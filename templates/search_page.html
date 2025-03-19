@@ -1,0 +1,284 @@
+{% extends "baseHTML.html" %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/customize/search_bar.css">
+{% endblock %}
+{% block body %}
+      <!--=================================
+      Header -->
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <!--=================================
+    Destination Find -->
+
+    <section class="destination-find-section">
+      <div class="container">
+         <div class="home-search">
+              <div class="row g-0 justify-content-center">
+                <div class="col-sm-12">
+
+                    <div class="form-group ">
+                        <div class="input-group">
+                            <input id="input_keyword" type="text" class="form-control" autocomplete="off" placeholder="Input the key words">
+
+                            <div class="">
+                              <button class="btn btn-secondary form-btn-v" onclick="submit_keyword()"> <i class="fas fa-search-location me-2"></i>
+                                  {{ _("Find Now")}} </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <script>
+      function submit_keyword(){
+      var keyword = $("#input_keyword").val()
+
+        window.location.href = "/search/" + keyword
+      }
+    </script>
+    <!--=================================
+    Destination Find -->
+
+
+    <!--=================================
+    Tour Grid -->
+    <section class="bg-holder travel-section" style="background-image: url(./../static/images/bg/map-bg.png);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title text-center mb-5">
+
+<!--            需要后端传数据 - destination名称  -->
+
+              <h2 class="title mb-0" id="Recommended_Title">{{ _("Searched Destination")}}</h2>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <nav class="nav-tab">
+              <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-one-tab" onclick="resize_photo()" data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">Destinations</a>
+                <a class="nav-item nav-link" id="nav-tow-tab" onclick="resize_photo()" data-bs-toggle="tab" href="#nav-tow" role="tab" aria-controls="nav-tow" aria-selected="false">Attractions</a>
+                <a class="nav-item nav-link" id="nav-three-tab" onclick="resize_photo()" data-bs-toggle="tab" href="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">Accommodations</a>
+              </div>
+            </nav>
+            <div class="tab-content mt-4 mt-lg-5" id="nav-tabContent">
+
+              <!-- Nav - one - destination -->
+              <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
+                <div class="row">
+                {%  if d_list != None %}
+                  {% for destination in d_list %}
+                  <div class="col-lg-4 col-md-6 mb-4 ">
+                    <div class="listing-item">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid img-restricted" src="data:;base64,{{ destination.avatar }}" alt="#">
+                        <div class="listing-favourite">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="listing-details">
+                        <div class="listing-title d-flex justify-content-between">
+                          <h5 class="mb-0">
+                            <span class="country-flags">
+                              <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ destination.country }}.jpg" alt="#">
+                            </span>
+                            <a href="tour-detail.html" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ destination.name }}{% endif %} {% if language == 'CHI' %} {{ destination.name_cn }} {% endif %}</a>
+                          </h5>
+                        </div>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ destination.location }}{% endif %} {% if language == 'CHI' %} {{ destination.location_cn }} {% endif %}</a>
+                        <div class="listing-info">
+                          <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ destination.info }}{% endif %} {% if language == 'CHI' %} {{ destination.info_cn }} {% endif %}</p>
+                        </div>
+                        <div class="listing-rating d-flex justify-content-between">
+                          <div class="d-flex">
+                            <div class="date me-3">
+                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                            </div>
+                            <div class="rating">
+                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                            </div>
+                          </div>
+                          <div class="price">
+{#                            <span class="text-decoration-line-through">$399</span>$350#}
+                          </div>
+                        </div>
+
+                        <a href="/detail/destination/{{ destination.id }}" class="btn btn-sm btn-primary">See Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endfor %}
+                {%  endif %}
+
+                </div>
+              </div>
+
+              <!-- Nav - two - attraction -->
+              <div class="tab-pane fade" id="nav-tow" role="tabpanel" aria-labelledby="nav-tow-tab">
+                <div class="row">
+                {%  if attract_list != None %}
+                  {% for attraction in attract_list %}
+                  <div class="col-lg-4 col-md-6 mb-4 ">
+                    <div class="listing-item">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid img-restricted"  src="data:;base64,{{ attraction.avatar }}" alt="#">
+                        <div class="listing-favourite">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="listing-details">
+                        <div class="listing-title d-flex justify-content-between">
+                          <h5 class="mb-0">
+                            <span class="country-flags">
+                              <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ attraction.destination.country }}.jpg" alt="#">
+                            </span>
+                            <a href="tour-detail.html" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ attraction.name }}{% endif %} {% if language == 'CHI' %} {{ attraction.name_cn }} {% endif %}</a>
+                          </h5>
+                        </div>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ attraction.location }}{% endif %} {% if language == 'CHI' %} {{ attraction.location_cn }} {% endif %}</a>
+                        <div class="listing-info">
+                          <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ attraction.info }}{% endif %} {% if language == 'CHI' %} {{ attraction.info_cn }} {% endif %}</p>
+                        </div>
+                        <div class="listing-rating d-flex justify-content-between">
+                          <div class="d-flex">
+                            <div class="date me-3">
+                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                            </div>
+                            <div class="rating">
+                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                            </div>
+                          </div>
+                          <div class="price">
+                            <span class="text-decoration-line-through">{{ attraction.price }}</span>
+                          </div>
+                        </div>
+
+                        <a href="/detail/attraction/{{ attraction.id }}" class="btn btn-sm btn-primary">See Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endfor %}
+                {%  endif %}
+
+                </div>
+              </div>
+
+              <!-- Nav - three - accommodation -->
+              <div class="tab-pane fade" id="nav-three" role="tabpanel" aria-labelledby="nav-three-tab">
+                <div class="row">
+                {%  if accommo_list != None %}
+                  {% for accommodation in accommo_list %}
+                  <div class="col-lg-4 col-md-6 mb-4 ">
+                    <div class="listing-item">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid img-restricted" src="data:;base64,{{ accommodation.avatar }}" alt="#">
+                        <div class="listing-favourite">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="listing-details">
+                        <div class="listing-title d-flex justify-content-between">
+                          <h5 class="mb-0">
+                            <span class="country-flags">
+                              <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ accommodation.destination.country }}.jpg" alt="#">
+                            </span>
+                            <a href="tour-detail.html" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ accommodation.name }}{% endif %} {% if language == 'CHI' %} {{ accommodation.name_cn }} {% endif %}</a>
+                          </h5>
+                        </div>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ accommodation.location }}{% endif %} {% if language == 'CHI' %} {{ accommodation.location_cn }} {% endif %}</a>
+                        <div class="listing-info">
+                          <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ accommodation.info }}{% endif %} {% if language == 'CHI' %} {{ accommodation.info }} {% endif %}</p>
+                        </div>
+                        <div class="listing-rating d-flex justify-content-between">
+                          <div class="d-flex">
+                            <div class="date me-3">
+                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                            </div>
+                            <div class="rating">
+                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                            </div>
+                          </div>
+                          <div class="price">
+                            <span class="text-decoration-line-through">{{ accommodation.price }}</span>
+                          </div>
+                        </div>
+
+                        <a href="/detail/accommodation/{{ accommodation.id }}" class="btn btn-sm btn-primary">See Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endfor %}
+                {%  endif %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Tour Grid -->
+{% endblock %}
+
+{% block js %}
+
+        <script>
+            $(function(){
+                $(window).on('load', function () { // This function is executed after the window is fully loaded
+          setTimeout(function (){
+              $('.img-restricted').removeAttr('width').removeAttr('height').css({
+            'height': function () {
+                return $(this).width() * 0.625;
+            },
+            'width': '100%'
+          });
+          },200)
+      });
+            })
+
+    </script>
+
+        <script>
+    function resize_photo() { // This function is executed after the window is fully loaded
+          setTimeout(function () {
+              $('.img-restricted').removeAttr('width').removeAttr('height').css({
+                  'height': function () {
+                      return $(this).width() * 0.625;
+                  },
+                  'width': '100%'
+              });
+          }, 200)
+      }
+    </script>
+
+{% endblock %}

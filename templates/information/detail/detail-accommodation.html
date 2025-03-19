@@ -1,0 +1,206 @@
+{% extends "baseHTML_Admin.html" %}
+{% block css %}
+<link href="/static/assets/js/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+<link href="/static/css/detail-room/available_rooms.css" rel="stylesheet" type="text/css" />
+
+        <!-- font-awesome -->
+<script src="https://kit.fontawesome.com/6db821cb18.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-body">
+{#                                        <h4 class="card-title">{{ destination.name}}</h4>#}
+{#                                        <p class="card-subtitle mb-4">{{ destination.info }} </p>#}
+                                        <img style="width: 100%;margin-bottom: 5%" src="data:;base64,{{ accommodation.avatar }}" alt="#">
+                                         <form>
+                                            <div class="form-group">
+                                                <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Name</label>
+                                                <div class="col-9">
+                                                    <input type="text" class="form-control" id="inputEmail3" value="{{ accommodation.name }}">
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Info</label>
+                                                <div class="col-9">
+                                                    <input type="text" class="form-control" id="inputEmail3" value="{{ accommodation.info }}">
+                                                </div>
+                                            </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Price</label>
+                                                <div class="col-9">
+                                                    <input type="text" class="form-control" id="inputEmail3" value="{{ accommodation.price }}">
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkmeout0">
+                                                    <label class="custom-control-label" for="checkmeout0">Check me out !</label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                        </form>
+
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card -->
+
+
+
+                            </div>
+                            <div class="col-xl-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Hotspot Index</h4>
+                                        <p class="card-subtitle mb-4">This shows the hotspot index of this destinations (search, view). </p>
+                                        <canvas id="lineChart"></canvas>
+
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card -->
+
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                       <div class="row">
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h4 class="card-title">Available Rooms</h4>
+                                        <p class="card-subtitle mb-4">Pick the date and check for any room available</p>
+
+                                        <div class="row">
+                                            <div class="col-xl-2"></div> <!-- left block -->
+                                            <div class="col-xl-8">
+                                                <div class="date-selector">
+                                                    <button class="date-button previous-button">&lt;</button>
+                                                    <input type="date" class="date-input">
+                                                    <button class="date-button next-button">&gt;</button>
+                                                    <button class="date-button select-button">Select</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2"></div> <!-- right block -->
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xl-2"></div> <!-- left block -->
+                                            <div class="col-xl-8">
+
+                                                <i class="fa-solid fa-door-closed fa-2xl door_close" title="Unavailable Room"></i>
+                                                <i class="fa-solid fa-door-closed fa-2xl door_close" title="Unavailable Room"></i>
+                                                <i class="fa-solid fa-door-closed fa-2xl door_close" title="Unavailable Room"></i>
+                                                <i class="fa-solid fa-door-closed fa-2xl door_close" title="Unavailable Room"></i>
+                                                <i class="fa-solid fa-door-closed fa-2xl door_close" title="Unavailable Room"></i>
+                                                <i class="fa-solid fa-door-closed fa-2xl door_close" title="Unavailable Room"></i>
+
+                                                <i class="fa-solid fa-door-open fa-2xl door_open" title="Available Room"></i>
+                                                <i class="fa-solid fa-door-open fa-2xl door_open" title="Available Room"></i>
+                                                <i class="fa-solid fa-door-open fa-2xl door_open" title="Available Room"></i>
+                                                <i class="fa-solid fa-door-open fa-2xl door_open" title="Available Room"></i>
+                                                <i class="fa-solid fa-door-open fa-2xl door_open" title="Available Room"></i>
+                                                <i class="fa-solid fa-door-open fa-2xl door_open" title="Available Room"></i>
+
+                                            </div>
+                                            <div class="col-xl-2"></div> <!-- right block -->
+
+                                        </div>
+
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                           <div class="col-xl-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Related Reservations</h4>
+                                        Reservations in this hotel
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>ID</th>
+                                                        <th>User</th>
+                                                        <th>Date</th>
+                                                        <th>Note</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for reserve in reservations %}
+                                                    <tr>
+                                                        <th scope="row">{{ reservations.index(reserve) }}</th>
+                                                        <td>{{ reserve.id }}</td>
+                                                        <td>{{ reserve.user.name }}</td>
+                                                        <td>{{ reserve.date }}</td>
+                                                        <td>{{ reserve.note }}</td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <div class="row">
+
+                            <div class = "col-xl-12">
+                                 <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Related Attractions</h4>
+                                        Attractions in this destination
+                                        <br>
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+{% endblock %}
+
+{% block js %}
+
+    <!-- Chart Js-->
+        <script src="/static/assets/js/chart-js/chart.min.js"></script>
+
+    <!-- Chart Custom Js-->
+        <script src="/static/assets/js/pages/chartjs-detail-destination.js"></script>
+
+    <script src="/static/assets/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="/static/assets/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="/static/assets/js/jvectormap/gdp-data.js"></script>
+        <script src="/static/assets/js/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="/static/assets/js/jvectormap/jquery-jvectormap-uk-mill-en.js"></script>
+        <script src="/static/assets/js/jvectormap/jquery-jvectormap-us-il-chicago-mill-en.js"></script>
+        <script src="/static/assets/js/pages/vectormap-demo.js"></script>
+    <script>
+    var height = $("#world-map-markers").height()
+    var right_table_class = $(".table-responsive").css({"height":height})
+    </script>
+
+    <script src="/static/js/detail-room/available_rooms.js"></script>
+    <script src="https://kit.fontawesome.com/6db821cb18.js" crossorigin="anonymous"></script>
+
+{% endblock %}

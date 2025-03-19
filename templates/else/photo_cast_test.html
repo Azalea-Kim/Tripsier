@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../static/js/jquery-3.5.1.js"></script>
+    <script src="../../static/js/reviewSubmitAjax.js"></script>
+    <script src="../../static/js/js_decode.js"></script>
+</head>
+<body>
+
+
+<img src="data:;base64,{{ r1 }}" width="300px"/>
+<img src="data:;base64,{{ r2 }}" width="300px"/>
+<img src="data:;base64,{{ r3 }}" width="300px"/>
+<div id = "review-area">
+        <div>
+            <p>Content: Fuck </p>
+            <p>Sender:Tenrin</p>
+        </div>
+
+        <div>
+            <p>Content: Fuck </p>
+            <p>Sender:Tenrin</p>
+        </div>
+</div>
+
+<form id = "review_form">
+    <label for="content"></label> <input id="content" name="content" placeholder="Enter the content">
+    <label for="rate"></label> <input id="rate" name = "rate" placeholder="Enter the rate">
+</form>
+<button style="width: 50px;height: 50px" onclick="sendReviewAttraction(1,1)"></button>
+
+</body>
+</html>

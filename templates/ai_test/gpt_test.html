@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Ai - Chat</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=RF91fFE0"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <style>
+         #chatgpt-response {
+            font-family: "宋体";
+            font-size: 20px;
+            color: #0000FF;
+            font-weight: bold;
+         }
+</style>
+
+      <script>
+         async function callCHATGPT() {
+            var responseText1 = document.getElementById("chatgpt-response");
+            responseText1.innerHTML = ""
+
+            function printMessage(message) {
+               var responseText = document.getElementById("chatgpt-response");
+               var index = 0;
+
+               // 创建一个定时器，每隔一段时间打印一个字符
+               var interval = setInterval(function() {
+                     responseText.innerHTML += message[index];
+                     index++;
+
+                     // 当打印完成时，清除定时器
+                     if (index >= message.length) {
+                        clearInterval(interval);
+                     }
+                  },
+                  150); // 每隔50毫秒打印一个字符
+            }
+            var xhr = new XMLHttpRequest();
+            var url = "https://api.openai.com/v1/completions";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("Authorization", "Bearer APIKEY");
+            xhr.onreadystatechange = function() {
+               if (xhr.readyState === 4 && xhr.status === 200) {
+                  var json = JSON.parse(xhr.responseText);
+                  var response = json.choices[0].text;
+
+                  // 将CHATGPT的返回值输出到文本框
+                  var responseText = document.getElementById("chatgpt-response");
+                  var index = 0;
+
+                  // 创建一个定时器，每隔一段时间打印一个字符
+                  var interval = setInterval(function() {
+                        responseText.innerHTML += response[index];
+                        index++;
+
+                        // 当打印完成时，清除定时器
+                        if (index >= response.length) {
+                           clearInterval(interval);
+                        }
+                     },
+                     50);// 每隔50毫秒打印一个字符
+
+                   responsiveVoice.speak(response,$('#voiceselection').val())
+
+                   //添加语音播报效果
+
+               }
+            };
+
+            var data = JSON.stringify({
+               "prompt": document.getElementById("chat-gpt-input").value,
+               "max_tokens": 2048,
+               "temperature": 0.5,
+               "top_p": 1,
+               "frequency_penalty": 0,
+               "presence_penalty": 0,
+               "model": "text-davinci-003"
+            });
+            console.log(data);
+            await printMessage('正在思考，请等待......');
+            await xhr.send(data);
+         }
+</script>
+   </head>
+
+   <body>
+
+      <div class="filter-menu text-center mb-40">
+         <h4>与Ai对话，请描述您的需求-支持中文、英语、日本语等</h4>
+      </div>
+
+      <textarea class="form-control" id="chat-gpt-input" placeholder="输入描述" rows="3" resize="none"
+         style="width: 135%; margin: 0 auto; background-color: #f4f4f4; color: #333; border: 1px solid #ccc; border-radius: 12px;"></textarea>
+      <button onclick="callCHATGPT()" autocomplete="off" class="btn btn-large" href="#"
+         style="background-color: #333; color: #f4f4f4; border-radius: 10px">
+         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>回答
+      </button>
+      <textarea class="form-control" id="chatgpt-response"
+         placeholder="请耐心等待回答 Ai生成它很快，但是由于网络问题我们需要等待，通常内容越长等待越久 如果长时间没反应请刷新页面重试" rows="26" resize="none"
+         style="width: 150%;height: auto; margin: 0 auto; background-color: #f4f4f4; color: #333; border: 1px solid #ccc; border-radius: 10px; overflow: scroll;"
+         readonly="true"></textarea>
+
+   <script>
+    //Populate voice selection dropdown
+    var voicelist = responsiveVoice.getVoices();
+
+    // Manually select the text to speech
+    var vselect = "Voice picked: Google JP English Male"
+    // console.log(vselect)
+
+    $.each(voicelist, function() {
+        vselect.append($("<option />").val(this.name).text(this.name));
+    });
+</script>

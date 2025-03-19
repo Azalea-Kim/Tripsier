@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5">
+    <meta name="description" content="Xtrip - Tour & Travel Hotel Booking HTML">
+    <meta name="author" content="potenzaglobalsolutions.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ _("Tripsier - Tour & Travel Hotel Booking HTML Template")}}</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css/2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="/static/css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="/static/css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/animate/animate.min.css">
+    <link rel="stylesheet" href="/static/css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/static/css/datetimepicker/datetimepicker.min.css">
+    <link rel="stylesheet" href="/static/css/range-slider/ion.rangeSlider.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/select2/select2.css">
+    <!-- Template Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/ai-response.css">
+    <link rel="stylesheet" href="/static/css/ask-ai.css">
+  <!-- icon Style -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      {% block css %}
+      {% endblock %}
+  </head>
+  <body>
+  <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=RF91fFE0"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--=================================
+    Header -->
+    <header class="header header-3 header-sticky default header-transparent">
+      <nav class="navbar navbar-static-top navbar-expand-lg">
+        <div class="container-fluid main-header position-relative">
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+          <a class="navbar-brand" href="else/index.html">
+            <img class="img-fluid" src="/static/images/logo/logo.png" alt="logo">
+          </a>
+          <div class="navbar-collapse collapse justify-content-end justify-content-lg-center">
+            <ul class="nav navbar-nav">
+              <li class="nav-item dropdown active">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li class="active"><a class="dropdown-item" href="/"><span>{{ _("Homepage") }}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("My Tours")}}</span></a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">{{ _("Destinations") }}<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/"><span>{{ _("View All Destinations")}}</span></a></li>
+                  <li><a class="dropdown-item" href="/detail/destination/2"><span>{{ _("Beijing") }}</span></a></li>
+                  <li><a class="dropdown-item" href="/detail/destination/3"><span>{{ _("Shanghai") }}</span></a></li>
+                  <li><a class="dropdown-item" href="/detail/destination/5"><span>{{ _("HongKong") }}</span></a></li>
+                  <li><a class="dropdown-item" href="/detail/destination/4"><span>{{ _("Guangzhou") }}</span></a></li>
+                </ul>
+              </li>
+
+
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">{{ _("Attractions") }}<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"><span>{{ _("View All Attractions")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Attraction 1")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Attraction 2")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Attraction 3")}}</span></a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">{{ _("Accommodations") }}<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"><span>{{ _("View All Accommodations")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Accommodation 1")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Accommodation 2")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Accommodation 3")}}</span></a></li>
+                </ul>
+              </li>
+                {% if user.role == 0 %}
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">{{ _("Booking") }}<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/plan"><span>{{ _("Planning Tool")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Booking Tool")}}</span></a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a class="nav-link" data-bs-toggle="dropdown">{{ _("Ask For Help")}}<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/a"><span>{{ _("Ask About Tours")}}</span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>{{ _("Report Bugs")}}</span></a></li>
+                </ul>
+              </li>
+                {% endif %}
+            </ul>
+          </div>
+          <div class="add-listing">
+            <div class="woo-action">
+              <ul class="list-unstyled">
+                <li class="cart dropdown">
+                    <a href="/switch_language">
+                  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="cart-icon">
+<!--                    <object type="image/svg+xml" data="/static/images/svg/cart.svg" class="icon"></object>-->
+                      <i class="fa-solid fa-language fa-2xl" style="color: #ffffff;"></i></span>
+
+                  </button>
+                    </a>
+                </li>
+              </ul>
+            </div>
+
+            {% if is_logged == False %}
+            <!-- For unregistered users-->
+            <div class="nav-item header-search" style = "margin-left: 50px">
+              <a href="/login" class="btn btn-light menu-btn ms-4 d-none d-xl-block">{{ _("Sign In Now")}}</a>
+            </div>
+            {% endif %}
+
+
+            {% if is_logged == True %}
+            <!-- For registered users-->
+            <div class="nav-item header-search" style = "margin-left: 50px">
+              <div style = "width:40px; height: 40px; border-radius: 20px; background-color: white">
+                <img src = "data:;base64,{{ user.avatar }}" alt="" id = "userIcon" style = "width:40px; height: 40px; border-radius: 20px;">
+              </div>
+            </div>
+
+            <!-- For registered users-->
+            <!-- For registered users-->
+            <div class="navbar-nav">
+              <li class="dropdown nav-item">
+                <a class="nav-link" href=" " data-bs-toggle="dropdown" style = "font-size: 20px; font-weight: bold; color: white">{{ user.name }}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% if user.role == 1 %}
+                  <li><a class="dropdown-item" href="/admin"><span>{{ _("Admin Page")}}</span></a></li>
+                        {% endif %}
+                  <li><a class="dropdown-item" href="/logout"><span>{{ _("Logout") }}</span></a></li>
+                </ul>
+              </li>
+<!--              <div><span>-->
+<!--                Username-->
+<!--              </span></div>-->
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+        </nav>
+      </header>
+      <!--=================================
+      Header -->
+  <div class="ai-response-container" id="ai-response-container" style="z-index: 99999">
+    <div class="ai-response" id="chatgpt-response">
+    </div>
+    <button class="close-response-btn" type="reset" id="close-response-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+    </button>
+</div>
+
+<div class="ask-ai-container" id="ai-ask" style="z-index: 99999;">
+    <button class="ask-ai-btn" id="ask-ai-btn">
+        ASK AI
+    </button>
+
+    <div class="ai-form-container" id="ask-ai-container">
+        <div class="ai-form">
+          <button onclick="callCHATGPT()" class="ai-search-btn" id="ai-search-btn">
+              <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                  <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+          </button>
+          <input class="ai-input" id="chat-gpt-input" placeholder="Type your text" required="" type="text">
+          <button class="reset" type="reset">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+        </div>
+    </div>
+
+</div>
+    {% block body %}
+        
+    {% endblock %}
+
+<!--=================================
+    Feature Section -->
+    <section class="feature-section">
+      <div class="container-fuild p-0">
+        <div class="row g-0">
+          <div class="col-md-6 bg-dark d-flex justify-content-center align-items-center text-center p-lg-5 p-4">
+            <div class="position-relative px-xl-6">
+              <img class="img-fluid" src="/static/images/icon/phone-white.png" alt="">
+              <h4 class="text-white font-weight-normal mb-5 mt-4">
+                <span class="d-block mb-2">{{ _("Call us at")}} <a href="" class="text-yellow">(+88) 126 632 2345</a> or</span><span> email <a href="mailto:support@pyscare.com">letstalk@xtrip.com</a></span>
+              </h4>
+              <a href="#" class="btn btn-secondary">{{ _("Call Us")}}</a>
+            </div>
+          </div>
+          <div class="col-md-6 text-center bg-primary d-flex justify-content-center align-items-center  p-lg-5 p-4">
+            <div class="newsletter">
+              <img class="img-fluid" src="/static/images/icon/email-white.png" alt="">
+              <div class="section-title mb-4 mt-4">
+                <h3 class="title text-white">{{ _("Newsletters sign up")}}</h3>
+              </div>
+              <form class="newsletter-form">
+                <input type="email" class="form-control" placeholder="Email*">
+                <button type="submit" class="btn btn-secondary">{{ _("Get Notified")}}</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Feature Section -->
+
+<!--=================================
+    footer-->
+    <footer class="footer footer-style-03 bg-holder" style="background-image: url(.//static/images/bg/06.jpg); ">
+      <div class="min-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <a class="footer-logo" href="else/index.html">
+                <img class="img-fluid" src="/static/images/logo/logo_black.png" alt="logo">
+              </a>
+              <p class="my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              <div class="social-icon">
+                <ul>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+              <h6 class="footer-title fw-600">{{ _("Quick Link")}}</h6>
+              <div class="footer-menu dark-text">
+                <ul>
+                  <li><a href="/">{{ _("Home") }}</a></li>
+                  <li><a href="/">{{ _("About Us")}}</a></li>
+                  <li><a href="/">{{ _("Tours") }}</a></li>
+                  <li><a href="/detail/destination/2">{{ _("Destinations") }}</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+              <h6 class="footer-title fw-600">{{ _("Support") }}</h6>
+              <div class="footer-menu dark-text">
+                <ul>
+                  <li><a href="/">{{ _("Privacy Policy")}}</a></li>
+                  <li><a href="/">{{ _("FAQs") }}</a></li>
+                  <li><a href="/">{{ _("Contact") }}</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mt-4 mt-lg-0">
+              <div class="footer-link">
+                <h6 class="footer-title fw-600">{{ _("Contact Travel")}}</h6>
+                <div class="footer-contact-info">
+                  <ul class="list-unstyled mb-0">
+                    <li><img class="img-fluid" src="/static/images/icon/address.png" alt=""><span class="address">17504 Carlton Cuevas Rd, Gulfport, MS, 39503</span></li>
+                    <li><img class="img-fluid" src="/static/images/icon/phone.png" alt=""><span class="phone">+126-632-2345</span></li>
+                    <li><img class="img-fluid" src="/static/images/icon/email.png" alt=""><span class="email">letstalk@xtrip.com</span></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center copyright text-center mt-4 mt-md-5">
+            <div class="col-12">
+              <p class="mb-0 text-dark"> &copy; {{ _("Copyright") }} <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> by <a href="Http://www.bootstrapmb.com">bootstrapMB</a> All Rights Reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--=================================
+    footer-->
+    <!--=================================
+    Back To Top-->
+    <div id="back-to-top" class="back-to-top">
+      <a href="#"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <!--=================================
+    Back To Top-->
+    <!--=================================
+    Javascript -->
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="/static/js/jquery-3.6.1.min.js"></script>
+    <script src="/static/js/jquery.appear.js"></script>
+    <script src="/static/js/popper/popper.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="/static/js/select2/select2.full.js"></script>
+    <script src="/static/js/datetimepicker/moment.min.js"></script>
+    <script src="/static/js/datetimepicker/datetimepicker.min.js"></script>
+    <script src="/static/js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/static/js/swiper/swiper.min.js"></script>
+    <script src="/static/js/swiperanimation/SwiperAnimation.min.js"></script>
+    <script src="/static/js/range-slider/ion.rangeSlider.min.js"></script>
+    <script src="/static/js/countdown/jquery.downCount.js"></script>
+    <script src="/static/js/counter/jquery.countTo.js"></script>
+    <script src="/static/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Template Scripts (Do not remove)-->
+    <script src="/static/js/custom.js"></script>
+    <script src="/static/js/ai-guide.js"></script>
+
+  <script>
+        // 检测设备类型
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        // 如果是移动设备，则禁用L2Dwidget
+        if (isMobile) {
+          // 禁用L2Dwidget
+          console.log('禁用 L2Dwidget');
+          $('#ai-ask').hide()
+            $('#ai-response-container').hide()
+        } else {
+          // 如果不是移动设备，则启用L2Dwidget
+          console.log('启用 L2Dwidget');
+            L2Dwidget.init({
+          "model": {
+              jsonPath:
+                  "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+              "scale": 1
+          }, "display": {
+              "position": "right", "width": 150, "height": 180,
+              "hOffset": 0, "vOffset": -20
+          }, "mobile": {"show": true, "scale": 0.5},
+          "react": {"opacityDefault": 1, "opacityOnHover": 0.1}
+  });
+        }
+  </script>
+
+  <script>
+
+  </script>
+
+  <script>
+         async function callCHATGPT() {
+
+
+            var responseText1 = document.getElementById("chatgpt-response");
+            responseText1.innerHTML = ""
+
+            function printMessage(message) {
+               var responseText = document.getElementById("chatgpt-response");
+               var index = 0;
+
+               // 创建一个定时器，每隔一段时间打印一个字符
+               var interval = setInterval(function() {
+                     responseText.innerHTML += message[index];
+                     index++;
+
+                     // 当打印完成时，清除定时器
+                     if (index >= message.length) {
+                        clearInterval(interval);
+                     }
+                  },
+                  150); // 每隔50毫秒打印一个字符
+            }
+            var xhr = new XMLHttpRequest();
+            var url = "https://api.openai.com/v1/completions";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("Authorization", "Bearer APIKEY");
+            xhr.onreadystatechange = function() {
+               if (xhr.readyState === 4 && xhr.status === 200) {
+                  var json = JSON.parse(xhr.responseText);
+                  var response = json.choices[0].text;
+
+                  // 将CHATGPT的返回值输出到文本框
+                  var responseText = document.getElementById("chatgpt-response");
+                  var index = 0;
+
+                  // 创建一个定时器，每隔一段时间打印一个字符
+                  var interval = setInterval(function() {
+                        responseText.innerHTML += response[index];
+                        index++;
+
+                        // 当打印完成时，清除定时器
+                        if (index >= response.length) {
+                           clearInterval(interval);
+                        }
+                     },
+                     50);// 每隔50毫秒打印一个字符
+
+                   responsiveVoice.speak(response,$('#voiceselection').val())
+
+                   //添加语音播报效果
+
+               }
+            };
+
+            var data = JSON.stringify({
+               "prompt": document.getElementById("chat-gpt-input").value,
+               "max_tokens": 2048,
+               "temperature": 0.5,
+               "top_p": 1,
+               "frequency_penalty": 0,
+               "presence_penalty": 0,
+               "model": "text-davinci-003"
+            });
+            console.log(data);
+            await printMessage('Thinking...');
+            await xhr.send(data);
+         }
+</script>
+
+    {% block js %}
+    {% endblock %}
+
+  </body>
+</html>

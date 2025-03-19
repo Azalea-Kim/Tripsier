@@ -1,0 +1,128 @@
+.ask-ai-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ask-ai-btn{
+    position: fixed;
+    bottom: 0;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0 0 60px #1f4c65;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    z-index: 999999;
+}
+
+.ask-ai-btn:active {
+  scale: 0.92;
+}
+
+.ask-ai-btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%) !important;
+  color: rgb(4, 4, 38) !important;
+}
+
+
+
+.ai-form-container{
+    position: fixed;
+    bottom: -50px;
+    height: 50px;
+    resize: none;
+    z-index: 99999;
+    transition: 0.6s;
+}
+
+.ai-form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+/* styling of whole input container */
+.ai-form {
+  --timing: 0.3s;
+  --width-of-input: 400px;
+  --height-of-input: 50px;
+  --border-height: 5px;
+  --input-bg: #fff;
+  --border-color: #2f2ee9;
+  --border-radius: 20px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+}
+/* styling of Input */
+.ai-input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+/* styling of animated border */
+.ai-form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+/* Hover on Input */
+.ai-form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+.ai-input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+.ai-form:focus-within:before {
+  transform: scale(1);
+}
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* close button shown when typing */
+.ai-input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+/* sizing svg icons */
+.ai-form svg {
+  width: 17px;
+  margin-top: 3px;
+}

@@ -1,0 +1,467 @@
+﻿{% extends "baseHTML.html" %}
+
+{% block body %}
+
+    {% block css %}
+        <link rel="stylesheet" href="/static/css/embedded-video.css">
+        <style>
+            #return:hover{
+                color: black;
+                cursor: pointer;
+            }
+
+        </style>
+    {% endblock %}
+    <!--=================================
+    Header -->
+    <!--=================================
+    Header -->
+
+    <!--=================================
+    Header Inner -->
+    <section class="header-inner header-inner-menu bg-overlay-dark-6" style="background-image: url('/static/images/bg/01.jpg');">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 position-relative">
+              <div id="play-div" style="">
+                  <img src="/static/images/svg/play_circle_FILL1_wght400_GRAD0_opsz48.svg" style="position: relative; left: -48px; filter: drop-shadow(48px 0 white);" alt="Smiley face">
+              </div>
+            <div class="header-inner-title">
+              <div class="section-title">
+                <h2 class="title text-white">{{ _("Attraction Details")}}</h2>
+                <div class="sub-title">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-uppercase" href="else/index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="breadcrumb-item active">{{ _("Attraction Details")}}</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Header Inner -->
+    <!--=================================
+    Tour Grid -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="listing-item listing-item-details">
+              <div class="listing-details">
+
+              <a href="/detail/destination/{{ attraction.destination_id }}">
+              <div id="return" style="top: -20px; position: relative;">
+                    <i class="fa-solid fa-arrow-left fa-xl" ></i>
+                    <span style="left: 5px; font-weight: bold">{{ _("Return") }}</span>
+              </div>
+              </a>
+
+                <div class="listing-title d-flex justify-content-between mb-4">
+                  <h4 class="mb-0 country-name">
+                    <span class="country-flags">
+
+                      <!-- 需要添加景点所属国家的国旗 -->
+                      <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ attraction.destination.country }}.jpg" alt="#">
+                    </span>
+                    <a href="#" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ attraction.name }}{% endif %} {% if language == 'CHI' %} {{ attraction.name_cn }} {% endif %}</a>
+                  </h4>
+
+                </div>
+                <div class="listing-rating row d-flex justify-content-between align-items-center">
+                  <div class="col-lg-7">
+                    <div class="d-sm-flex align-items-center">
+                      <div class="date me-3 mb-3 mb-sm-0">
+                        <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                      </div>
+                      <div class="rating mb-3 mb-sm-0">
+                        <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                      </div>
+                      <a href="#" class="listing-loaction ms-sm-4"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ attraction.location }}{% endif %} {% if language == 'CHI' %} {{ attraction.location_cn }} {% endif %}</a>
+                    </div>
+                  </div>
+                {% if is_logged == True %}
+                  <div class="col-lg-5">
+                    <div class="d-sm-flex align-items-center ms-auto justify-content-lg-end">
+                      <a onclick="alert_add()" href="/add_attraction/{{ attraction.id }}" class="btn btn-primary"><i class="fa-solid fa-circle-check fa-xl me-2"></i>Add To Cart</a>
+                    </div>
+                  </div>
+                {% endif %}
+                </div>
+
+                
+
+              </div>
+              <div class="row">
+                 <div class="col-lg-4">
+                  <div class="sidebar mb-0">
+
+                    <!-- Price -->
+                    <div class="widget">
+                      <div class="widget-title">
+                        <a class="collapse-title" data-bs-toggle="collapse" href="#price">
+                          Price  <i class="fas fa-minus-circle"></i>
+                        </a>
+                      </div>
+                      <div class="widget-content">
+                        <div class="pb-3">
+                          <div class="collapse show" id="price">
+                            <div class="mb-4 attraction-price-slider ">
+                              <label class="form-label">{{ _("Possible Price Range")}}</label>
+                              <input type="text" id="attraction-price-slider" disabled>
+                            </div>
+<!--                            <div class="mb-0 d-grid">-->
+<!--                              <a class="btn btn-primary" href="#">Search</a>-->
+<!--                            </div>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="widget">
+                      <div class="widget-title">
+                        <h5 class="mb-0 fw-600"> Location </h5>
+                      </div>
+                      <div class="widget-content">
+                        <iframe src = "{{ attraction.destination.map_url }}" style="border:0; width: 100%; height: 200px" allowfullscreen=""></iframe>
+                        <ul class="list-unstyled mb-3 mt-4 d-block">
+                          <li class="mb-2"><strong class="text-dark d-inline-block me-2">{{ _("Address:")}}</strong>{% if language == 'ENG' %}
+
+                            {{ attraction.location }}{% endif %} {% if language == 'CHI' %} {{ attraction.location_cn }} {% endif %}</li>
+                          <li class="mb-2"><strong class="text-dark d-inline-block me-2">{{ _("Website:")}}</strong>{{ attraction.website }}</li>
+                        </ul>
+                        <ul class="list-unstyled mb-0 d-flex mt-3">
+                          <li><a class="px-3 py-2 d-block bg-light border-radius me-2" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                          <li><a class="px-3 py-2 d-block bg-light border-radius me-2" href="#"><i class="fab fa-twitter"></i></a></li>
+                          <li><a class="px-3 py-2 d-block bg-light border-radius me-2" href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                          <li><a class="px-3 py-2 d-block bg-light border-radius me-2" href="#"><i class="fab fa-behance"></i></a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="widget mb-0">
+                      <div class="widget-title">
+                        <h5 class="mb-0 fw-600"> {{ _("Tags") }} </h5>
+                      </div>
+                      <div class="widget-content">
+                        <div class="popular-tag">
+                          <ul class="list-unstyled mb-0">
+                              {% for tag in tags %}
+                            <li><a href="#"> {{tag}}</a></li>
+                              {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="listing-detail-page">
+                    <div class="listing-detail-box listing-detail-description">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid"  src="data:;base64,{{ attraction.avatar }}" alt="#">
+                      </div>
+                      <div class="listing-detail-content">
+                        <div class="detail-title">
+                          <h5 class="fw-600">{{ _("Listing Description")}}</h5>
+                        </div>
+                        <p>{% if language == 'ENG' %}
+
+                            {{ attraction.info }}{% endif %} {% if language == 'CHI' %} {{ attraction.info_cn }} {% endif %}</p>
+                      </div>
+                    </div>
+                    <div class="listing-detail-box listing-detail-reviews">
+                      <div class="detail-title">
+                        <h5 class="fw-600">{{ _("Listing Average Reviews")}}</h5>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="bg-secondary px-4 py-3 border-radius d-flex align-items-center">
+                            <h6 class="rating text-white mb-0"><span class="bg-success text-white me-2">{{ score }}</span>Ratings</h6>
+                            <ul class="ms-auto list-unstyled d-flex mb-0">
+                              <li><i class="fas fa-star text-yellow ms-1"></i></li>
+                              <li><i class="fas fa-star text-yellow ms-1"></i></li>
+                              <li><i class="fas fa-star text-yellow ms-1"></i></li>
+                              <li><i class="fas fa-star text-yellow ms-1"></i></li>
+                              <li><i class="fas fa-star text-yellow ms-1"></i></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- column 1 -->
+                        <div class="col-lg-4">
+                          <div class="mt-4">
+                            <div class="d-flex mb-2">
+                              <strong class="text-dark">{{ _("Quality") }}</strong>
+                              <span class="ms-auto">4.8</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                              <div class="progress-bar" role="progressbar" style="width:98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="mt-4">
+                            <div class="d-flex mb-2">
+                              <strong class="text-dark">{{ _("Location") }}</strong>
+                              <span class="ms-auto">4</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                              <div class="progress-bar" role="progressbar" style="width:80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- column 2 -->
+                        <div class="col-lg-4">
+                          <div class="mt-4">
+                            <div class="d-flex mb-2">
+                              <strong class="text-dark">{{ _("Space") }}</strong>
+                              <span class="ms-auto">3</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                              <div class="progress-bar" role="progressbar" style="width:60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-4">
+                            <div class="d-flex mb-2">
+                              <strong class="text-dark">{{ _("Service") }}</strong>
+                              <span class="ms-auto">1.5</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                              <div class="progress-bar" role="progressbar" style="width:30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- column 3 -->
+                        <div class="col-lg-4">
+                          <div class="mt-4">
+                            <div class="d-flex mb-2">
+                              <strong class="text-dark">{{ _("Price") }}</strong>
+                              <span class="ms-auto">2</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                              <div class="progress-bar" role="progressbar" style="width:40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-4">
+                            <div class="d-flex mb-2">
+                              <strong class="text-dark">{{ _("Cleanliness") }} </strong>
+                              <span class="ms-auto">2.5</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                              <div class="progress-bar" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+{#                    <div class="listing-detail-box popup-gallery portfolio-style-gallery listing-gallery">#}
+{#                      <div class="detail-title">#}
+{#                        <h5 class="fw-600">Representative Captures</h5>#}
+{#                      </div>#}
+{#                      <div class="row g-2">#}
+{#                        <div class="col-md-12">#}
+{#                          <div class="row g-2">#}
+{##}
+{#                            <div class="col-md-7">#}
+{#                              <div class="portfolio portfolio-style-03 mb-0 rounded">#}
+{#                                <div class="portfolio-images">#}
+{#                                  <img class="img-fluid rounded " src="/static/images/listing/09.jpg" alt="">#}
+{#                                  <div class="portfolio-info-02">#}
+{#                                    <a class="portfolio-img popup-icon" href="/static/images/listing/09.jpg"> <i class="fas fa-plus"></i> </a>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                              </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-md-5">#}
+{#                              <div class="portfolio portfolio-style-03 mb-0 rounded">#}
+{#                                <div class="portfolio-images">#}
+{#                                  <img class="img-fluid rounded " src="/static/images/listing/10.jpg" alt="">#}
+{#                                  <div class="portfolio-info-02">#}
+{#                                    <a class="portfolio-img popup-icon" href="/static/images/listing/10.jpg"> <i class="fas fa-plus"></i> </a>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                              </div>#}
+{#                            </div>#}
+{##}
+{#                          </div>#}
+{#                        </div>#}
+{#                        <div class="col-md-12">#}
+{#                          <div class="row mb-2 g-2">#}
+{#                            <div class="col-md-4">#}
+{#                              <div class="portfolio portfolio-style-03 mb-0 rounded">#}
+{#                                <div class="portfolio-images">#}
+{#                                  <img class="img-fluid rounded " src="/static/images/listing/11.jpg" alt="">#}
+{#                                  <div class="portfolio-info-02">#}
+{#                                    <a class="portfolio-img popup-icon" href="/static/images/listing/11.jpg"> <i class="fas fa-plus"></i> </a>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                              </div>#}
+{#                            </div>#}
+{#                            <div class="col-md-4 mb-sm-0">#}
+{#                              <div class="portfolio portfolio-style-03 mb-0 rounded">#}
+{#                                <div class="portfolio-images">#}
+{#                                  <img class="img-fluid rounded " src="/static/images/listing/12.jpg" alt="">#}
+{#                                  <div class="portfolio-info-02">#}
+{#                                    <a class="portfolio-img popup-icon" href="/static/images/listing/12.jpg"> <i class="fas fa-plus"></i> </a>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                              </div>#}
+{#                            </div>#}
+{#                            <div class="col-md-4">#}
+{#                              <div class="portfolio portfolio-style-03 mb-0 rounded">#}
+{#                                <div class="portfolio-images">#}
+{#                                  <img class="img-fluid rounded " src="/static/images/listing/13.jpg" alt="">#}
+{#                                  <div class="portfolio-info-02">#}
+{#                                    <a class="portfolio-img popup-icon" href="/static/images/listing/13.jpg"> <i class="fas fa-plus"></i> </a>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                              </div>#}
+{#                            </div>#}
+{#                          </div>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+
+                    <div class="listing-detail-box reviews-box">
+                      <div class="detail-title">
+                        <h5 class="fw-600">{{ _("Reviews") }}</h5>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" id = "review-area">
+                            {% for review in reviews %}
+                          <div class="d-block d-md-flex mb-4">
+                            <div class="avatar mb-3">
+                              <img src = "data:;base64,{{ review.sender.avatar }}" class="rounded-circle img-fluid" alt="...">
+                            </div>
+                            <div class="p-4 border border-radius-sm ms-0 ms-md-3">
+                              <div class="d-flex align-items-center">
+                                <h6 class="mt-0">{{ review.sender.name }}</h6>
+                                <div class="d-flex ms-auto mb-3">
+                                  <span class="px-2 border text-success border-radius-sm d-inline-block me-2">{{ review.rate }}</span>
+                                  <ul class="list-unstyled d-flex mb-0">
+
+                                      {% for i in range(0,review.rate) %}
+                                    <li><i class="fas fa-star text-warning"></i></li>
+                                      {% endfor %}
+
+                                      {% for i in range(0,5-review.rate) %}
+                                    <li><i class="far fa-star text-light"></i></li>
+                                      {% endfor %}
+
+                                  </ul>
+                                </div>
+                              </div>
+                              <p>{{ review.content }}</p>
+                              <div class=" d-flex flex-wrap">
+                              </div>
+                            </div>
+                          </div>
+                            {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="listing-detail-box mb-lg-0">
+                      <div class="detail-title">
+
+                        <h5 class="fw-600">{{ _("Add a Review")}}</h5>
+
+                      </div>
+                      <form id = "review_form">
+                        <div class="row">
+                          <div class="mb-3 col-md-12">
+                            <div class="ratings">
+                              <input type="radio" id="star5" name="rate" value="5" ><label class = "full form-label" for="star5" title="Awesome - 5 stars"></label>
+                              <input type="radio" id="star4" name="rate" value="4" ><label class = "full form-label" for="star4" title="Pretty good - 4 stars"></label>
+                              <input type="radio" id="star3" name="rate" value="3" ><label class = "full form-label" for="star3" title="Meh - 3 stars"></label>
+                              <input type="radio" id="star2" name="rate" value="2" ><label class = "full form-label text-yellow" for="star2" title="Kinda bad - 2 stars"></label>
+                              <input type="radio" id="star1" name="rate" value="1" ><label class = "full form-label text-yellow" for="star1" title="Sucks big time - 1 star"></label>
+                            </div>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label class="form-label">{{ _("Your message")}}</label>
+                            <textarea class="form-control" id = "content" name = "content" rows="4" placeholder="Your message"></textarea>
+                          </div>
+                          <div class="col-md-12">
+                              {% if is_logged == False %}
+                            <a class="btn btn-primary" href="/login">{{ _("Login To Send Review")}}</a>
+                              {% endif %}
+
+                              {% if is_logged == True %}
+                            <a class="btn btn-primary" onclick="sendReviewAttraction({{ user.id }},{{ attraction.id }})">Submit Review</a>
+                              {% endif %}
+{#                          For testing use user_id = 1#}
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Tour Grid -->
+
+    <!-- embedded -->
+    <div id="embedded-video">
+        <button class="close-video-btn" type="reset" id="close-video-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+        </button>
+        <iframe id="video-iframe"  src="https://www.youtube.com/embed/jZIr7PL1SDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script src="/static/js/rangeSliderCustomize.js"></script>
+    <script src="/static/js/reviewSubmitAjax.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#btn_addToChart").hover(
+          function() {
+            $("#icon_addToChart").addClass("fa-beat");
+          },
+          function() {
+            $("#icon_addToChart").removeClass("fa-beat");
+          }
+        );
+      });
+
+      $("#play-div").on("click", function () {
+          $("#embedded-video").css("visibility", "visible");
+      });
+
+      $("#close-video-btn").click(function (){
+          $("#embedded-video").css("visibility", "hidden");
+      });
+    </script>
+
+    <script>
+    function alert_add(){
+        alert("You have add this to the cart successfully.")
+    }
+    </script>
+{% endblock %}

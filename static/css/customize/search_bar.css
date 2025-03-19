@@ -1,0 +1,33 @@
+p.p-info {
+    height: 70px;
+}
+@media (max-width: 768px){
+    p.p-info {
+      height: 45px;
+    }
+}
+/* Search input submit button*/
+.form-btn-v{
+    margin-left: -1px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    height: 100%
+}
+/* Search input */
+#input_keyword{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+@media (max-width: 768px){
+    #input_keyword {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 530px){
+    #input_keyword {
+        padding-left: 20px;
+    }
+}

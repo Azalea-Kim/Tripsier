@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "baseHTML.html" %}
+{% block body %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Xtrip - Tour & Travel Hotel Booking HTML Template">
+    <meta name="author" content="potenzaglobalsolutions.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tripsier</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="/static/css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="/static/css/owl-carousel/owl.carousel.min.css">
+    <!-- Template Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <style media="screen">
+        .everyday{
+            border: 2px solid rgb(72, 167, 218);
+            margin: 5%;
+        }
+        h4{
+            border: 2px dashed rgb(72, 167, 218);
+            margin: 3%;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <section class="header-inner header-inner-menu bg-overlay-dark-6" style="background-image: url('/static/images/bg/01.jpg');">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12 position-relative">
+              <div class="header-inner-title">
+                <div class="section-title">
+                  <h2 class="title text-white">{{ _("Tackle your travel bucket list")}}</h2>
+                  <div class="sub-title">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a class="text-uppercase" href="index.html"><i class="fas fa-home me-1"></i>{{ _("Home") }}</a></li>
+                      <li class="breadcrumb-item active">{{ _("Destinations Details")}}</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+    <div class="container-fluid" >
+        <div class="sidebar">
+          
+            <div class="row">
+                
+                {% for book_time, date in plan.items() %}
+                <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 everyday">
+                    <h4 class="title fw-600">{{p[book_time][0]}} - {{p[book_time][1]}}</h4>
+                    {% for d, o in date.items() %}
+                    <div class="widget">
+
+                    <div class="widget-title">
+                      <h5 class="title fw-600">{{ d }}</h5>
+                    </div>
+                    <div class="widget-content">
+        
+{#                      <div class="blog blog-style-2 d-flex align-items-center mb-4">#}
+{#                        <div class="blog-img me-3">#}
+{#                          <img  class="img-fluid" src="images/blog/blog-vertical-01.jpg" alt="#">#}
+{#                        </div>#}
+{#                        <div class="blog-body pt-0">#}
+{#                          <div class="time-card me-3 d-flex align-items-center">#}
+{#                            #}
+{#                            <span>Destination</span>#}
+{#                          </div>#}
+{#                          <a href="#">Destination Name</a>#}
+{#                        </div>#}
+{#                      </div>#}
+                    {% for order, attraction in o.items()%}
+                      <div class="blog blog-style-2 d-flex align-items-center mb-4">
+                        <div class="blog-img me-3">
+                          <img  class="img-fluid" src="data:;base64,{{ attraction.avatar }}" alt="#">
+                        </div>
+                        <div class="blog-body pt-0">
+                          <div class="time-card me-3 d-flex align-items-center">
+                            
+{#                            <span>Attraction</span>#}
+                          </div>
+                          <a href="#">{{ attraction.name }}</a>
+                        </div>
+                      </div>
+                        {% endfor %}
+
+                    </div>
+                  </div>
+                        {% endfor %}
+
+                </div>
+                {% endfor %}
+
+
+
+
+
+
+
+            </div>
+          
+        </div>
+    </div>
+
+  </body>
+{% endblock %}
+</html>

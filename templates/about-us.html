@@ -1,0 +1,565 @@
+﻿{#{% extends "baseHTML.html" %}#}
+
+<!DOCTYPE html>
+{% extends "baseHTML.html" %}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Xtrip - Tour & Travel Hotel Booking HTML Template">
+    <meta name="author" content="potenzaglobalsolutions.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tripster-About us</title>
+    <!-- Favicon -->
+    {#    <link rel="shortcut icon" href="../static/imgs/favicon.ico">#}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="../static/css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.min.css">
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="../static/css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup/magnific-popup.css">
+    <!-- Template Style -->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+{#<!--=================================#}
+{#Header -->#}
+{#<header class="header header-3 header-sticky default header-transparent">#}
+{#    <nav class="navbar navbar-static-top navbar-expand-lg">#}
+{#        <div class="container-fluid main-header position-relative">#}
+{#            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i#}
+{#                    class="fas fa-align-left"></i></button>#}
+{#            <a class="navbar-brand" href="else/index.html">#}
+{#                <img class="img-fluid" src="/static/images/logo/logo.png" alt="logo">#}
+{#            </a>#}
+{#            <div class="navbar-collapse collapse justify-content-end justify-content-lg-center">#}
+{#                <ul class="nav navbar-nav">#}
+{#                    <li class="nav-item dropdown active">#}
+{#                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"#}
+{#                           aria-haspopup="true" aria-expanded="false">Home<i class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                            <li class="active"><a class="dropdown-item" href="/"><span>Homepage</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>My Tours</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{##}
+{#                    <li class="dropdown nav-item">#}
+{#                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Destinations<i#}
+{#                                class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                            <li><a class="dropdown-item" href="/"><span>View All Destinations</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="/detail/destination/2"><span>Beijing</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="/detail/destination/3"><span>Shanghai</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="/detail/destination/5"><span>HongKong</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="/detail/destination/4"><span>Guangzhou</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{##}
+{##}
+{#                    <li class="dropdown nav-item">#}
+{#                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Attractions<i#}
+{#                                class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                            <li><a class="dropdown-item" href="#"><span>View All Attractions</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>Attraction 1</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>Attraction 2</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>Attraction 3</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{##}
+{#                    <li class="dropdown nav-item">#}
+{#                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Accommodations<i#}
+{#                                class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                            <li><a class="dropdown-item" href="#"><span>View All Accommodations</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>Accommodation 1</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>Accommodation 2</span></a></li>#}
+{#                            <li><a class="dropdown-item" href="#"><span>Accommodation 3</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    {% if user.role == 0 %}#}
+{#                        <li class="dropdown nav-item">#}
+{#                            <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Booking<i#}
+{#                                    class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                                <li><a class="dropdown-item" href="/plan"><span>Planning Tool</span></a></li>#}
+{#                                <li><a class="dropdown-item" href="#"><span>Booking Tool</span></a></li>#}
+{#                            </ul>#}
+{#                        </li>#}
+{#                        <li class="dropdown nav-item">#}
+{#                            <a class="nav-link" data-bs-toggle="dropdown">Ask For Help<i#}
+{#                                    class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                                <li><a class="dropdown-item" href="/a"><span>Ask About Tours</span></a></li>#}
+{#                                <li><a class="dropdown-item" href="#"><span>Report Bugs</span></a></li>#}
+{#                            </ul>#}
+{#                        </li>#}
+{##}
+{##}
+{#                    {% endif %}#}
+{#                    <li class="nav-item dropdown active">#}
+{#                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"#}
+{#                           aria-haspopup="true" aria-expanded="false">About us<i class="fas fa-chevron-down fa-xs"></i></a>#}
+{#                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                            <li class="active"><a class="dropdown-item" href="/aboutus"><span>About us</span></a></li>#}
+{##}
+{#                        </ul>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            <div class="add-listing">#}
+{#                <div class="woo-action">#}
+{#                    <ul class="list-unstyled">#}
+{#                        <li class="cart dropdown">#}
+{#                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"#}
+{#                                    aria-haspopup="true" aria-expanded="false">#}
+{#                  <span class="cart-icon">#}
+{#<!--                    <object type="image/svg+xml" data="/static/images/svg/cart.svg" class="icon"></object>-->#}
+{#                      <i class="fa-solid fa-bag-shopping fa-xl" style="color: #ffffff;"></i></span>#}
+{#                                <span class="cart-count">2</span>#}
+{#                            </button>#}
+{#                            <div class="dropdown-menu-right" aria-labelledby="dropdownMenuButton">#}
+{#                                <ul class="cart-list ps-0">#}
+{#                                    <li class="d-flex">#}
+{#                                        <a class="remove-item" href="#"><i class="fas fa-times"></i></a>#}
+{#                                        <img class="img-fluid me-3" src="/static/images/product/01.jpg" alt="">#}
+{#                                        <div class="cart-info">#}
+{#                                            <a href="#">Extra Fine Wool Jumpers</a>#}
+{#                                            <span class="d-block">1 x 12.49</span>#}
+{#                                        </div>#}
+{#                                    </li>#}
+{#                                    <li class="d-flex">#}
+{#                                        <a class="remove-item" href="#"><i class="fas fa-times"></i></a>#}
+{#                                        <img class="img-fluid me-3" src="/static/images/product/02.jpg" alt="">#}
+{#                                        <div class="cart-info">#}
+{#                                            <a href="#"> Men’s Standard Fit Crew T-Shirt</a>#}
+{#                                            <span class="d-block">1 x 28.72</span>#}
+{#                                        </div>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                                <div class="cart-footer">#}
+{#                                    <div class="d-flex mb-3">#}
+{#                                        <b class="me-auto text-dark">Subtotal:</b>#}
+{#                                        <span>$41.21</span>#}
+{#                                    </div>#}
+{#                                    <div class="d-inline-block d-sm-flex">#}
+{#                                        <a class="col btn btn-secondary btn-sm me-2 px-4" href="#">View Cart</a>#}
+{#                                        <a class="col btn btn-sm btn-primary ms-0 mt-1 mt-sm-0 ms-sm-2 px-4" href="#">Checkout</a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{##}
+{#                {% if is_logged == False %}#}
+{#                    <!-- For unregistered users-->#}
+{#                    <div class="nav-item header-search" style="margin-left: 50px">#}
+{#                        <a href="/login" class="btn btn-light menu-btn ms-4 d-none d-xl-block">Sign In Now</a>#}
+{#                    </div>#}
+{#                {% endif %}#}
+{##}
+{##}
+{#                {% if is_logged == True %}#}
+{#                    <!-- For registered users-->#}
+{#                    <div class="nav-item header-search" style="margin-left: 50px">#}
+{#                        <div style="width:40px; height: 40px; border-radius: 20px; background-color: white">#}
+{#                            <img src="data:;base64,{{ user.avatar }}" alt="" id="userIcon"#}
+{#                                 style="width:40px; height: 40px; border-radius: 20px;">#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <!-- For registered users-->#}
+{#                    <!-- For registered users-->#}
+{#                    <div class="navbar-nav">#}
+{#                        <li class="dropdown nav-item">#}
+{#                            <a class="nav-link" data-bs-toggle="dropdown"#}
+{#                               style="font-size: 20px; font-weight: bold; color: white">{{ user.name }}</a>#}
+{#                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                                {% if user.role == 1 %}#}
+{#                                    <li><a class="dropdown-item" href="/admin"><span>Admin Page</span></a></li>#}
+{#                                {% endif %}#}
+{#                                <li><a class="dropdown-item" href="/logout"><span>Logout</span></a></li>#}
+{#                                <li><a class="dropdown-item" href="/profile"><span>Profile</span></a></li>#}
+{#                            </ul>#}
+{#                        </li>#}
+{#                        <!--              <div><span>-->#}
+{#                        <!--                Username-->#}
+{#                        <!--              </span></div>-->#}
+{#                    </div>#}
+{#                {% endif %}#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </nav>#}
+{#</header>#}
+<!--=================================
+Header -->
+<!--=================================
+Search -->
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<!--=================================
+Search -->
+<!--=================================
+Header Inner -->
+<section class="header-inner header-inner-menu bg-overlay-dark-6"
+         style="background-image: url('static/images/bg/01.jpg');">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 position-relative">
+                <div class="header-inner-title">
+                    <div class="section-title">
+                        <h2 class="title text-white">About Us</h2>
+                        <div class="sub-title">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-uppercase" href="index.html"><i
+                                        class="fas fa-home me-1"></i>Home</a></li>
+                                <li class="breadcrumb-item active">About</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+Header Inner -->
+
+<!--=================================
+About -->
+<section class="space-ptb about-02" style="background-image: url(static/images/bg/map-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="section-title">
+                    <h2 class="title">Welcome to Tripster!</h2>
+                    <div class="description mb-0 mb-lg-5">
+                        <p class='mt-4'>We are delighted to invite you on a journey through our virtual world, where we provide the opportunity to discover and explore the most fascinating destinations in the world.<p class='mt-4'>
+Our mission is to make travel accessible for everyone. We believe that the world is full of wonders, every corner bursting with unique sights, sounds, cultures, and experiences waiting to be discovered. </p><p class='mt-4'>Our goal is to help travelers plan and book their dream trips easily and efficiently– no matter what their preferences, budget or style.
+                        We pride ourselves on being more than just a website. We are an experience – created by a team of adventurous explorers and experienced travel experts who share the same passion for exploring the world. </p><p class='mt-4'>Our team works tirelessly to ensure that every traveler’s journey will be seamless, stress-free, and unforgettable.
+At Tripster, we value authenticity, sustainability, and quality service above all else. We believe that travel should have a positive impact on both the traveler and the destination being visited- while providing travelers with unique experiences that they will remember forever.
+</p><p class='mt-4'>Ultimately, our goal at Tripster is to inspire and enable people to travel the world, meet new people, learn new cultures, and have fun. So go ahead: join us on the journey of a lifetime and discover the world at your fingertips!
+Thank you for choosing Tripster. We are thrilled to be part of your next adventure!</p>
+
+                    </div>
+                </div>
+{#                <div class="row">#}
+{#                    <div class="col-12">#}
+{#                        <ul class="list list-unstyled">#}
+{#                            <li><i class="fa fa-check"></i>Consectetur ipsum dolor sit amet, adipiscing Sed do</li>#}
+{#                            <li><i class="fa fa-check"></i>Eiusmod tempor incididunt ut labore et Dolore</li>#}
+{#                            <li><i class="fa fa-check"></i>Quis ipsum suspendisse ultrices gravida.</li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row mt-5">#}
+{#                    <div class="col-xl-4 col-lg-5 col-md-4 col-sm-5">#}
+{#                        <a href="about-us.html" class="btn btn-primary">Read More</a>#}
+{#                    </div>#}
+                    <div class="col-xl-8 col-lg-7 col-md-8 col-sm-7 mt-4 mt-sm-0 ">
+                        <div class="call-box">
+                            <div class="call-box-icon">
+                                <i class="fa-solid me-2 fa-phone-volume"></i>
+                            </div>
+                            <div class="call-box-content">
+                                <p class="small">Call Us Anytime</p>
+                                <span class="text-secondary">+126-632-2345</span>
+                            </div>
+                        </div>
+                    </div>
+{#                </div>#}
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="about-img">
+                    <div class="img-01 text-center">
+                        <img class="img-fluid" src="static/images/about/01.jpg" alt="">
+                    </div>
+                    <div class="img-02">
+                        <img class="img-fluid" src="static/images/about/04.png" alt="">
+                    </div>
+                    <h2 class="title-travel">Traveling</h2>
+                    <div class="about-video video">
+                        <a class="popup-icon popup-youtube bg-holder bg-overlay-black-80"
+                           href="https://www.youtube.com/watch?v=n_Cn8eFo7u8">
+                            <i class="fa-solid fa-play"></i>
+                            <img class="img-fluid" src="static/images/about/03.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+About -->
+
+<!--=================================
+Testimonial -->
+<section class="position-relative"
+         style="background-image: url(static/images/testimonial/testimonial-bg02.jpg); background-attachment: fixed; background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-12 col-lg-7 justify-content-start">
+                <div class="space-ptb">
+                    <div class="section-title position-relative">
+                        <h2 class="title text-white">What Our Happy Clients say about us</h2>
+                        <div class="description">
+                            <p class="text-white">This website is designed to cater to your every need. Whether you want to enjoy a luxury vacation, explore hidden gems, backpack across different continents, or experience the local cuisine of exciting destinations, we've got you covered. With easy-to-use navigation tools and powerful search filters, you'll find the perfect destination that suits your needs and budget.
+                            </p><p class="text-white">TIn addition, the site features user-generated content, like reviews, photos, and videos, which allows you to see a destination from the eyes of a fellow traveler. Our team always reviews and verifies user-generated information to ensure accuracy, reliability, and authenticity.
+</p>
+                        </div>
+                    </div>
+                    <div class="owl-carousel owl-nav-bottom-center testimonial-style-1 align-left"
+                         data-nav-arrow="false"
+                         data-space="30" data-autoheight="true">
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-5 d-none d-lg-block">
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+Testimonial -->
+
+<!--=================================
+Team -->
+<section class="space-ptb">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="section-title text-center">
+                    <h2 class="title">List of people who matter in our Company</h2>
+                    <div class="description">
+                        <p>Please meet our development team full of enthusiasm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+                <div class="team">
+                    <div class="team-image  position-relative d-flex justify-content-center">
+                        <img class="img-fluid rounded" src="../static/temp_photo_test/member/liyiming.png" alt="">
+                        <div class="team-social">
+                            <ul class="list-unstyled d-flex mb-0">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-detail text-center">
+                            <span class="team-label">Back end</span>
+                            <h4 class="team-title mb-0"><a href="team-detail.html">Li Yiming</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+                <div class="team">
+                    <div class="team-image  position-relative d-flex justify-content-center">
+                        <img class="img-fluid rounded" src="../static/temp_photo_test/member/lym.png" alt="">
+                        <div class="team-social">
+                            <ul class="list-unstyled d-flex mb-0">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-detail text-center">
+                            <span class="team-label">Back end</span>
+                            <h4 class="team-title mb-0"><a href="team-detail.html">Lou Yiming</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="team">
+                    <div class="team-image  position-relative d-flex justify-content-center">
+                        <img class="img-fluid rounded" src="../static/temp_photo_test/member/lulu.png" alt="">
+                        <div class="team-social">
+                            <ul class="list-unstyled d-flex mb-0">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-detail text-center">
+                            <span class="team-label">Front end</span>
+                            <h4 class="team-title mb-0"><a href="team-detail.html">Wang Jialu</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+     <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+                <div class="team">
+                    <div class="team-image  position-relative d-flex justify-content-center">
+                        <img class="img-fluid rounded" src="../static/temp_photo_test/member/dtr.jpg" alt="">
+                        <div class="team-social">
+                            <ul class="list-unstyled d-flex mb-0">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-detail text-center">
+                            <span class="team-label">Front end</span>
+                            <h4 class="team-title mb-0"><a href="team-detail.html">Ding Tairan</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="team">
+                    <div class="team-image  position-relative d-flex justify-content-center">
+                        <img class="img-fluid rounded" src="../static/temp_photo_test/member/smoker.png" alt="">
+                        <div class="team-social">
+                            <ul class="list-unstyled d-flex mb-0">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-detail text-center">
+                            <span class="team-label">Front end</span>
+                            <h4 class="team-title mb-0"><a href="team-detail.html">Yan Mingwei</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="team">
+                    <div class="team-image  position-relative d-flex justify-content-center">
+                        <img class="img-fluid rounded" src="../static/temp_photo_test/member/jinyanxiu.png" alt="">
+
+                        <div class="team-detail text-center">
+                            <span class="team-label">Documentation</span>
+                            <h4 class="team-title mb-0"><a href="team-detail.html">Jin Yanxiu</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!--=================================
+Team -->
+
+<!--=================================
+client -->
+{#<section class="client-logo client-logo-2 bg-light">#}
+{#    <div class="container-fluid">#}
+{#        <div class="row ">#}
+{#            <div class="col-md-12">#}
+{#                <div class="owl-carousel owl-nav-bottom-center" data-nav-dots="false" data-nav-arrow="false"#}
+{#                     data-items="6" data-lg-items="4" data-md-items="2" data-sm-items="1" data-space="30"#}
+{#                     data-autoheight="true">#}
+{#                    <div class="item text-center">#}
+{#                        <a href="#"><img class="img-fluid" src="images/client-logo/01.png" alt="#"></a>#}
+{#                    </div>#}
+{#                    <div class="item text-center">#}
+{#                        <a href="#"><img class="img-fluid" src="images/client-logo/02.png" alt="#"></a>#}
+{#                    </div>#}
+{#                    <div class="item text-center">#}
+{#                        <a href="#"><img class="img-fluid" src="images/client-logo/03.png" alt="#"></a>#}
+{#                    </div>#}
+{#                    <div class="item text-center">#}
+{#                        <a href="#"><img class="img-fluid" src="images/client-logo/04.png" alt="#"></a>#}
+{#                    </div>#}
+{#                    <div class="item text-center">#}
+{#                        <a href="#"><img class="img-fluid" src="images/client-logo/05.png" alt="#"></a>#}
+{#                    </div>#}
+{#                    <div class="item text-center">#}
+{#                        <a href="#"><img class="img-fluid" src="images/client-logo/06.png" alt="#"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--=================================
+client -->
+
+<!--=================================
+action box -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <div class="section-title mb-4 mb-lg-0">
+                    <h2 class="title mb-2">Join Us!</h2>
+                    <div class="description mb-0">
+
+                                                <p class="mt-4">Travel takes us out of our comfort zones and inspires us to see, taste and try new things. It constantly challenges us, not only to adapt to and explore new surroundings, but also to engage with different people, to embrace adventures as they come and to share new and meaningful experiences with friends and loved ones. </p>
+                    <blockquote class="mb-4">
+                        <i class="fas fa-quote-left pe-4 fa-5x text-primary"></i>
+                        Traveling is a brutality. It forces you to trust strangers and to lose sight of all that familiar comfort of home and friends. You are constantly off balance. Nothing is yours except the essential things: air, sleep, dreams, sea, the sky – all things tending towards the eternal or what we imagine of it.
+                    </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto">
+                <a href="/login" class="btn btn-primary">Sign in</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+action box -->
+<!--=================================
+footer-->
+
+<!--=================================
+footer-->
+<!--=================================
+Back To Top-->
+<div id="back-to-top" class="back-to-top">
+    <a href="#"><i class="fas fa-angle-up"></i></a>
+</div>
+<!--=================================
+Back To Top-->
+<!--=================================
+Javascript -->
+<!-- JS Global Compulsory (Do not remove)-->
+<script src="../static/js/jquery-3.6.1.min.js"></script>
+<script src="../static/js/jquery.appear.js"></script>
+<script src="../static/js/popper/popper.min.js"></script>
+<script src="../static/js/bootstrap/bootstrap.min.js"></script>
+<!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+<script src="../static/js/owl-carousel/owl.carousel.min.js"></script>
+<script src="../static/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Template Scripts (Do not remove)-->
+<script src="../static/js/custom.js"></script>
+</body>
+{% endblock %}
+</html>

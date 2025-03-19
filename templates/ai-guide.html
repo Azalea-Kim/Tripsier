@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/ai-response.css">
+    <link rel="stylesheet" href="../static/css/ask-ai.css">
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+      L2Dwidget.init({ "model": { jsonPath:
+            "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+          "scale": 1 }, "display": { "position": "right", "width": 150, "height": 180,
+          "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 },
+          "react": { "opacityDefault": 1, "opacityOnHover": 0.1 } });
+    </script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=RF91fFE0"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--hOffset & vOffset respectively represents horizontal offset & vertical offset-->
+
+
+</head>
+<body>
+<div class="ai-response-container" id="ai-response-container">
+    <div class="ai-response" id="chatgpt-response">
+    </div>
+    <button class="close-response-btn" type="reset" id="close-response-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+    </button>
+</div>
+
+<div class="ask-ai-container">
+    <button class="ask-ai-btn" id="ask-ai-btn">
+        ASK AI
+    </button>
+
+    <div class="ai-form-container" id="ask-ai-container">
+        <div class="ai-form">
+          <button onclick="callCHATGPT()" class="ai-search-btn">
+              <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                  <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+          </button>
+          <input class="ai-input" id="chat-gpt-input" placeholder="Type your text" required="" type="text">
+          <button class="reset" type="reset">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- JS Global Compulsory (Do not remove)-->
+    <script src="../static/js/jquery-3.6.1.min.js"></script>
+    <script src="../static/js/jquery.appear.js"></script>
+    <script src="../static/js/popper/popper.min.js"></script>
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="../static/js/select2/select2.full.js"></script>
+    <script src="../static/js/datetimepicker/moment.min.js"></script>
+    <script src="../static/js/datetimepicker/datetimepicker.min.js"></script>
+    <script src="../static/js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../static/js/swiper/swiper.min.js"></script>
+    <script src="../static/js/swiperanimation/SwiperAnimation.min.js"></script>
+    <script src="../static/js/range-slider/ion.rangeSlider.min.js"></script>
+    <script src="../static/js/countdown/jquery.downCount.js"></script>
+    <script src="../static/js/counter/jquery.countTo.js"></script>
+    <script src="../static/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Template Scripts (Do not remove)-->
+    <script src="../static/js/custom.js"></script>
+
+    <script src="../static/js/ai-guide.js"></script>
+
+<script>
+         async function callCHATGPT() {
+            var responseText1 = document.getElementById("chatgpt-response");
+            responseText1.innerHTML = ""
+
+            function printMessage(message) {
+               var responseText = document.getElementById("chatgpt-response");
+               var index = 0;
+
+               // 创建一个定时器，每隔一段时间打印一个字符
+               var interval = setInterval(function() {
+                     responseText.innerHTML += message[index];
+                     index++;
+
+                     // 当打印完成时，清除定时器
+                     if (index >= message.length) {
+                        clearInterval(interval);
+                     }
+                  },
+                  150); // 每隔50毫秒打印一个字符
+            }
+            var xhr = new XMLHttpRequest();
+            var url = "https://api.openai.com/v1/completions";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("Authorization", "Bearer APIKEY" +
+                "");
+            xhr.onreadystatechange = function() {
+               if (xhr.readyState === 4 && xhr.status === 200) {
+                  var json = JSON.parse(xhr.responseText);
+                  var response = json.choices[0].text;
+
+                  // 将CHATGPT的返回值输出到文本框
+                  var responseText = document.getElementById("chatgpt-response");
+                  var index = 0;
+
+                  // 创建一个定时器，每隔一段时间打印一个字符
+                  var interval = setInterval(function() {
+                        responseText.innerHTML += response[index];
+                        index++;
+
+                        // 当打印完成时，清除定时器
+                        if (index >= response.length) {
+                           clearInterval(interval);
+                        }
+                     },
+                     50);// 每隔50毫秒打印一个字符
+
+                   responsiveVoice.speak(response,$('#voiceselection').val())
+
+                   //添加语音播报效果
+
+               }
+            };
+
+            var data = JSON.stringify({
+               "prompt": document.getElementById("chat-gpt-input").value,
+               "max_tokens": 2048,
+               "temperature": 0.5,
+               "top_p": 1,
+               "frequency_penalty": 0,
+               "presence_penalty": 0,
+               "model": "text-davinci-003"
+            });
+            console.log(data);
+            await printMessage('Thinking......');
+            await xhr.send(data);
+         }
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,1718 @@
+# Chinese (Simplified, China) translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-05-06 18:21+0800\n"
+"PO-Revision-Date: 2023-05-06 18:23+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_Hans_CN\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: templates/baseHTML.html:9
+msgid "Tripsier - Tour & Travel Hotel Booking Website"
+msgstr "Tripsier - 旅游和旅游酒店预订网站"
+
+#: templates/baseHTML.html:46
+msgid "Homepage"
+msgstr "主页"
+
+#: templates/baseHTML.html:47
+msgid "My Tours"
+msgstr "我的旅游"
+
+#: templates/baseHTML.html:52 templates/baseHTML.html:248
+#: templates/baseHTML_Admin.html:219 templates/search_page.html:60
+msgid "Destinations"
+msgstr "目的地"
+
+#: templates/baseHTML.html:54
+msgid "View All Destinations"
+msgstr "查看所有目的地"
+
+#: templates/baseHTML.html:55 templates/index-03-new.html:42
+msgid "Beijing"
+msgstr "北京"
+
+#: templates/baseHTML.html:56 templates/index-03-new.html:50
+msgid "Shanghai"
+msgstr "上海"
+
+#: templates/baseHTML.html:57
+msgid "HongKong"
+msgstr "香港"
+
+#: templates/baseHTML.html:58
+msgid "Guangzhou"
+msgstr "广州"
+
+#: templates/baseHTML.html:64 templates/baseHTML_Admin.html:220
+#: templates/search_page.html:61
+msgid "Attractions"
+msgstr "景点"
+
+#: templates/baseHTML.html:66
+msgid "View All Attractions"
+msgstr "查看所有景点"
+
+#: templates/baseHTML.html:67
+msgid "Attraction 1"
+msgstr "景点 1"
+
+#: templates/baseHTML.html:68
+msgid "Attraction 2"
+msgstr "景点 2"
+
+#: templates/baseHTML.html:69
+msgid "Attraction 3"
+msgstr "景点 3"
+
+#: templates/baseHTML.html:74 templates/baseHTML_Admin.html:221
+#: templates/search_page.html:62
+msgid "Accommodations"
+msgstr "住宿"
+
+#: templates/baseHTML.html:76
+msgid "View All Accommodations"
+msgstr "查看所有住宿"
+
+#: templates/baseHTML.html:77
+msgid "Accommodation 1"
+msgstr "住宿1"
+
+#: templates/baseHTML.html:78
+msgid "Accommodation 2"
+msgstr "住宿2"
+
+#: templates/baseHTML.html:79
+msgid "Accommodation 3"
+msgstr "住宿3"
+
+#: templates/baseHTML.html:84
+msgid "Booking"
+msgstr "预订"
+
+#: templates/baseHTML.html:86
+msgid "Planning Tool"
+msgstr "计划工具"
+
+#: templates/baseHTML.html:87
+msgid "Booking Tool"
+msgstr "规划工具"
+
+#: templates/baseHTML.html:91
+msgid "Ask For Help"
+msgstr "联系我们"
+
+#: templates/baseHTML.html:93
+msgid "Ask About Tours"
+msgstr "寻求帮助"
+
+#: templates/baseHTML.html:94
+msgid "Report Bugs"
+msgstr "报告错误"
+
+#: templates/baseHTML.html:116
+msgid "Extra Fine Wool Jumpers"
+msgstr "超细羊毛毛衣"
+
+#: templates/baseHTML.html:124
+msgid "Men’s Standard Fit Crew T-Shirt"
+msgstr "男士标准版型船员 T 恤"
+
+#: templates/baseHTML.html:131
+msgid "Subtotal:"
+msgstr "小计"
+
+#: templates/baseHTML.html:135
+msgid "View Cart"
+msgstr "查看购物车"
+
+#: templates/baseHTML.html:136
+msgid "Checkout"
+msgstr "收款处"
+
+#: templates/baseHTML.html:147
+msgid "Sign In Now"
+msgstr "立即登录"
+
+#: templates/baseHTML.html:167
+msgid "Admin Page"
+msgstr "管理页面"
+
+#: templates/baseHTML.html:169
+msgid "Logout"
+msgstr "注销"
+
+#: templates/baseHTML.html:197
+msgid "Call us at"
+msgstr "致电我们"
+
+#: templates/baseHTML.html:199
+msgid "Call Us"
+msgstr "致电我们"
+
+#: templates/baseHTML.html:206
+msgid "Newsletters sign up"
+msgstr "时事通讯注册"
+
+#: templates/baseHTML.html:210
+msgid "Get Notified"
+msgstr "获得通知"
+
+#: templates/baseHTML.html:230
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor\n"
+"                      incididunt"
+msgstr ""
+
+#: templates/baseHTML.html:242
+msgid "Quick Link"
+msgstr "快速链接"
+
+#: templates/baseHTML.html:245 templates/drag_drop.html:37
+msgid "Home"
+msgstr "主页"
+
+#: templates/baseHTML.html:246
+msgid "About Us"
+msgstr "关于我们"
+
+#: templates/baseHTML.html:247
+msgid "Tours"
+msgstr "旅游"
+
+#: templates/baseHTML.html:249 templates/detail_accommodation.html:129
+#: templates/detail_attraction.html:127 templates/detail_destination.html:103
+msgid "Blog"
+msgstr "博客"
+
+#: templates/baseHTML.html:250
+msgid "Shop"
+msgstr "购物"
+
+#: templates/baseHTML.html:255
+msgid "Support"
+msgstr "支持"
+
+#: templates/baseHTML.html:258
+msgid "Terms of Use"
+msgstr "使用条款"
+
+#: templates/baseHTML.html:259
+msgid "Privacy Policy"
+msgstr "隐私策略"
+
+#: templates/baseHTML.html:260
+msgid "FAQs"
+msgstr "常见问题"
+
+#: templates/baseHTML.html:261
+msgid "Pricing & Plan"
+msgstr "定价和计划"
+
+#: templates/baseHTML.html:262
+msgid "Contact"
+msgstr "联系"
+
+#: templates/baseHTML.html:268
+msgid "Contact Travel"
+msgstr "联系旅行"
+
+#: templates/baseHTML.html:282
+msgid "Copyright"
+msgstr "版权"
+
+#: templates/baseHTML_Admin.html:6
+msgid "Tripsier - Admin"
+msgstr "Tripsier - 管理员网站"
+
+#: templates/baseHTML_Admin.html:52
+msgid "Trip Management System"
+msgstr "行程管理系统"
+
+#: templates/baseHTML_Admin.html:89
+msgid "Notifications"
+msgstr "通知"
+
+#: templates/baseHTML_Admin.html:92
+msgid "View All"
+msgstr "查看全部"
+
+#: templates/baseHTML_Admin.html:102
+msgid "Samuel Coverdale"
+msgstr "塞缪尔·科弗代尔"
+
+#: templates/baseHTML_Admin.html:103
+msgid ""
+"You have new follower on\n"
+"                                                                Instagram"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:106
+msgid "2 min ago"
+msgstr "2分钟前"
+
+#: templates/baseHTML_Admin.html:118
+msgid "Download Available !"
+msgstr "下载可用！"
+
+#: templates/baseHTML_Admin.html:119
+msgid ""
+"Latest version of admin is now\n"
+"                                                                "
+"available. Please download here."
+msgstr ""
+
+#: templates/baseHTML_Admin.html:122
+msgid "4 hours ago"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:131
+msgid "Victoria Mendis"
+msgstr "4小时前"
+
+#: templates/baseHTML_Admin.html:132
+msgid "Just upgraded to premium account."
+msgstr "刚刚升级到高级帐户"
+
+#: templates/baseHTML_Admin.html:134
+msgid "1 day ago"
+msgstr "一天前"
+
+#: templates/baseHTML_Admin.html:141
+msgid "Load More.."
+msgstr "加载更多.."
+
+#: templates/baseHTML_Admin.html:158
+msgid "Inbox"
+msgstr "收件箱"
+
+#: templates/baseHTML_Admin.html:164
+msgid "Chat"
+msgstr "聊天"
+
+#: templates/baseHTML_Admin.html:170
+msgid "Settings"
+msgstr "设置"
+
+#: templates/baseHTML_Admin.html:173
+msgid "Lock Account"
+msgstr "锁定帐户"
+
+#: templates/baseHTML_Admin.html:176
+msgid "Log Out"
+msgstr "注销"
+
+#: templates/baseHTML_Admin.html:194
+msgid "Overview"
+msgstr "概述"
+
+#: templates/baseHTML_Admin.html:200
+msgid "Information"
+msgstr "信息"
+
+#: templates/baseHTML_Admin.html:218
+msgid "Customers"
+msgstr "客户"
+
+#: templates/baseHTML_Admin.html:227
+msgid "Planning & Booking"
+msgstr "规划与预订"
+
+#: templates/baseHTML_Admin.html:230
+msgid "Typography"
+msgstr "字体排印学"
+
+#: templates/baseHTML_Admin.html:231
+msgid "Cards"
+msgstr "卡"
+
+#: templates/baseHTML_Admin.html:232
+msgid "Buttons"
+msgstr "按钮"
+
+#: templates/baseHTML_Admin.html:233
+msgid "Modals"
+msgstr "模态"
+
+#: templates/baseHTML_Admin.html:234
+msgid "Tabs"
+msgstr "制表符"
+
+#: templates/baseHTML_Admin.html:235
+msgid "Progress Bars"
+msgstr "进度条"
+
+#: templates/baseHTML_Admin.html:236
+msgid "Toasts"
+msgstr "祝酒词"
+
+#: templates/baseHTML_Admin.html:237
+msgid "Carousel"
+msgstr "旋转 木马"
+
+#: templates/baseHTML_Admin.html:238
+msgid "Embeds"
+msgstr "嵌入"
+
+#: templates/baseHTML_Admin.html:239
+msgid ""
+"Tooltips &\n"
+"                                                    Popovers"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:241
+msgid "Media Objects"
+msgstr "媒体对象"
+
+#: templates/baseHTML_Admin.html:242
+msgid "General"
+msgstr "常规"
+
+#: templates/baseHTML_Admin.html:243
+msgid "Grid"
+msgstr "网 格"
+
+#: templates/baseHTML_Admin.html:244
+msgid "Spinners"
+msgstr "纺纱"
+
+#: templates/baseHTML_Admin.html:245
+msgid "Scrollspy"
+msgstr "滚动间谍"
+
+#: templates/baseHTML_Admin.html:246
+msgid "Sweet Alerts"
+msgstr "甜蜜的警报"
+
+#: templates/baseHTML_Admin.html:279
+msgid "More"
+msgstr "更多"
+
+#: templates/baseHTML_Admin.html:284
+msgid "Tables"
+msgstr "表格"
+
+#: templates/baseHTML_Admin.html:287
+msgid "Basic Tables"
+msgstr "基本表"
+
+#: templates/baseHTML_Admin.html:288
+msgid "Data Tables"
+msgstr "数据表"
+
+#: templates/baseHTML_Admin.html:294
+msgid "Icons"
+msgstr "图标"
+
+#: templates/baseHTML_Admin.html:297
+msgid "Feather Icons"
+msgstr "羽毛图标"
+
+#: templates/baseHTML_Admin.html:298
+msgid ""
+"Material\n"
+"                                                            Design"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:300
+msgid "Dripicons"
+msgstr "滴水"
+
+#: templates/baseHTML_Admin.html:301
+msgid ""
+"Font\n"
+"                                                            awesome"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:307
+msgid "Maps"
+msgstr "地图"
+
+#: templates/baseHTML_Admin.html:310
+msgid "Google Maps"
+msgstr "谷歌地图"
+
+#: templates/baseHTML_Admin.html:311
+msgid "Vector Maps"
+msgstr "矢量地图"
+
+#: templates/baseHTML_Admin.html:338
+msgid "Design & Develop by"
+msgstr "设计与开发"
+
+#: templates/chat_room.html:7 templates/chat_room_backload.html:7
+msgid ":: PostMan :: Chat Application"
+msgstr "邮递员 ：： 聊天应用程序"
+
+#: templates/chat_room_backload.html:82
+msgid "online"
+msgstr "在线"
+
+#: templates/detail_accommodation.html:16
+#: templates/detail_accommodation.html:20
+msgid "Accommodation Details"
+msgstr "住宿详情"
+
+#: templates/detail_accommodation.html:54 templates/detail_destination.html:54
+#: templates/index-03-new.html:158 templates/index-03-new.html:324
+#: templates/index-03-new.html:364 templates/index-03-new.html:404
+#: templates/index-03-new.html:449 templates/index-03-new.html:488
+#: templates/index-03-new.html:527
+msgid "Day"
+msgstr "天"
+
+#: templates/detail_accommodation.html:64
+msgid ""
+"Add To\n"
+"                              Cart"
+msgstr ""
+
+#: templates/detail_accommodation.html:104
+#: templates/detail_accommodation.html:189 templates/detail_attraction.html:187
+#: templates/detail_destination.html:78 templates/detail_destination.html:163
+#: templates/information/information-accommodation.html:23
+#: templates/information/information-attraction.html:23
+#: templates/information/information-destination.html:22
+msgid "Location"
+msgstr "位置"
+
+#: templates/detail_accommodation.html:109 templates/detail_attraction.html:107
+#: templates/detail_destination.html:83
+msgid "Address:"
+msgstr "地址"
+
+#: templates/detail_accommodation.html:110 templates/detail_attraction.html:108
+#: templates/detail_destination.html:84
+msgid "Website:"
+msgstr "网站"
+
+#: templates/detail_accommodation.html:124 templates/detail_attraction.html:122
+#: templates/detail_destination.html:98
+msgid "Tags"
+msgstr "标签"
+
+#: templates/detail_accommodation.html:130 templates/detail_attraction.html:128
+#: templates/detail_destination.html:104
+msgid "Adventure"
+msgstr "奇遇"
+
+#: templates/detail_accommodation.html:131 templates/detail_attraction.html:129
+#: templates/detail_destination.html:105
+msgid "WordPress"
+msgstr ""
+
+#: templates/detail_accommodation.html:132 templates/detail_attraction.html:130
+#: templates/detail_destination.html:106
+msgid "Blogger"
+msgstr "博主"
+
+#: templates/detail_accommodation.html:133 templates/detail_attraction.html:131
+#: templates/detail_destination.html:107
+msgid "Food"
+msgstr "食物"
+
+#: templates/detail_accommodation.html:134 templates/detail_attraction.html:132
+#: templates/detail_destination.html:108
+msgid "Tourism"
+msgstr "旅游"
+
+#: templates/detail_accommodation.html:135 templates/detail_attraction.html:133
+#: templates/detail_destination.html:109
+msgid "Fashion"
+msgstr "时尚"
+
+#: templates/detail_accommodation.html:136 templates/detail_attraction.html:134
+#: templates/detail_destination.html:110
+msgid "Travel"
+msgstr "旅行"
+
+#: templates/detail_accommodation.html:137 templates/detail_attraction.html:135
+#: templates/detail_destination.html:111
+msgid "Magazine"
+msgstr "杂志"
+
+#: templates/detail_accommodation.html:152 templates/detail_attraction.html:150
+#: templates/detail_destination.html:126
+msgid "Listing Description"
+msgstr "房源描述"
+
+#: templates/detail_accommodation.html:159 templates/detail_attraction.html:157
+#: templates/detail_destination.html:133
+msgid "Listing Average Reviews"
+msgstr "列表平均评论"
+
+#: templates/detail_accommodation.html:178 templates/detail_attraction.html:176
+#: templates/detail_destination.html:152
+msgid "Quality"
+msgstr "质量"
+
+#: templates/detail_accommodation.html:203 templates/detail_attraction.html:201
+#: templates/detail_destination.html:177
+msgid "Space"
+msgstr "空间"
+
+#: templates/detail_accommodation.html:213 templates/detail_attraction.html:211
+#: templates/detail_destination.html:187
+msgid "Service"
+msgstr "服务"
+
+#: templates/detail_accommodation.html:227 templates/detail_attraction.html:225
+#: templates/detail_destination.html:201
+#: templates/information/detail/detail-destination.html:96
+#: templates/information/detail/detail-destination.html:134
+#: templates/information/information-accommodation.html:21
+#: templates/information/information-attraction.html:21
+msgid "Price"
+msgstr "价格"
+
+#: templates/detail_accommodation.html:237 templates/detail_attraction.html:235
+#: templates/detail_destination.html:211
+msgid "Cleanliness"
+msgstr "清洁"
+
+#: templates/detail_accommodation.html:321
+#: templates/detail_accommodation.html:362 templates/detail_attraction.html:361
+msgid "Add a Review"
+msgstr "添加评论"
+
+#: templates/detail_accommodation.html:376 templates/detail_attraction.html:376
+#: templates/detail_destination.html:427
+msgid "Your message"
+msgstr "您的留言"
+
+#: templates/detail_accommodation.html:381
+#: templates/detail_destination.html:431
+msgid "Submit Review"
+msgstr "提交评论"
+
+#: templates/detail_accommodation.html:385 templates/detail_attraction.html:381
+msgid "Login To Send Review"
+msgstr "登录以发送评论"
+
+#: templates/detail_attraction.html:17 templates/detail_attraction.html:21
+msgid "Attraction Details"
+msgstr "景点详情"
+
+#: templates/detail_attraction.html:88
+msgid "Possible Price Range"
+msgstr "可能的价格范围"
+
+#: templates/detail_attraction.html:319
+msgid "Reviews"
+msgstr "评论"
+
+#: templates/detail_destination.html:16 templates/detail_destination.html:20
+msgid "Destination Details"
+msgstr "目的地详情"
+
+#: templates/detail_destination.html:226
+msgid "Representative Captures"
+msgstr "代表捕获"
+
+#: templates/detail_destination.html:295
+msgid "Top 3 Reviews"
+msgstr "前 3 条评论"
+
+#: templates/detail_destination.html:305
+msgid "Alice Williams"
+msgstr "爱丽丝·威廉姆斯"
+
+#: templates/detail_destination.html:317
+msgid ""
+"Then work backwards to develop the plan. What steps are required to get "
+"you to the\n"
+"                                      goals? Make the plan as detailed as"
+" possible. Try to visualize and then plan."
+msgstr ""
+
+#: templates/detail_destination.html:332
+msgid "Ora Bryan"
+msgstr "奥拉·布莱恩"
+
+#: templates/detail_destination.html:344
+msgid ""
+"Along with your plans, you should consider developing an action "
+"orientation that will\n"
+"                                      keep you motivated to move forward "
+"at all times This requires a little."
+msgstr ""
+
+#: templates/detail_destination.html:370
+msgid "Maria Fields"
+msgstr "玛丽亚·菲尔兹"
+
+#: templates/detail_destination.html:382
+msgid ""
+"I coach my clients to practice the 3 D’s – Defer, Delegate or Delete. Can"
+" the\n"
+"                                      particular activity be done later? "
+"Defer it! Can it be done by someone else? Delegate"
+msgstr ""
+
+#: templates/detail_destination.html:415
+msgid "Your name"
+msgstr "你的名字"
+
+#: templates/detail_destination.html:419
+msgid "Your email"
+msgstr "你的邮箱"
+
+#: templates/detail_destination.html:423
+msgid "Subject"
+msgstr "主题"
+
+#: templates/drag_drop.html:34
+msgid "Tackle your travel bucket list"
+msgstr "处理您的旅行愿望清单"
+
+#: templates/drag_drop.html:38
+msgid "Destinations Details"
+msgstr "目的地详情"
+
+#: templates/drag_drop.html:56
+msgid "Step.1 Select Plan Date"
+msgstr "步骤1 选择计划日期"
+
+#: templates/drag_drop.html:57
+msgid "Select the planning date and confirm it."
+msgstr "选择计划日期并确认"
+
+#: templates/drag_drop.html:64 templates/index-03-new.html:83
+#: templates/search_page.html:24
+msgid "Find Now"
+msgstr "立即查找"
+
+#: templates/drag_drop.html:85
+msgid "Step.2 Cart Lists"
+msgstr "步骤2 购物车列表"
+
+#: templates/drag_drop.html:86
+msgid ""
+"This is a destination list shows the information about all our\n"
+"                            destinations"
+msgstr ""
+
+#: templates/drag_drop.html:113
+msgid "Step.3 Plan Chart"
+msgstr "步骤3 计划图"
+
+#: templates/drag_drop.html:114
+msgid ""
+"This is a destination list shows the information about all our\n"
+"                                destinations"
+msgstr ""
+
+#: templates/drag_drop.html:121
+#: templates/information/detail/detail-destination.html:40
+msgid "Submit"
+msgstr "提交"
+
+#: templates/index-03-new.html:13 templates/specificDestination.html:13
+msgid "Search"
+msgstr "搜索"
+
+#: templates/index-03-new.html:29
+msgid "Share"
+msgstr "共享"
+
+#: templates/index-03-new.html:41 templates/index-03-new.html:49
+#: templates/index-03-new.html:57
+msgid "Your next tour plan"
+msgstr "您的下一个旅游计划"
+
+#: templates/index-03-new.html:58
+msgid "Hong Kong"
+msgstr "香港"
+
+#: templates/index-03-new.html:113
+msgid "Recommend Destination"
+msgstr "推荐目的地"
+
+#: templates/index-03-new.html:169 templates/index-03-new.html:335
+#: templates/index-03-new.html:375 templates/index-03-new.html:415
+#: templates/index-03-new.html:460 templates/index-03-new.html:498
+#: templates/index-03-new.html:537
+msgid "See Details"
+msgstr "查看详情"
+
+#: templates/index-03-new.html:314
+msgid "Tokyo"
+msgstr "东京"
+
+#: templates/index-03-new.html:319 templates/index-03-new.html:399
+msgid "The price is something not necessarily defined as financial."
+msgstr "价格不一定被定义为财务。"
+
+#: templates/index-03-new.html:353
+msgid "United Kingdom"
+msgstr "英国"
+
+#: templates/index-03-new.html:356
+msgid ""
+"19 The\n"
+"                                Lindens,Grantham,England United Kingdom"
+msgstr ""
+
+#: templates/index-03-new.html:359 templates/index-03-new.html:483
+msgid ""
+"The bottom line is that we must shed the bad and replace with good "
+"beliefs."
+msgstr ""
+
+#: templates/index-03-new.html:393
+msgid "Rio"
+msgstr "力拓"
+
+#: templates/index-03-new.html:439
+msgid "Marsella"
+msgstr "玛塞拉"
+
+#: templates/index-03-new.html:444
+msgid "We all carry a lot of baggage, thanks to our upbringing."
+msgstr "“由于我们的成长经历，我们都背负着很多包袱。"
+
+#: templates/index-03-new.html:478
+msgid "United States"
+msgstr "美国"
+
+#: templates/index-03-new.html:516
+msgid "India"
+msgstr "印度"
+
+#: templates/index-03-new.html:521
+msgid ""
+"Briefly imagine that you are not going to live and discover your "
+"unfulfilled\n"
+"                                  dreams."
+msgstr ""
+
+#: templates/index-03-new.html:561
+msgid "ENJOY A SUPERIOR TRAVEL EXPERIENCE"
+msgstr "享受卓越的旅行体验"
+
+#: templates/index-03-new.html:562
+msgid "About our excellent team members"
+msgstr "关于我们优秀的团队成员"
+
+#: templates/index-03-new.html:580
+msgid "Developing Experience"
+msgstr "开发经验"
+
+#: templates/index-03-new.html:588
+msgid "Destionation Collaboration"
+msgstr "设计协作"
+
+#: templates/index-03-new.html:596
+msgid "Cities"
+msgstr "城市"
+
+#: templates/index-03-new.html:604
+msgid "Average Age"
+msgstr "平均年龄"
+
+#: templates/index-03-new.html:621
+msgid "Team Members"
+msgstr "团队成员"
+
+#: templates/index-03-new.html:623
+msgid ""
+"Figure out what you want, put a plan together to achieve it, understand "
+"the cost, believe in\n"
+"                        yourself then go and get it!"
+msgstr ""
+
+#: templates/index-03-new.html:647
+msgid "Frontend & Design"
+msgstr "前端与设计"
+
+#: templates/index-03-new.html:648
+msgid "Wang Jialu"
+msgstr ""
+
+#: templates/index-03-new.html:667
+msgid "Frontend"
+msgstr ""
+
+#: templates/index-03-new.html:668
+msgid "Ding Tairan"
+msgstr ""
+
+#: templates/index-03-new.html:687
+msgid "Backend & Management"
+msgstr "后端与管理"
+
+#: templates/index-03-new.html:688
+msgid "Lou Yiming"
+msgstr ""
+
+#: templates/index-03-new.html:707
+msgid "Frontend & Editing"
+msgstr "前端和编辑"
+
+#: templates/index-03-new.html:708
+msgid "Yan Mingwei"
+msgstr ""
+
+#: templates/index-03-new.html:727
+msgid "Documentation"
+msgstr "文档"
+
+#: templates/index-03-new.html:728
+msgid "Jin Yanxiu"
+msgstr ""
+
+#: templates/index-03-new.html:767
+msgid "Backend"
+msgstr "后端"
+
+#: templates/index-03-new.html:768
+msgid "Li Yiming"
+msgstr "李翊铭"
+
+#: templates/index_admin.html:13
+msgid ""
+"Income Per\n"
+"                                                        User"
+msgstr ""
+
+#: templates/index_admin.html:32
+msgid ""
+"Total Expense\n"
+"                                                        in Cart"
+msgstr ""
+
+#: templates/index_admin.html:51
+msgid "User Numbers"
+msgstr "用户数量"
+
+#: templates/index_admin.html:69
+msgid "Daily Visits"
+msgstr "每日访问量"
+
+#: templates/index_admin.html:89
+msgid "All Time Best Destinations"
+msgstr "史上最佳目的地"
+
+#: templates/index_admin.html:90
+msgid "From begin until now"
+msgstr "自始至终"
+
+#: templates/index_admin.html:102
+msgid "Destination Information"
+msgstr "目的地信息"
+
+#: templates/index_admin.html:103
+msgid "For our top destinations"
+msgstr "对于我们的热门目的地"
+
+#: templates/index_admin.html:118
+msgid "Registered Customers"
+msgstr "注册客户"
+
+#: templates/index_admin.html:119
+msgid ""
+"Recently, just about the last 5 registered\n"
+"                                                customers"
+msgstr ""
+
+#: templates/index_admin.html:126 templates/index_admin.html:140
+msgid "Customer"
+msgstr "客户"
+
+#: templates/index_admin.html:127
+msgid "Role"
+msgstr "角色"
+
+#: templates/index_admin.html:128
+#: templates/information/information-customer.html:22
+msgid "Email"
+msgstr "电子邮件"
+
+#: templates/index_admin.html:144
+msgid "Administrator"
+msgstr "管理员"
+
+#: templates/index_admin.html:165
+msgid "Cart Transactions"
+msgstr "购物车交易"
+
+#: templates/index_admin.html:166
+msgid "Transaction about the last 10 records"
+msgstr "关于最近 10 条记录的事务"
+
+#: templates/index_admin.html:179
+msgid "Amount"
+msgstr "量"
+
+#: templates/index_admin.html:183
+msgid "Card"
+msgstr "卡"
+
+#: templates/index_admin.html:187
+msgid "Pay"
+msgstr "支付"
+
+#: templates/login.html:7
+msgid "Document"
+msgstr "公文"
+
+#: templates/login.html:15
+msgid "Create Account"
+msgstr "创建帐户"
+
+#: templates/login.html:26
+msgid "Verify"
+msgstr "验证"
+
+#: templates/login.html:38 templates/login.html:93
+msgid "Sign Up"
+msgstr "登记"
+
+#: templates/login.html:49 templates/specificDestination.html:160
+msgid "Sign in"
+msgstr "登录"
+
+#: templates/login.html:50
+msgid "or use your account"
+msgstr "或使用您的帐户"
+
+#: templates/login.html:58
+msgid "Forgot your password?"
+msgstr "忘记密码？"
+
+#: templates/login.html:59 templates/login.html:84
+msgid "Sign In"
+msgstr "登录"
+
+#: templates/login.html:68
+msgid "Forgot Password"
+msgstr "忘记密码"
+
+#: templates/login.html:69
+msgid ""
+"Please enter your email, if email is registered, you'll recieve a link to"
+" reset your password"
+msgstr ""
+
+#: templates/login.html:72
+msgid "Varify"
+msgstr "瓦里弗"
+
+#: templates/login.html:76
+msgid "Reset"
+msgstr "重置"
+
+#: templates/login.html:82
+msgid "Welcome Back!"
+msgstr "欢迎回来"
+
+#: templates/login.html:83
+msgid "To keep connected with us please login with your personal info"
+msgstr "要与我们保持联系，请使用您的个人信息登录"
+
+#: templates/login.html:91
+msgid "Hello, Friend!"
+msgstr "嘿，朋友！"
+
+#: templates/login.html:92
+msgid "Enter your personal details and start journey with us"
+msgstr "输入您的个人详细信息并开始我们的旅程"
+
+#: templates/search_page.html:54
+msgid "Searched Destination"
+msgstr "搜索目的地"
+
+#: templates/specificDestination.html:24
+msgid "TIME FOR AN ADVENTURE"
+msgstr "是时候冒险了"
+
+#: templates/specificDestination.html:25
+msgid "Welcome to"
+msgstr "欢迎来到"
+
+#: templates/specificDestination.html:44
+msgid "Find Your Preferred Attractions"
+msgstr "找到您喜欢的景点"
+
+#: templates/specificDestination.html:78
+msgid "Choose Your Perfect Accommodation"
+msgstr "选择您的完美住宿"
+
+#: templates/specificDestination.html:79
+msgid ""
+"Figure out what you want, put a plan together to achieve it, understand "
+"the cost, believe\n"
+"                      in yourself then go and get it!"
+msgstr ""
+
+#: templates/specificDestination.html:152
+msgid "Your travel journey starts here"
+msgstr "您的旅行之旅从这里开始"
+
+#: templates/specificDestination.html:154
+msgid ""
+"Join us! Our members can access savings of up to 30% and earn Trip Coins "
+"while\n"
+"                        booking"
+msgstr ""
+
+#: templates/else/index.html:5
+msgid "SocketIO Demo"
+msgstr "套接字IO演示"
+
+#: templates/information/information-accommodation.html:11
+msgid "Accommodation Lists"
+msgstr "住宿清单"
+
+#: templates/information/information-accommodation.html:12
+msgid ""
+"This is a customer list shows the information\n"
+"                                                about all our "
+"accommodations"
+msgstr ""
+
+#: templates/information/information-accommodation.html:19
+#: templates/information/information-attraction.html:19
+#: templates/information/information-customer.html:19
+#: templates/information/information-destination.html:19
+msgid "ID"
+msgstr "身份证"
+
+#: templates/information/detail/detail-destination.html:19
+#: templates/information/detail/detail-destination.html:95
+#: templates/information/detail/detail-destination.html:132
+#: templates/information/information-accommodation.html:20
+#: templates/information/information-attraction.html:20
+#: templates/information/information-destination.html:20
+msgid "Name"
+msgstr "姓名"
+
+#: templates/information/information-accommodation.html:22
+#: templates/information/information-attraction.html:22
+msgid "Destination"
+msgstr "目的地"
+
+#: templates/information/information-accommodation.html:24
+#: templates/information/information-destination.html:23
+msgid "Country"
+msgstr "城市"
+
+#: templates/information/information-accommodation.html:25
+#: templates/information/information-attraction.html:24
+#: templates/information/information-customer.html:24
+#: templates/information/information-destination.html:24
+msgid "Operations"
+msgstr "操作"
+
+#: templates/information/detail/detail-destination.html:145
+#: templates/information/information-accommodation.html:39
+#: templates/information/information-attraction.html:36
+#: templates/information/information-customer.html:36
+#: templates/information/information-destination.html:37
+msgid "Details"
+msgstr "详情"
+
+#: templates/information/information-attraction.html:11
+msgid "Attraction Lists"
+msgstr "景点列表"
+
+#: templates/information/information-attraction.html:12
+msgid ""
+"This is a customer list shows the information\n"
+"                                                about all our attraction"
+msgstr ""
+
+#: templates/information/information-customer.html:11
+msgid "Customers Lists"
+msgstr ""
+
+#: templates/information/information-customer.html:12
+msgid ""
+"This is a customer list shows the information\n"
+"                                                about all our customers"
+msgstr ""
+
+#: templates/information/information-customer.html:20
+msgid "Username"
+msgstr "用户名"
+
+#: templates/information/information-customer.html:21
+msgid "Mark"
+msgstr "马克"
+
+#: templates/information/information-customer.html:23
+msgid "Date of register"
+msgstr "注册日期"
+
+#: templates/information/information-destination.html:11
+msgid "Destination Lists"
+msgstr "目的地列表"
+
+#: templates/information/information-destination.html:12
+msgid ""
+"This is a destination list shows the information\n"
+"                                                about all our destinations"
+msgstr ""
+
+#: templates/information/detail/detail-destination.html:27
+#: templates/information/detail/detail-destination.html:133
+#: templates/information/information-destination.html:21
+msgid "Info"
+msgstr "信息"
+
+#: templates/information/detail/detail-destination.html:36
+msgid ""
+"Check me out\n"
+"                                                            !"
+msgstr ""
+
+#: templates/information/detail/detail-destination.html:54
+msgid "Hotspot Index"
+msgstr "热点指数"
+
+#: templates/information/detail/detail-destination.html:55
+msgid ""
+"This shows the hotspot index of this destinations\n"
+"                                                (search, view)."
+msgstr ""
+
+#: templates/information/detail/detail-destination.html:72
+msgid "Location Map"
+msgstr "位置图"
+
+#: templates/information/detail/detail-destination.html:73
+msgid ""
+"This is a location map shows the geographic\n"
+"                                                location of the target"
+msgstr ""
+
+#: templates/information/detail/detail-destination.html:87
+msgid "Related Accommodations"
+msgstr "相关住宿"
+
+#: templates/information/detail/detail-destination.html:88
+msgid "Accommodations in this destination"
+msgstr "该目的地的住宿"
+
+#: templates/information/detail/detail-destination.html:97
+#: templates/information/detail/detail-destination.html:135
+msgid "Operation"
+msgstr "操作"
+
+#: templates/information/detail/detail-destination.html:124
+msgid "Related Attractions"
+msgstr "相关景点"
+
+#: templates/information/detail/detail-destination.html:125
+msgid "Attractions in this destination"
+msgstr "这个目的地的景点"
+
+#: venv/lib/python3.8/site-packages/click/_termui_impl.py:496
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/_termui_impl.py:500
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1097
+msgid "Aborted!"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1282
+#: venv/lib/python3.8/site-packages/click/decorators.py:495
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1313
+#: venv/lib/python3.8/site-packages/click/core.py:1339
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1357
+msgid "Options"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1385
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1398
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1605
+msgid "Commands"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1637
+msgid "Missing command."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:1715
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:2271
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:2293
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:2734
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:2764
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:2777
+msgid "default: {default}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/core.py:2790
+msgid "required"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/decorators.py:400
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/decorators.py:464
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:43
+#: venv/lib/python3.8/site-packages/click/exceptions.py:79
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:71
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:120
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:122
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:178
+msgid "Missing argument"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:180
+msgid "Missing option"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:182
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:184
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:191
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:211
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:225
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:261
+msgid "unknown error"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/exceptions.py:268
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/parser.py:473
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/click/shell_completion.py:315
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/shell_completion.py:322
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/termui.py:160
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/termui.py:176
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/termui.py:178
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/termui.py:189
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/termui.py:245
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/termui.py:776
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:265
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:299
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:389
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:409
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:465
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:606
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:630
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:811
+msgid "file"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:813
+msgid "directory"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:815
+msgid "path"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:861
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:870
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:878
+msgid "{name} '{filename}' is a directory."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:887
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:896
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:905
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/click/types.py:971
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/flask_wtf/file.py:35
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:294
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:322
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/flask_wtf/file.py:69
+msgid "File does not have an approved extension: {extensions}"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/flask_wtf/file.py:77
+msgid "File does not have an approved extension."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/flask_wtf/file.py:112
+msgid "File must be between {min_size} and {max_size} bytes."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:87
+#, python-format
+msgid "Invalid field name '%s'."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:100
+#, python-format
+msgid "Field must be equal to %(other_name)s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:146
+#, python-format
+msgid "Field must be at least %(min)d character long."
+msgid_plural "Field must be at least %(min)d characters long."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:152
+#, python-format
+msgid "Field cannot be longer than %(max)d character."
+msgid_plural "Field cannot be longer than %(max)d characters."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:158
+#, python-format
+msgid "Field must be exactly %(max)d character long."
+msgid_plural "Field must be exactly %(max)d characters long."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:164
+#, python-format
+msgid "Field must be between %(min)d and %(max)d characters long."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:217
+#, python-format
+msgid "Number must be at least %(min)s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:220
+#, python-format
+msgid "Number must be at most %(max)s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:223
+#, python-format
+msgid "Number must be between %(min)s and %(max)s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:357
+msgid "Invalid input."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:416
+msgid "Invalid email address."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:454
+msgid "Invalid IP address."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:497
+msgid "Invalid Mac address."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:532
+msgid "Invalid URL."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:553
+msgid "Invalid UUID."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:586
+#, python-format
+msgid "Invalid value, must be one of: %(values)s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/validators.py:621
+#, python-format
+msgid "Invalid value, can't be any of: %(values)s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/csrf/core.py:96
+msgid "Invalid CSRF Token."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/csrf/session.py:63
+msgid "CSRF token missing."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/csrf/session.py:71
+msgid "CSRF failed."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/csrf/session.py:76
+msgid "CSRF token expired."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/choices.py:132
+msgid "Invalid Choice: could not coerce."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/choices.py:136
+#: venv/lib/python3.8/site-packages/wtforms/fields/choices.py:188
+msgid "Choices cannot be None."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/choices.py:145
+msgid "Not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/choices.py:181
+msgid "Invalid choice(s): one or more data inputs could not be coerced."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/choices.py:200
+#, python-format
+msgid "'%(value)s' is not a valid choice for this field."
+msgid_plural "'%(value)s' are not valid choices for this field."
+msgstr[0] ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/datetime.py:50
+msgid "Not a valid datetime value."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/datetime.py:76
+msgid "Not a valid date value."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/datetime.py:102
+msgid "Not a valid time value."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/numeric.py:82
+#: venv/lib/python3.8/site-packages/wtforms/fields/numeric.py:92
+msgid "Not a valid integer value."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/numeric.py:167
+msgid "Not a valid decimal value."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/wtforms/fields/numeric.py:196
+msgid "Not a valid float value."
+msgstr ""
+
+msgid "ENJOY A SUPERIOR TRAVEL EXPERIENCE"
+msgstr "享受卓越的旅行体验"
+
+msgid "About our excellent team members"
+msgstr "关于我们优秀的团队成员"
+
+msgid "Input the key words"
+msgstr "输入搜索关键词"
+
+msgid "This is the introduction for our teammates."
+msgstr "这是一个关于我们优秀团队成员的介绍"
+
+msgid "ASK AI"
+msgstr "询问AI"
+
+msgid "Switch Language"
+msgstr "切换语言"
+
+msgid "Income Per User"
+msgstr "平均购物车价格"
+
+msgid "Total Expense in Cart"
+msgstr "全部购物车价格"
+
+msgid "User Numbers"
+msgstr "总用户数"
+
+msgid "Visits"
+msgstr "总访问量"
+
+msgid "All Time Best Destinations"
+msgstr "一直以来的最佳景点"
+
+msgid "From begin until now"
+msgstr "从始至终"
+
+msgid "Destination Information"
+msgstr "目的地信息"
+
+msgid "For our top destinations"
+msgstr "头牌景点"
+
+msgid "Registered Customers"
+msgstr "注册的用户"
+
+msgid "Recently, just about the last 5 registered customers"
+msgstr "仅展示最近注册的五个用户"
+
+msgid "Cart Transactions"
+msgstr "购物车内容"
+
+msgid "Transaction about the last 10 records"
+msgstr "展示最近的十个内容"
+
+msgid "Supervise Planning"
+msgstr "监控预定安排"
+
+msgid "Edit Reservation Accommodation"
+msgstr "修改住宿预定安排"
+
+msgid "Edit Reservation Attraction"
+msgstr "修改景点预定安排"
+
+msgid "Add Destination"
+msgstr "添加游客目的地"
+
+msgid "Index"
+msgstr "首页"
+
+msgid "Customer"
+msgstr "客户"
+
+msgid "Role"
+msgstr "职责"
+
+msgid "Email"
+msgstr "电子邮箱"
+
+msgid "Contact Us"
+msgstr "联系我们"

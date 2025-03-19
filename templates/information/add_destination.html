@@ -1,0 +1,110 @@
+﻿{% extends "baseHTML_Admin.html" %}
+
+    {% block css%}
+    <!-- Plugins css -->
+     <link href="/static/dropify/dropify.min.css" rel="stylesheet" type="text/css" />
+    {% endblock %}
+
+{% block content %}
+
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                        
+                                        <h4 class="card-title">Upload New Destination</h4>
+                                        <p class="card-subtitle mb-4">
+                                            When a destination is now supported by the travel agency to be the target destination,
+                                        staff can add information to the website.</p>
+
+
+                                        <form action="/admin/upload_destination" method="post" enctype="multipart/form-data" id = "destination_form" >
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="destination_name">Destination Name</label>
+                                                        <input type="text" name = "destination_name" id="destination_name" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>Description</label>
+                                                        <textarea class="form-control" name = "destination_description" id="destination_description" rows="3" maxlength="250"
+                                                                  placeholder="A brief description of the destination"></textarea>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="destination_location">Location</label>
+                                                        <input type="text" id="destination_location"  name = "destination_location" class="form-control">
+                                                        <span class="font-13 text-muted">E.g. Sichaun Province, Chengdu City.</span>
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <label>Longitude (From -180 to 180)</label>
+                                                        <input type="text" data-v-min="-180.00" data-v-max="180.00"
+                                                               class="form-control autonumber" name = "destination_lg" id = "destination_longitude">
+                                                        <span class="font-13 text-muted">0°~180°represent East longitude, -180°~0°represent West longitude</span>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>Latitude (From -90 to 90)</label>
+                                                        <input type="text" data-v-min="-90.00" data-v-max="90.00"
+                                                               class="form-control autonumber" name = "destination_la" id = "destination_latitude">
+                                                        <span class="font-13 text-muted">0°~90°represent North latitude, -90°~0°represent South latitude</span>
+                                                    </div>
+                                                </div> <!-- end col -->
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="destination_country">Country</label>
+                                                        <input type="text" id="destination_country" name = "destination_country" class="form-control" >
+                                                        <span class="font-13 text-muted">The country of the destination belongs to.</span>
+                                                    </div>
+
+                                                    <!--  Upload Avatar -->
+                                                    <div class="form-group">
+                                                        <label>Avatar of the Destination</label>
+                                                        <input type="file" id = "destination_avatar" name = "destination_avatar" class="dropify" data-height="324"/>
+                                                        <span class="font-13 text-muted">Only <b>.jpg</b>, <b>.jpeg</b>, <b>.png</b>, <b>.gif</b> are allowed</span>
+                                                    </div>
+
+                                                </div> <!-- end col -->
+
+                                            </div>
+                                        <!-- end row -->
+                                            <!-- button for submit -->
+                                            <div class = "row" style = "margin: 10px 0 10px 0">
+                                                <button class = "btn btn-primary btn-block btn-lg"
+                                                        id = "submit_destination">Submit</button>
+                                            </div>
+                                        </form>
+
+                        
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row-->
+    
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+{% endblock %}
+        {% block js %}
+        <!-- Custom Js -->
+        <script src="/static/assets/js/add_destination.js"></script>
+            <!-- Plugins js -->
+        <script src="/static/autonumeric/autoNumeric-min.js"></script>
+         <script src="/static/dropify/dropify.min.js"></script>
+         <script src="/static/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+
+<!-- Custom Js -->
+<script src="/static/assets/js/add_destination.js"></script>
+
+        {% endblock %}
+
+    </body>
+
+</html>

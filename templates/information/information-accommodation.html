@@ -1,0 +1,57 @@
+﻿{% extends "baseHTML_Admin.html" %}
+{% block content %}
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Accommodation Lists</h4>
+                                        <p class="card-subtitle mb-4">This is a customer list shows the information about all our accommodations </p>
+                                        <div class="table-responsive">
+                                            <table class="table table-dark mb-0">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>ID</th>
+                                                        <th>Name</th>
+                                                        <th>Price</th>
+                                                        <th>Destination</th>
+                                                        <th>Location</th>
+                                                        <th>Country</th>
+                                                        <th>Operations</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for user_info in accommodations_list %}
+                                                    <tr>
+                                                        <th scope="row">{{ accommodations_list.index(user_info) }}</th>
+                                                        <td>{{ user_info.id }}</td>
+                                                        <td>{{ user_info.name }}</td>
+                                                        <td>{{ user_info.price }}</td>
+                                                        <td>{{ user_info.destination.name }}</td>
+                                                        <td>{{ user_info.destination.location }}</td>
+                                                        <td>{{ user_info.destination.country }}</td>
+                                                        <td><a href="/admin/accommodation/detail/{{ user_info.id }}"><button type="button" class="btn btn-primary">Details</button></td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card -->
+
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+{% endblock %}

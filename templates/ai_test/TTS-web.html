@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=RF91fFE0"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+
+<textarea id="text" cols="45" rows="3" >
+
+The customer portal includes work packages 1, 2 and the first half of 3. To
+be specific, it includes basic chatting functionality; additional "schedule package”sharing; system notification; staff allocation algorithm; travel destination,
+accommodation and attractions modules; reviews; categorized search; a planning tool that enables users to create and edit a tour plan, and a booking tool
+for accommodation, attraction and transportation
+</textarea>
+
+<!-- Manually select the text to speech -->
+<!--<select id="voiceselection"></select>-->
+
+<input onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());"
+    type="button"
+    value="Read this for me"
+/>
+
+<script>
+    //Populate voice selection dropdown
+    var voicelist = responsiveVoice.getVoices();
+
+    // Manually select the text to speech
+    // var vselect = $("#voiceselection");
+    // var vselect = "Voice picked: Google UK English Male"
+    // console.log(vselect)
+
+    $.each(voicelist, function() {
+        vselect.append($("<option />").val(this.name).text(this.name));
+    });
+</script>
+</body>
+</html>

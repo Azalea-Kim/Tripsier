@@ -1,0 +1,362 @@
+﻿{% extends "baseHTML_Admin.html" %}
+
+{% block css %}
+<link href="/static/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="/static/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="/static/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="/static/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link href="/static/css/detail-room/available_rooms.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker@3.1.0/daterangepicker.min.css" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+{% endblock %}
+{% block content %}
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                    <!-- Basic Data Table -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Reservation Management</h4>
+                                    <p class="card-subtitle mb-4">
+                                        When an unexpected or uncontrollable event occurs, some specific accommodations and attractions may be affected.
+                                        That is when staff is responsible for altering or cancelling the relevant reservation within this page.
+                                    </p>
+<!--                                    <span>-->
+<!--                                    <div class="date-selector">-->
+<!--                                        <button class="date-button previous-button">&lt;</button>-->
+<!--                                        <input type="date" class="date-input">-->
+<!--                                        <button class="date-button next-button">&gt;</button>-->
+<!--                                        <button class="date-button select-button">Select</button>-->
+<!--                                    </div>-->
+<!--                                    </span>-->
+
+                                    <!-- Date Picker -->
+                                        <form action="/#" method="POST">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="date-range-selector" placeholder="Select Date Range" data-cancel-class="btn-warning">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                    <table id="complex-header-datatable" class="table table-striped nowrap">
+                                        <thead class="thead-light">
+                                            <tr>
+<!--                                                <th rowspan="2" style = "vertical-align: middle; text-align: center;">ID</th>-->
+                                                <th colspan="5" >Information</th>
+                                                <th colspan="2" >Operations</th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>Customer Name</th>
+                                                <th>Destination</th>
+                                                <th>Attraction or Accommodation</th>
+                                                <th>Date</th>
+                                                <th>Priority</th>
+
+                                                <th>Update Information</th>
+                                                <th>Cancel Reservation</th>
+                                                <th>SpaceHolder</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+<!--                                            <tr>-->
+
+<!--                                                <td>Tiger Nixon</td>-->
+<!--                                                <td>Destination V</td>-->
+<!--                                                <td>Attraction 1</td>-->
+<!--                                                <td>2011/04/25</td>-->
+<!--                                                <td> <span class = "btn btn-sm btn-info ">Update Information</span> </td>-->
+<!--                                                <td> <span class = "btn btn-sm btn-danger ">Cancel Reservation</span> </td>-->
+<!--                                                <td> Space Holder </td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+
+<!--                                                <td>Garrett Winters</td>-->
+<!--                                                <td>Destination 3</td>-->
+<!--                                                <td>Attraction 2</td>-->
+<!--                                                <td>2011/07/25</td>-->
+<!--                                                <td> <span class = "btn btn-sm btn-info ">Update Information</span> </td>-->
+<!--                                                <td> <span class = "btn btn-sm btn-danger ">Cancel Reservation</span> </td>-->
+<!--                                                <td> Space Holder </td>-->
+<!--                                            </tr>-->
+
+                                        {% for acc in reservation_acc %}
+                                            <tr id = {{ acc.id }}>
+
+                                                <td>{{ acc.user.name }}</td>
+                                                <td>{{ acc.accommodation.destination.name }}</td>
+                                                <td>{{ acc.accommodation.name }}</td>
+                                                <td>{{ acc.date }}</td>
+                                                <td>{{ acc.priority }}</td>
+                                                <td> <span onclick="update_reservation({{ acc.id }})" class = "btn btn-sm btn-info update_button">Update Information</span> </td>
+                                                <td><a onclick="cancel_information()" href="/cancel_notice_accommodation/{{ acc.id }}"><span class = "btn btn-sm btn-danger ">Cancel Reservation</span></a></td>
+                                                <td> Space Holder </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <!-- end row-->
+
+                    </div> <!-- container-fluid -->
+
+
+                    <div id = "popup_form_container">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Edit Plan for accommodation</h4>
+                                <p class="card-subtitle mb-4">This part is for edit any information in the reservation for an accommodation.</p>
+
+                                <form id="destination_form">
+                                    <div class="form-group row mb-3">
+                                        <label for="customer_name" class="col-3 col-form-label">Name</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" id="customer_name" readonly="" value="{{customer}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label for="destination_name" class="col-3 col-form-label">Destination</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" id="destination_name" readonly="" value="{{Destination}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label for="attraction_name" class="col-3 col-form-label">Attraction or Accommodation</label>
+                                        <div class="col-9">
+                                            <select name="name" class="form-control" id="attraction_name" >
+                                                <option selected>{{place}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label for="date_selected" class="col-3 col-form-label">Date</label>
+                                        <div class="col-9">
+                                            <input name="date" type="date" class="form-control" id="date_selected">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label for="pri_select" class="col-3 col-form-label">Priority</label>
+                                        <div class="col-9">
+                                            <input type="number" name="pri" class="form-control" id="pri_select">
+                                        </div>
+                                    </div>
+                                    <br>
+                                </form>
+
+                                  <button onclick="submit_form()" class= "btn btn-primary btn-block">Submit</button>
+
+
+                            </div>
+                        </div>
+                                    <!-- end card-body-->
+                    </div>
+
+
+                </div>
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center text-lg-left">
+                                    2019 © Drezoc
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-right d-none d-lg-block">
+                                    Design & Develop by <a href="http://www.bootstrapMB.com">bootstrapMB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Overlay-->
+        <div class="menu-overlay"></div>
+         {% endblock %}
+          {% block js %}
+       <!-- jQuery  -->
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/assets/js/metismenu.min.js"></script>
+        <script src="/static/assets/js/waves.js"></script>
+        <script src="/static/assets/js/jquery.slimscroll.min.js"></script>
+
+         <!-- third party js -->
+        <script src="/static/datatables/jquery.dataTables.min.js"></script>
+        <script src="/static/datatables/dataTables.bootstrap4.js"></script>
+        <script src="/static/datatables/dataTables.responsive.min.js"></script>
+        <script src="/static/datatables/responsive.bootstrap4.min.js"></script>
+        <script src="/static/datatables/dataTables.buttons.min.js"></script>
+        <script src="/static/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="/static/datatables/buttons.html5.min.js"></script>
+        <script src="/static/datatables/buttons.flash.min.js"></script>
+        <script src="/static/datatables/buttons.print.min.js"></script>
+        <script src="/static/datatables/dataTables.keyTable.min.js"></script>
+        <script src="/static/datatables/dataTables.select.min.js"></script>
+        <script src="/static/datatables/pdfmake.min.js"></script>
+        <script src="/static/datatables/vfs_fonts.js"></script>
+        <!-- third party js ends -->
+
+        <!-- Datatables init -->
+        <script src="/static/assets/pages/datatables-demo.js"></script>
+
+
+        <!-- App js -->
+        <script src="/static/assets/js/theme.js"></script>
+        <script src="/static/js/detail-room/available_rooms.js"></script>
+
+        <!-- Date Range Picker -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker@3.1.0/daterangepicker.min.js"></script>
+        <script>
+            $(function() {
+                $('#date-range-selector').daterangepicker({
+                    opens: 'left',
+                    drops: 'down',
+                    locale: {
+                        format: 'YYYY/MM/DD',
+                        separator: ' → ',
+                    }
+                }, function(start, end, label) {
+                    console.log("A date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                    let start_str = start.format('YYYY-MM-DD')
+                    let end_str = end.format('YYYY-MM-DD')
+                    location.href = "/admin/edit/acc/"+start_str+"/"+end_str
+                });
+            });
+        </script>
+
+        <script>
+
+            <!-- pop-up -->
+            $(function() {
+              // Show popup form when update button is clicked
+              $('.update_button').click(function() {
+                $('#popup_form_container').fadeIn();
+                // $('#popup_form_container').removeClass('hide');
+              });
+
+              // Hide popup form when submit button is clicked
+              $('#popup_form').submit(function(e) {
+                e.preventDefault();
+
+                // Submit form data using AJAX
+                $.ajax({
+                  type: 'POST',
+                  url: 'your-api-endpoint-url',
+                  data: $(this).serialize(),
+                  success: function(response) {
+                    // Handle successful form submission
+                    // Hide popup
+                    $('#popup_form_container').fadeOut();
+                  },
+                  error: function(error) {
+                    // Handle form submission error
+                    console.log(error);
+                  }
+                });
+
+              });
+
+              // Hide popup form when clicking outside of it
+              $(document).mouseup(function(e) {
+                var container = $('#popup_form_container');
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                  $('#popup_form_container').fadeOut();
+                  // $('#popup_form_container').removeClass('show');
+                }
+              });
+            });
+
+        </script>
+              <script>
+              let select_id
+              function update_reservation(id){
+                  select_id = id
+                  var firstRow = $('#'+id);
+                  var tdsInFirstRow = firstRow.find('td');
+                  $('#customer_name').val(tdsInFirstRow[0].textContent)
+                  $('#destination_name').val(tdsInFirstRow[1].textContent)
+
+                  $.ajax({
+                  type: 'POST',
+                  url: '/admin/get_destination/acc',
+                  data: {'destination':tdsInFirstRow[1].textContent},
+                  success: function(response) {
+                    console.log(response)
+                      var selectElement = $('#attraction_name');
+                      for (let i = 0; i < response.length; i++) {
+
+                            // 创建新的选项
+                            var newOption = $('<option>');
+
+                            // 设置新选项的值和文本
+                            newOption.val(response[i]).text(response[i]);
+
+                            // 将新选项添加到select中
+                            selectElement.append(newOption);
+                      }
+                  },
+                  error: function(error) {
+                    // Handle form submission error
+                    console.log(error);
+                  }
+                });
+              }
+
+              function cancel_information(){
+                  alert("You have cancel this reservation and send a email to this customer.")
+              }
+
+              function submit_form(){
+                      console.log(select_id)
+                      $.ajax({
+                        url: "/admin/edit_reservation_accommodation/" + select_id,
+                        method: "POST",
+                        data: $('#destination_form').serialize(),
+                        success: function( response ) {
+                          console.log( "Form submitted successfully." );
+                        },
+                        error: function( error ) {
+                          console.error( "Error submitting form: " + error );
+                        }
+                      });
+               }
+
+              </script>
+{% endblock %}

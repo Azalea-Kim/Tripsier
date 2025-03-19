@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="92fc09a5-bd04-4216-84a7-5f04b5092551" name="Changes" comment="readme">
+      <change afterPath="$PROJECT_DIR$/img_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2uW4skBntPkSTHhNbQpDyE9ENlc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Tripsier" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92fc09a5-bd04-4216-84a7-5f04b5092551" name="Changes" comment="" />
+      <created>1742351206547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742351206547</updated>
+      <workItem from="1742351207296" duration="2965000" />
+    </task>
+    <task id="LOCAL-00001" summary="Application">
+      <option name="closed" value="true" />
+      <created>1742351464152</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742351464152</updated>
+    </task>
+    <task id="LOCAL-00002" summary="user manual">
+      <option name="closed" value="true" />
+      <created>1742351679731</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742351679731</updated>
+    </task>
+    <task id="LOCAL-00003" summary="readme">
+      <option name="closed" value="true" />
+      <created>1742352557633</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742352557633</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Application" />
+    <MESSAGE value="user manual" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+  </component>
+</project>

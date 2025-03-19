@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="../static/css/style_login_test.css">
+
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+    <script type="text/javascript" src="../static/js/chat_login.js"></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <img src="logo.png" alt="Logo" class="logo">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <input type="text" id="room" name="room" required>
+        <button onclick="login()">Login</button>
+    </div>
+  </body>
+</html>

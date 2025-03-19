@@ -1,0 +1,850 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Xtrip - Tour & Travel Hotel Booking HTML Template">
+    <meta name="author" content="potenzaglobalsolutions.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Xtrip - Tour & Travel Hotel Booking HTML Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="css/datetimepicker/datetimepicker.min.css">
+    <link rel="stylesheet" href="css/select2/select2.css">
+    <link rel="stylesheet" href="css/range-slider/ion.rangeSlider.css">
+    <!-- Template Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!--=================================
+    Header -->
+    <header class="header header-sticky default">
+      <div class="topbar d-none d-md-block">
+        <div class="container">
+          <div class="topbar-inner">
+            <div class="row">
+              <div class="col-12">
+                <div class="d-lg-flex align-items-center text-center">
+                  <div class="topbar-left mb-2 mb-lg-0">
+                    <div class="social d-inline-flex">
+                      <ul class="list-unstyled">
+                        <li><a href="#"> <i class="fa-brands fa-facebook-f"></i> </a></li>
+                        <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                        <li><a href="#"> <i class="fa-brands fa-linkedin"></i> </a></li>
+                        <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                      </ul>
+                    </div>
+                    <div class="dropdown d-inline-flex ps-4">
+                      <a class="dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        USD<i class="fas fa-chevron-down fa-xs"></i>
+                      </a>
+                      <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-dollar-sign"></i> USD</a>
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-indian-rupee-sign"></i> INR</a>
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-euro-sign"></i> EURO</a>
+                      </div>
+                    </div>
+                    <div class="dropdown right-menu d-inline-flex ps-4">
+                      <a class="dropdown-toggle" href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-fluid" src="images/icon/en.png" alt=""> English<i class="fas fa-chevron-down fa-xs"></i>
+                      </a>
+                      <div class="dropdown-menu mt-0" aria-labelledby="dropdownMenuButton2">
+                        <a class="dropdown-item" href="#"><img class="img-fluid country-flag" src="images/country-flags/02.jpg" alt="">English</a>
+                        <a class="dropdown-item" href="#"><img class="img-fluid country-flag" src="images/country-flags/09.jpg" alt="">Francais</a>
+                        <a class="dropdown-item" href="#"><img class="img-fluid country-flag" src="images/country-flags/11.jpg" alt="">Deutsch</a>
+                        <a class="dropdown-item" href="#"><img class="img-fluid country-flag" src="images/country-flags/12.jpg" alt="">Italiano</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="topbar-right ms-auto justify-content-center">
+                    <div class="d-inline-flex topbar-address">
+                      <a href="#"><i class="fa-solid fa-location-dot me-2"></i>220E Front St. Burlington NC 27215</a>
+                    </div>
+                    <div class="topbar-call d-inline-flex me-auto">
+                      <a href=""><i class="fa-solid fa-phone me-2"></i>Call Services  +126-632-2345</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-static-top navbar-expand-lg">
+        <div class="container main-header position-relative">
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+          <a class="navbar-brand" href="index.html">
+            <img class="img-fluid" src="images/logo.png" alt="logo">
+          </a>
+          <div class="navbar-collapse collapse justify-content-end justify-content-lg-center">
+            <ul class="nav navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="index.html"><span>Home 01</span></a></li>
+                  <li><a class="dropdown-item" href="index-02.html"><span>Home 02</span></a></li>
+                  <li><a class="dropdown-item" href="index-03.html"><span>Home 03</span></a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item mega-menu">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Pages<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu megamenu">
+                  <li>
+                    <div class="row">
+                      <div class="col-sm-6 col-lg-4">
+                        <span class="mb-3 nav-title mt-0  "> Pages</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="about-us.html"><span>About Us</span></a></li>
+                          <li><a class="dropdown-submenu" href="team.html"><span>Team</span></a></li>
+                          <li><a class="dropdown-submenu" href="team-detail.html"><span>Team Details</span></a></li>
+                          <li><a class="dropdown-submenu" href="booking.html"><span>Booking</span></a></li>
+                          <li><a class="dropdown-submenu" href="contact-us.html"><span>Contact us</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6 col-lg-4 mt-3 mt-sm-0">
+                        <span class="mb-3 nav-title mt-0  "> Pages</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="pricing-plan.html"><span>Pricing Plan</span></a></li>
+                          <li><a class="dropdown-submenu" href="faq.html"><span>Faq</span></a></li>
+                          <li><a class="dropdown-submenu" href="coming-soon.html"><span>Coming Soon</span></a></li>
+                          <li><a class="dropdown-submenu" href="404-error.html"><span>Error 404</span></a></li>
+                          <li><a class="dropdown-submenu" href="no-result-found.html"><span>No Result Found</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6 col-lg-4">
+                        <span class="mb-3 nav-title mt-0  "> Authentication</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="sign-in.html"><span>Sign In</span></a></li>
+                          <li><a class="dropdown-submenu" href="sign-up.html"><span>Sign Up</span></a></li>
+                          <li><a class="dropdown-submenu" href="privacy-policy.html"><span>Privacy policy</span></a></li>
+                          <li><a class="dropdown-submenu" href="terms-and-conditions.html"><span>Terms And Conditions</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item mega-menu">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Portfolio<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu megamenu">
+                  <li>
+                    <div class="row">
+                      <div class="col-sm-6 col-lg-6 col-xl-3 mt-4 mt-xl-0">
+                        <span class="mb-3 nav-title mt-0  "> Portfolio Style</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="portfolio-agency.html"><span>Portfolio Agency</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-fancy.html"><span>Portfolio Fancy</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-morden.html"><span>Portfolio Morden</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-gallery-lightbox.html"><span>Photo Gallery</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6 col-lg-6 col-xl-3 mt-3 mt-sm-4 mt-xl-0">
+                        <span class="mb-3 nav-title mt-0  "> Portfolio Columns</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="portfolio-2-columns.html"><span>Portfolio 2 Columns</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-3-columns.html"><span>Portfolio 3 Columns</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-4-columns.html"><span>Portfolio 4 Columns</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-5-columns.html"><span>Portfolio 5 Columns</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6 col-lg-6 col-xl-3 mt-3 mt-xl-0">
+                        <span class="mb-3 nav-title mt-0  "> Portfolio Masonry</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="portfolio-2-masonry.html"><span>Portfolio 2 Masonry</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-3-masonry.html"><span>Portfolio 3 Masonry</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-4-masonry.html"><span>Portfolio 4 Masonry</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-5-masonry.html"><span>Portfolio 5 Masonry</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6 col-lg-6 col-xl-3 mt-3 mt-xl-0">
+                        <span class="mb-3 nav-title mt-0  "> Portfolio Single</span>
+                        <ul class="list-unstyled">
+                          <li><a class="dropdown-submenu" href="portfolio-single-01.html"><span>Portfolio Single 01</span></a></li>
+                          <li><a class="dropdown-submenu" href="portfolio-single-02.html"><span>Portfolio Single 02</span></a></li>
+                           
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Destination<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="destination.html"><span>Destination</span></a></li>
+                  <li><a class="dropdown-item" href="destinations-details.html"><span>Destinations Details</span></a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item active">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Tour<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li class="active"><a class="dropdown-item" href="tour-search.html"><span>Tour Search</span></a></li>
+                  <li><a class="dropdown-item" href="all_acco.html"><span>Tour List</span></a></li>
+                  <li><a class="dropdown-item" href="all_attractions.html"><span>Tour Grid</span></a></li>
+                  <li><a class="dropdown-item" href="tour-detail.html"><span>Tour Details</span></a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Blog<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="blog-standard.html"><span>Blog Standard</span></a></li>
+                  <li><a class="dropdown-item" href="blog-single.html"><span>Blog Single</span></a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Shop<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="shop.html"><span>Shop</span></a></li>
+                  <li><a class="dropdown-item" href="shop-list.html"><span>Shop List</span></a></li>
+                  <li><a class="dropdown-item" href="shop-single.html"><span>Shop Single</span></a></li>
+                  <li><a class="dropdown-item" href="shop-cart.html"><span>Shop Cart</span></a></li>
+                  <li><a class="dropdown-item" href="shop-checkout.html"><span>Shop Checkout</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="add-listing">
+            <div class="woo-action">
+              <ul class="list-unstyled">
+                <li class="cart dropdown">
+                  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="cart-icon"><object type="image/svg+xml" data="images/svg/cart.svg" class="icon"></object></span>
+                  <span class="cart-count">2</span></button>
+                  <div class="dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <ul class="cart-list ps-0">
+                      <li class="d-flex">
+                        <a class="remove-item" href="#"><i class="fas fa-times"></i></a>
+                        <img class="img-fluid me-3" src="images/product/01.jpg" alt="">
+                        <div class="cart-info">
+                          <a href="#">Extra Fine Wool Jumpers</a>
+                          <span class="d-block">1 x 12.49</span>
+                        </div>
+                      </li>
+                      <li class="d-flex">
+                        <a class="remove-item" href="#"><i class="fas fa-times"></i></a>
+                        <img class="img-fluid me-3" src="images/product/02.jpg" alt="">
+                        <div class="cart-info">
+                          <a href="#"> Men’s Standard Fit Crew T-Shirt</a>
+                          <span class="d-block">1 x 28.72</span>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="cart-footer">
+                      <div class="d-flex mb-3">
+                        <b class="me-auto text-dark">Subtotal:</b>
+                        <span>$41.21</span>
+                      </div>
+                      <div class="d-inline-block d-sm-flex">
+                        <a class="col btn btn-secondary btn-sm me-2 px-4" href="#">View Cart</a>
+                        <a class="col btn btn-sm btn-primary ms-0 mt-1 mt-sm-0 ms-sm-2 px-4" href="#">Checkout</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="nav-item header-search">
+              <div class="search">
+                <ul class="list-unstyled mb-0">
+                  <li class="dropdown nav-item header-search search-icon">
+                    <a href="#search">
+                      <object type="image/svg+xml" data="images/svg/search.svg" class="icon"></object>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--=================================
+    Header -->
+    <!--=================================
+    Search -->
+    <div id="search">
+      <button type="button" class="close">×</button>
+      <form>
+        <input type="search" value="" placeholder="type keyword(s) here">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+    <!--=================================
+    Search -->
+    <!--=================================
+    Header Inner -->
+    <section class="header-inner header-inner-menu bg-overlay-dark-6" style="background-image: url('images/bg/01.jpg');">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 position-relative">
+            <div class="header-inner-title">
+              <div class="section-title">
+                <h2 class="title text-white">Tour Search</h2>
+                <div class="sub-title">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-uppercase" href="index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="breadcrumb-item active">Tour Search</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Header Inner -->
+    <!--=================================
+    Tour Search -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row my-2">
+          <div class="col-lg-8">
+            <div class="row align-items-center">
+              <div class="col-lg-8 mb-3 mb-lg-0">
+                <p class="mb-0">Showing all 2 results</p>
+              </div>
+              <div class="col-lg-4">
+                <div class="select-border">
+                  <select class="form-control basic-select">
+                    <option value="1" selected="selected">Default sorting</option>
+                    <option value="2">Sort by popularity</option>
+                    <option value="3">Sort by average rating</option>
+                    <option value="4">Sort by latest</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr class="mb-0">
+              </div>
+            </div>
+            <div class="row pt-5">
+              <div class="col-lg-6 col-md-6 mb-4 ">
+                <div class="listing-item">
+                  <div class="listing-image bg-overlay-half-bottom">
+                    <img class="img-fluid" src="images/listing/01.jpg" alt="#">
+                    <div class="listing-favourite">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="listing-details">
+                    <div class="listing-title d-flex justify-content-between">
+                      <h5 class="mb-0">
+                        <span class="country-flags">
+                          <img class="img-fluid shadow-sm" src="images/country-flags/01.jpg" alt="#">
+                        </span>
+                        <a href="tour-detail.html" class="title mb-0">Tokyo</a>
+                      </h5>
+                    </div>
+                    <a href="#" class="listing-loaction"> <i class="fa fa-location-dot"></i>17-4, Kaminarimon 2-chome, Taito-ku, Tokyo </a>
+                    <div class="listing-info">
+                      <img class="img-fluid" src="images/listing-brand/01.png" alt="">
+                      <p class="mb-0">The price is something not necessarily defined as financial.</p>
+                    </div>
+                    <div class="listing-rating d-flex justify-content-between">
+                      <div class="d-flex">
+                        <div class="date me-3">
+                          <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                        </div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.0 / 5</span>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span class="text-decoration-line-through">$899</span>$700
+                      </div>
+                    </div>
+                    <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 mb-4 ">
+                <div class="listing-item">
+                  <div class="listing-image bg-overlay-half-bottom">
+                    <img class="img-fluid" src="images/listing/02.jpg" alt="#">
+                    <div class="listing-favourite listing-like">
+                      <i class="fa-solid fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="listing-details">
+                    <div class="listing-title d-flex justify-content-between">
+                      <h5 class="mb-0">
+                        <span class="country-flags">
+                          <img class="img-fluid shadow-sm" src="images/country-flags/02.jpg" alt="#">
+                        </span>
+                        <a href="#" class="title mb-0">United Kingdom</a>
+                      </h5>
+                    </div>
+                    <a href="#" class="listing-loaction"> <i class="fa fa-location-dot"></i>19 The Lindens,Grantham,England United Kingdom </a>
+                    <div class="listing-info">
+                      <img class="img-fluid" src="images/listing-brand/02.png" alt="">
+                      <p class="mb-0">The bottom line is that we must shed the bad and replace with good beliefs.</p>
+                    </div>
+                    <div class="listing-rating d-flex justify-content-between">
+                      <div class="d-flex">
+                        <div class="date me-3">
+                          <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                        </div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.9 / 5</span>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span class="text-decoration-line-through"></span>$550
+                      </div>
+                    </div>
+                    
+                    <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 mb-4 ">
+                <div class="listing-item">
+                  <div class="listing-image bg-overlay-half-bottom">
+                    <img class="img-fluid" src="images/listing/03.jpg" alt="#">
+                    <div class="listing-favourite">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="listing-details">
+                    <div class="listing-title d-flex justify-content-between">
+                      <h5 class="mb-0">
+                        <span class="country-flags">
+                          <img class="img-fluid shadow-sm" src="images/country-flags/03.jpg" alt="#">
+                        </span>
+                        <a href="tour-detail.html" class="title mb-0">Rio</a>
+                      </h5>
+                    </div>
+                    <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i> Rua americo Piola,13- Horto Santo Antonio,Rio de Janeiro SP Brasil </a>
+                    <div class="listing-info">
+                      <img class="img-fluid" src="images/listing-brand/03.png" alt="">
+                      <p class="mb-0">The price is something not necessarily defined as financial.</p>
+                    </div>
+                    <div class="listing-rating d-flex justify-content-between">
+                      <div class="d-flex">
+                        <div class="date me-3">
+                          <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                        </div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span class="text-decoration-line-through">$399</span>$350
+                      </div>
+                    </div>
+                    
+                    <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                <div class="listing-item">
+                  <div class="listing-image bg-overlay-half-bottom">
+                    <img class="img-fluid" src="images/listing/04.jpg" alt="#">
+                    <div class="listing-favourite">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="listing-details">
+                    <div class="listing-title d-flex justify-content-between">
+                      <h5 class="mb-0">
+                        <span class="country-flags">
+                          <img class="img-fluid shadow-sm" src="images/country-flags/04.jpg" alt="#">
+                        </span>
+                        <a href="tour-detail.html" class="title mb-0">Marsella</a>
+                      </h5>
+                    </div>
+                    <a href="#" class="listing-loaction"> <i class="fa fa-location-dot"></i> 25 Place De L Eglise,Marseille, France </a>
+                    <div class="listing-info">
+                      <img class="img-fluid" src="images/listing-brand/03.png" alt="">
+                      <p class="mb-0">We all carry a lot of baggage, thanks to our upbringing.</p>
+                    </div>
+                    <div class="listing-rating d-flex justify-content-between">
+                      <div class="d-flex">
+                        <div class="date me-3">
+                          <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                        </div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span class="text-decoration-line-through"></span>$970
+                      </div>
+                    </div>
+                    
+                    <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0 mb-md-0">
+                <div class="listing-item">
+                  <div class="listing-image bg-overlay-half-bottom">
+                    <img class="img-fluid" src="images/listing/05.jpg" alt="#">
+                    <div class="listing-favourite listing-like">
+                      <i class="fa-solid fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="listing-details">
+                    <div class="listing-title d-flex justify-content-between">
+                      <h5 class="mb-0">
+                        <span class="country-flags">
+                          <img class="img-fluid shadow-sm" src="images/country-flags/05.jpg" alt="#">
+                        </span>
+                        <a href="tour-detail.html" class="title mb-0">Denver</a>
+                      </h5>
+                    </div>
+                    <a href="#" class="listing-loaction"> <i class="fa fa-location-dot"></i> 17-4, Kaminarimon 2-chome, Taito-ku, Tokyo </a>
+                    <div class="listing-info">
+                      <img class="img-fluid" src="images/listing-brand/01.png" alt="">
+                      <p class="mb-0">The price is something not necessarily defined as financial.</p>
+                    </div>
+                    <div class="listing-rating d-flex justify-content-between">
+                      <div class="d-flex">
+                        <div class="date me-3">
+                          <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                        </div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span class="text-decoration-line-through"></span>$700
+                      </div>
+                    </div>
+                   
+                    <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="listing-item">
+                  <div class="listing-image bg-overlay-half-bottom">
+                    <img class="img-fluid" src="images/listing/06.jpg" alt="#">
+                    <div class="listing-favourite">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="listing-details">
+                    <div class="listing-title d-flex justify-content-between">
+                      <h5 class="mb-0">
+                        <span class="country-flags">
+                          <img class="img-fluid shadow-sm" src="images/country-flags/06.jpg" alt="#">
+                        </span>
+                        <a href="tour-detail.html" class="title mb-0">India</a>
+                      </h5>
+                      
+                    </div>
+                    <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i> Red pagoda and cherry blossoms </a>
+                     <div class="listing-info">
+                      <img class="img-fluid" src="images/listing-brand/02.png" alt="">
+                      <p class="mb-0">Quis ipsum suspendisse ultrices gravida risus com modo</p>
+                    </div>
+                    <div class="listing-rating d-flex justify-content-between">
+                      <div class="d-flex">
+                        <div class="date me-3">
+                          <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                        </div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                        </div>
+                      </div>
+                      <div class="price">
+                        <span class="text-decoration-line-through"></span>$850
+                      </div>
+                    </div>
+                   
+                    <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <div class="widget">
+                <div class="widget-title">
+                  <h5 class="title fw-600">Find Your Destination</h5>
+                </div>
+                <div class="widget-content">
+                  <div class="mb-3 select-border">
+                    <select class="form-control basic-select" aria-label="Default select example">
+                      <option selected>Destination</option>
+                      <option value="3">Italy</option>
+                      <option value="4">Germany</option>
+                      <option value="2">France</option>
+                      <option value="4">India</option>
+                      <option value="5">Bresil</option>
+                      <option value="6">Australia</option>
+                    </select>
+                  </div>
+                  <div class="mb-3 form-location form-datepicker datetimepickers">
+                    <div class="input-group date" id="datetimepicker-01" data-target-input="nearest">
+                      <input type="text" class="form-control datetimepicker-input border-end-0" placeholder="Depart Date" data-target="#datetimepicker-01">
+                      <div class="input-group-append" data-target="#datetimepicker-01" data-toggle="datetimepicker">
+                        <div class="input-group-text h-100 bg-white"><i class="far fa-calendar-alt"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-0 select-border">
+                    <select class="form-control basic-select" aria-label="Default select example">
+                      <option selected>Travel Type</option>
+                      <option value="3">Adventure Travel</option>
+                      <option value="4">Luxury Travel</option>
+                      <option value="2">Family Travel</option>
+                      <option value="4">Solo Travel</option>
+                      <option value="5">Family Travel</option>
+                      <option value="6">Travel With Friends</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="widget">
+                <div class="widget-title">
+                  <h5 class="title fw-600">Filter by price</h5>
+                </div>
+                <div class="widget-content">
+                  <div class="mb-3">
+                    <div class="collapse show" id="price">
+                      <div class="property-price-slider">
+                        <input type="text" id="property-price-slider" name="example_name" value="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price-filter d-flex">
+                    <div class="price_label">
+                      Price: <span class="from">$10 — $382</span>
+                    </div>
+                    <a class="ms-auto" href="#"><i class="fas fa-filter"></i>Filter</a>
+                  </div>
+                  <div class="chek-box mt-4">
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Coupons
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked02" checked>
+                      <label class="form-check-label" for="flexCheckChecked02">
+                        Bike Parking
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked03">
+                      <label class="form-check-label" for="flexCheckChecked03">
+                        Accepts Credit Cards
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked04">
+                      <label class="form-check-label" for="flexCheckChecked04">
+                        Street Parking
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked05">
+                      <label class="form-check-label" for="flexCheckChecked05">
+                        Cable TV
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked06">
+                      <label class="form-check-label" for="flexCheckChecked06">
+                        Wireless Internet
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked07">
+                      <label class="form-check-label" for="flexCheckChecked07">
+                        Kitchen
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="widget">
+                <div class="widget-title">
+                  <h5 class="title fw-600">Tags</h5>
+                </div>
+                <div class="widget-content">
+                  <div class="popular-tag">
+                    <ul class="list-unstyled mb-0">
+                      <li><a href="#"> Blog</a></li>
+                      <li><a href="#"> Adventure</a></li>
+                      <li><a href="#"> WordPress</a></li>
+                      <li><a href="#"> Blogger</a></li>
+                      <li><a href="#"> Food</a></li>
+                      <li><a href="#"> Tourism</a></li>
+                      <li><a href="#"> Fashion</a></li>
+                      <li><a href="#"> Travel</a></li>
+                      <li><a href="#"> Magazine</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Tour Search -->
+
+    <!--=================================
+    action box -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-auto">
+            <div class="section-title mb-4 mb-lg-0">
+              <h2 class="title mb-2">Your travel journey starts here</h2>
+              <div class="description mb-0">
+                <p class="mb-0">Join us! Our members can access savings of up to 30% and earn Trip Coins while booking.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <a href="sign-in.html" class="btn btn-primary">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    action box -->
+    <!--=================================
+    footer-->
+    <footer class="footer footer-style-01">
+      <div class="min-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <a class="footer-logo" href="index.html">
+                <img class="img-fluid" src="images/logo-white.png" alt="logo">
+              </a>
+              <p class="mt-4 mb-0">Give yourself the power of responsibility. Remind yourself the only thing stopping you is yourself.</p>
+              <div class="social-icon mt-4 mt-lg-5">
+                <ul>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 col-6 mt-4 mt-md-0">
+              <h6 class="footer-title fw-600">Services</h6>
+              <div class="footer-menu dark-text">
+                <ul>
+                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a href="team.html">Team</a></li>
+                  <li><a href="tour-search.html">Tours</a></li>
+                  <li><a href="destination.html">Destinations</a></li>
+                  <li><a href="shop.html">Shop</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6 mt-4 mt-md-5 mt-lg-0">
+              <div class="footer-link">
+                <h6 class="footer-title fw-600">Travel Gallery</h6>
+                <ul class="list-unstyled footer-gallery">
+                  <li>
+                    <a href="#">
+                      <img class="img-fluid" src="images/portfolio/small/01.jpg" alt="logo">
+                    </a>
+                  </li>
+                   <li>
+                    <a href="#">
+                      <img class="img-fluid" src="images/portfolio/small/02.jpg" alt="logo">
+                    </a>
+                  </li>
+                   <li>
+                    <a href="#">
+                      <img class="img-fluid" src="images/portfolio/small/03.jpg" alt="logo">
+                    </a>
+                  </li>
+                   <li>
+                    <a href="#">
+                      <img class="img-fluid" src="images/portfolio/small/04.jpg" alt="logo">
+                    </a>
+                  </li>
+                   <li>
+                    <a href="#">
+                      <img class="img-fluid" src="images/portfolio/small/05.jpg" alt="logo">
+                    </a>
+                  </li>
+                   <li>
+                    <a href="#">
+                      <img class="img-fluid" src="images/portfolio/small/06.jpg" alt="logo">
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-4 mt-md-5 mt-lg-0 position-relative">
+              <div class="footer-link">
+                <h6 class="footer-title fw-600">Contact Travel</h6>
+                <div class="footer-contact-info">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fa-solid fa-location-dot"></i><span class="address">17504 Carlton Cuevas Rd, Gulfport, MS, 39503</span></li>
+                    <li><i class="fa-solid fa-phone"></i><span class="phone">+126-632-2345</span></li>
+                    <li><i class="fa-solid fa-envelope"></i><span class="email">letstalk@xtrip.com</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center copyright">
+            <div class="col-12 col-md-6 text-center text-md-start mt-2 mt-md-0">
+              <p class="mb-0"> &copy; Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> by <a href="Http://www.bootstrapmb.com">bootstrapMB</a> All Rights Reserved</p>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+              <div class="copyright-menu footer-menu">
+                <ul class="mb-0 justify-content-center justify-content-md-end">
+                  <li><a href="terms-and-conditions.html">Term & Conditions</a></li>
+                  <li><a href="privacy-policy.html">Privacy Policy </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--=================================
+    footer-->
+    <!--=================================
+    Back To Top-->
+    <div id="back-to-top" class="back-to-top">
+      <a href="#"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <!--=================================
+    Back To Top-->
+    <!--=================================
+    Javascript -->
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="js/datetimepicker/moment.min.js"></script>
+    <script src="js/datetimepicker/datetimepicker.min.js"></script>
+    <script src="js/select2/select2.full.js"></script>
+    <script src="js/range-slider/ion.rangeSlider.min.js"></script>
+    <!-- Template Scripts (Do not remove)-->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

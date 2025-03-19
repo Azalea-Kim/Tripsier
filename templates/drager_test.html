@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style type="text/css">
+#div1 {width:100px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+#div2 {width:100px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+#div3 {width:100px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+
+#div4 {width:100px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+#div5 {width:100px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+#div6 {width:100px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+
+</style>
+<script>
+
+var drag_name
+var data_id
+
+function allowDrop(ev)
+{
+    ev.preventDefault();
+}
+
+function drag(ev)
+{
+    ev.dataTransfer.setData("Text",ev.target.id);
+
+    var element = ev.target
+    drag_name = element.src
+}
+
+function update_plan()
+{
+
+
+}
+
+function drop(ev)
+{
+    ev.preventDefault();
+    console.log(ev.target)
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+    data_id = ev.target.id
+}
+</script>
+</head>
+<body>
+
+<p>拖动 城市图片 到矩形框中:</p>
+<p>您的行程为: </p>
+<div>
+  <p>第一天</p>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <p>第二天</p>
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <p>第三天</p>
+  <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+</div>
+
+<div>
+  <p>第四天</p>
+  <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <p>第五天</p>
+  <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <p>第六天</p>
+  <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+</div>
+
+<img decoding="async" loading="lazy" id="drag1" src="../static/imgs/pek.png" draggable="true" ondragstart="drag(event)" width="100" height="70">
+<img decoding="async" loading="lazy" id="drag2" src="../static/imgs/snh.png" draggable="true" ondragstart="drag(event)" width="100" height="70">
+
+</body>
+</html>

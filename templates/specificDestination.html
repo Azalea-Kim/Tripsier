@@ -1,0 +1,217 @@
+{% extends "baseHTML.html" %}
+{% block body %}
+
+    <!--=================================
+    Header -->
+
+    <!--=================================
+    Search ( I dont know what is this use for) -->
+    <div id="search">
+      <button type="button" class="close">×</button>
+      <form>
+        <input type="search" value="" placeholder="type keyword(s) here">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+    <!--=================================
+    Search -->
+    <!--=================================
+    banner -->
+    <section class="banner banner-1 bg-holder position-relative" style="background-image: url(data:;base64,{{ destination.avatar }});">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h5 class="text-yellow">TIME FOR AN ADVENTURE</h5>
+            <h1 class="text-white">Welcome to {% if language == 'ENG' %}
+
+                            {{ destination.name }}{% endif %} {% if language == 'CHI' %} {{ destination.name_cn }} {% endif %}</h1>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!--=================================
+    banner -->
+
+
+
+
+    <!--=================================
+    Perfect Tour (Attractions) -->
+    <section class="space-ptb perfect-tour bg-holder" style="background-image: url(/static/images/bg/map-bg.png);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="section-title text-center">
+              <h2 class="title mb-0">Find Your Preferred Attractions</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+            {% for attraction in attractions %}
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
+            <div class="destination-price-item">
+              <div class="destination-img">
+                <img class="img-fluid img-restricted" src="data:;base64,{{ attraction.avatar }}" alt="#">
+                 <div class="destination-info">
+                    <h6 class="mb-0"><a class="destination-title" href="/detail/attraction/{{ attraction.id }}">{% if language == 'ENG' %}
+
+                            {{ attraction.name }}{% endif %} {% if language == 'CHI' %} {{ attraction.name_cn }} {% endif %}</a></h6>
+                    <a class="destination-price">{{ attraction.price }}</a>
+                    <div class="loaction">
+                      <a href="#"> <i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ attraction.location }}{% endif %} {% if language == 'CHI' %} {{ attraction.location_cn }} {% endif %}</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Perfect Tour -->
+
+    <!--=================================
+    Accommodation -->
+    <section class="space-ptb perfect-tour bg-holder nav-arrow-top" style="background-image: url(.//static/images/bg/07.png);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <div class="section-title text-center mb-5">
+              <h2 class="title">Choose Your Perfect Accommodation</h2>
+              <p class="mb-0">Figure out what you want, put a plan together to achieve it, understand the cost, believe in yourself then go and get it!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 position-relative">
+            <div class="slider">
+              <div class="owl-carousel owl-nav-bottom-center" data-nav-dots="false" data-nav-arrow="true" data-items="5" data-xl-items="4" data-lg-items="3" data-md-items="3" data-sm-items="2" data-xs-items="1"  data-space="30" data-autoheight="true">
+
+                  {%  for accommodation in accommodations %}
+                <div class="item">
+                  <div class="listing-item">
+                    <div class="listing-image bg-overlay-half-bottom">
+                      <img class="img-fluid img-hotel-restricted" src="data:;base64,{{ accommodation.avatar }}" alt="#">
+                      <div class="listing-favourite">
+                        <i class="fa-regular fa-heart"></i>
+                      </div>
+                    </div>
+                    <div class="listing-details">
+                      <div class="listing-title">
+                        <h5 class="mb-0">
+                          <span class="country-flags">
+                            <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ accommodation.destination.country }}.jpg" alt="#">
+                          </span>
+                          <a href="/detail/accommodation/{{ accommodation.id }}" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ accommodation.name }}{% endif %} {% if language == 'CHI' %} {{ accommodation.name_cn }} {% endif %}</a>
+                        </h5>
+                      </div>
+                      <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ accommodation.location }}{% endif %} {% if language == 'CHI' %} {{ accommodation.location_cn }} {% endif %}</a>
+                      <div class="listing-info">
+                        <img class="img-fluid" src="/static/images/listing-brand/01.png" alt="">
+                        <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ accommodation.info }}{% endif %} {% if language == 'CHI' %} {{ accommodation.info_cn }} {% endif %}</p>
+                      </div>
+                      <div class="listing-rating d-flex justify-content-between">
+                        <div class="d-flex">
+                          <div class="date me-3">
+                            <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                          </div>
+                          <div class="rating">
+                            <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.0 / 5</span>
+                          </div>
+                        </div>
+                        <div class="price">
+                          <span class="text-decoration-line-through">$899</span>$700
+                        </div>
+                      </div>
+                      <a href="/detail/accommodation/{{ accommodation.id }}" class="btn btn-sm btn-primary">See Details</a>
+                    </div>
+                  </div>
+                </div>
+                  {% endfor %}
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Accommodation -->
+
+
+
+    <!--=================================
+    sign in box -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-auto">
+            <div class="section-title mb-4 mb-lg-0">
+              <h2 class="title mb-2">Your travel journey starts here</h2>
+              <div class="description mb-0">
+                <p class="mb-0">Join us! Our members can access savings of up to 30% and earn Trip Coins while booking.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <a href="sign-in.html" class="btn btn-primary">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    action box -->
+
+{% endblock %}
+
+{% block js %}
+    <script src="/static/js/rangeSliderCustomize.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#btn_addToChart").hover(
+          function() {
+            $("#icon_addToChart").addClass("fa-beat");
+          },
+          function() {
+            $("#icon_addToChart").removeClass("fa-beat");
+          }
+        );
+      });
+
+    </script>
+
+    <script>
+    $('.img-restricted').removeAttr('width').removeAttr('height').css({
+      'height': function () {
+          return $(this).width() * 0.85;
+      },
+      'width': '100%'
+    });
+    </script>
+
+    <script>
+      $(window).on('load', function () { // This function is executed after the window is fully loaded
+          setTimeout(function (){
+              $('.img-hotel-restricted').removeAttr('width').removeAttr('height').css({
+            'height': function () {
+                return $(this).width() * 0.625;
+            },
+            'width': '100%'
+          });
+          },500)
+      });
+    </script>
+{% endblock %}

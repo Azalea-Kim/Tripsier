@@ -1,0 +1,684 @@
+{% extends "baseHTML.html" %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/customize/search_bar.css">
+{% endblock %}
+
+{% block body %}
+    <!--=================================
+    Header -->
+      <!--=================================
+      Header -->
+    <!--=================================
+    Search -->
+    <div id="search">
+      <button type="button" class="close">×</button>
+      <form>
+        <input type="search" value="" placeholder="type keyword(s) here">
+        <button type="submit" class="btn btn-primary">{{ _("Search") }}</button>
+      </form>
+    </div>
+    <!--=================================
+    Search -->
+
+    <!--=================================
+    Banner -->
+    <section class="travel-banner bg-secondary overflow-hidden">
+       <div class="container-fluid p-0">
+         <div class="row g-0 justify-content-center">
+          <div class="col-md-12 position-relative">
+              <div class="owl-carousel owl-nav-center arrow-center" data-nav-dots="false" data-nav-arrow="true" data-items="1" data-xl-items="1" data-lg-items="1" data-md-items="1" data-sm-items="1" data-xs-items="1"  data-space="0" data-autoheight="true">
+                <div class="item">
+                 <div class="travel-slider" style="background-image: url(../static/temp_photo_test/city/beijing.jpg); background-size: cover; background-repeat: no-repeat;">
+                  <div class="single-banner-info">
+                    <p>{{ _("Your next tour plan")}}</p>
+                    <h1 class="title">{{ _("Beijing") }}</h1>
+                  </div>
+                 </div>
+                </div>
+                <div class="item">
+                 <div class="travel-slider" style="background-image: url(../static/temp_photo_test/city/shanghai.jpg); background-size: cover; background-repeat: no-repeat;">
+                  <div class="single-banner-info">
+                    <p>{{ _("Your next tour plan")}}</p>
+                    <h1 class="title">{{ _("Shanghai") }}</h1>
+                  </div>
+                 </div>
+                </div>
+                <div class="item">
+                 <div class="travel-slider" style="background-image: url(../static/temp_photo_test/city/hongkong.png); background-size: cover; background-repeat: no-repeat;">
+                  <div class="single-banner-info">
+                    <p>{{ _("Your next tour plan")}}</p>
+                    <h1 class="title">{{ _("Hong Kong")}}</h1>
+                  </div>
+                 </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Banner -->
+
+    <!--=================================
+    Destination Find -->
+
+    <section class="destination-find-section">
+      <div class="container">
+         <form class="home-search">
+              <div class="row g-0 justify-content-center">
+                <div class="col-sm-12">
+
+
+                    <div class="form-group ">
+                        <div class="input-group">
+                            <input id="input_keyword" type="text" class="form-control" placeholder="{{ _("Input the key words")}}">
+
+                            <div class="">
+                              <button class="btn btn-secondary form-btn-v" onclick="submit_keyword()"> <i class="fas fa-search-location me-2"></i>
+                                  {{ _("Find Now")}} </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+              </div>
+            </form>
+      </div>
+    </section>
+
+    <script>
+      function submit_keyword(){
+      var keyword = $("#input_keyword").val()
+
+        window.location.href = "/search/" + keyword
+      }
+    </script>
+    <!--=================================
+    Destination Find -->
+
+
+    <!--=================================
+    Tour Grid -->
+    <section class="bg-holder travel-section" style="background-image: url(./../static/images/bg/map-bg.png);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title text-center mb-5">
+
+<!--            需要后端传数据 - destination名称  -->
+
+              <h2 class="title mb-0" id="Recommended_Title">{{ _("Recommend Destination")}}</h2>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <nav class="nav-tab">
+              <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-one-tab" data-bs-toggle="tab" onclick="resize_photo();change_title_1('{{ language|string }}')" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">{{ _("Destinations") }}</a>
+                <a class="nav-item nav-link" id="nav-tow-tab" data-bs-toggle="tab" onclick="resize_photo();change_title_2('{{ language|string }}')" href="#nav-tow" role="tab" aria-controls="nav-tow" aria-selected="false">{{ _("Attractions") }}</a>
+                <a class="nav-item nav-link" id="nav-three-tab" data-bs-toggle="tab" onclick="resize_photo();change_title_3('{{ language|string }}')" href="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">{{ _("Accommodations") }}</a>
+              </div>
+            </nav>
+            <div class="tab-content mt-4 mt-lg-5" id="nav-tabContent">
+
+              <!-- Nav - one - destination -->
+              <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
+                <div class="row">
+                    <!-- Destination 1 -->
+                    <!-- col-lg-4: This class specifies that the element should take up 4 out of 12 columns (or 1/3 of the total width) on large screens (width ≥ 992px).
+                        col-md-6: This class specifies that the element should take up 6 out of 12 columns (or 1/2 of the total width) on medium screens (width ≥ 768px and < 992px).
+                        mb-4: This class adds margin-bottom of 1.5rem (or 24px) to the element to create spacing between the elements. -->
+                    {% for destination in rec_list %}
+                  <div class="col-lg-4 col-md-6 mb-4 ">
+                    <div class="listing-item">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid img-flu img-presented" src="data:;base64,{{ destination.avatar }}" alt="#">
+                        <div class="listing-favourite">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="listing-details">
+                        <div class="listing-title d-flex justify-content-between">
+                          <h5 class="mb-0">
+                            <span class="country-flags">
+                              <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ destination.country }}.jpg" alt="#">
+                            </span>
+                            <a href="/detail/destination/{{ destination.id }}" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ destination.name }}{% endif %} {% if language == 'CHI' %} {{ destination.name_cn }} {% endif %}</a>
+                          </h5>
+                        </div>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>
+                            {% if language == 'ENG' %}{{ destination.location }}{% endif %}
+                            {% if language == 'CHI' %} {{ destination.location_cn }} {% endif %}</a>
+
+                        <div class="listing-info">
+                          <p class="mb-0 p-info">
+                              {% if language == 'ENG' %}{{ destination.info }}{% endif %}
+                              {% if language == 'CHI' %} {{ destination.info_cn }} {% endif %}
+                          </p>
+                        </div>
+                        <div class="listing-rating d-flex justify-content-between">
+                          <div class="d-flex">
+                            <div class="date me-3">
+                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>
+                            </div>
+                            <div class="rating">
+                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                            </div>
+                          </div>
+                          <div class="price">
+                            <span class="text-decoration-line-through"></span>
+                          </div>
+                        </div>
+
+                        <a href="/detail/destination/{{ destination.id }}" class="btn btn-sm btn-primary">{{ _("See Details")}}</a>
+                      </div>
+                    </div>
+                  </div>
+                    {% endfor %}
+
+                </div>
+              </div>
+
+              <!-- Nav - tow - attraction -->
+              <div class="tab-pane fade" id="nav-tow" role="tabpanel" aria-labelledby="nav-tow-tab">
+                <div class="row">
+                    {% for destination in rec_list_attraction %}
+                  <div class="col-lg-4 col-md-6 mb-4 ">
+                    <div class="listing-item">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid img-flu img-presented" src="data:;base64,{{ destination.avatar }}" alt="#">
+                        <div class="listing-favourite">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="listing-details">
+                        <div class="listing-title d-flex justify-content-between">
+                          <h5 class="mb-0">
+                            <span class="country-flags">
+                              <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ destination.destination.country }}.jpg" alt="#">
+                            </span>
+                            <a href="/detail/attraction/{{ destination.id }}" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ destination.name }}{% endif %} {% if language == 'CHI' %} {{ destination.name_cn }} {% endif %}</a>
+                          </h5>
+                        </div>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ destination.location }}{% endif %} {% if language == 'CHI' %} {{ destination.location_cn }} {% endif %}</a>
+                        <div class="listing-info">
+                          <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ destination.info }}{% endif %} {% if language == 'CHI' %} {{ destination.info_cn }} {% endif %}</p>
+                        </div>
+                        <div class="listing-rating d-flex justify-content-between">
+                          <div class="d-flex">
+                            <div class="date me-3">
+                              <i class="fa-regular fa-calendar-days me-2"></i><span> {{ _("Day") }} </span>
+                            </div>
+                            <div class="rating">
+                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                            </div>
+                          </div>
+                          <div class="price">
+                            <span class="text-decoration-line-through"></span>
+                          </div>
+                        </div>
+
+                        <a href="/detail/attraction/{{ destination.id }}" class="btn btn-sm btn-primary">{{ _("See Details")}}</a>
+                      </div>
+                    </div>
+                  </div>
+                    {% endfor %}
+                </div>
+              </div>
+
+              <!-- Nav - three - accommodation -->
+              <div class="tab-pane fade" id="nav-three" role="tabpanel" aria-labelledby="nav-three-tab">
+                <div class="row">
+                    {% for accommodation in rec_list_accommodation %}
+                  <div class="col-lg-4 col-md-6 mb-4 ">
+                    <div class="listing-item">
+                      <div class="listing-image bg-overlay-half-bottom">
+                        <img class="img-fluid img-flu img-presented" src="data:;base64,{{ accommodation.avatar }}" alt="#">
+                        <div class="listing-favourite">
+                          <i class="fa-regular fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="listing-details">
+                        <div class="listing-title d-flex justify-content-between">
+                          <h5 class="mb-0">
+                            <span class="country-flags">
+                              <img class="img-fluid shadow-sm" src="/static/images/country-flags/{{ accommodation.destination.country }}.jpg" alt="#">
+                            </span>
+                            <a href="tour-detail.html" class="title mb-0">{% if language == 'ENG' %}
+
+                            {{ accommodation.name }}{% endif %} {% if language == 'CHI' %} {{ accommodation.name_cn }} {% endif %}</a>
+                          </h5>
+                        </div>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
+
+                            {{ accommodation.location }}{% endif %} {% if language == 'CHI' %} {{ accommodation.location_cn }} {% endif %}</a>
+                        <div class="listing-info">
+                          <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ accommodation.info }}{% endif %} {% if language == 'CHI' %} {{ accommodation.info_cn }} {% endif %}</p>
+                        </div>
+                        <div class="listing-rating d-flex justify-content-between">
+                          <div class="d-flex">
+                            <div class="date me-3">
+                              <i class="fa-regular fa-calendar-days me-2"></i><span> {{ _("Day") }} </span>
+                            </div>
+                            <div class="rating">
+                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>
+                            </div>
+                          </div>
+                          <div class="price">
+                            <span class="text-decoration-line-through"></span>
+                          </div>
+                        </div>
+
+                        <a href="/detail/accommodation/{{ accommodation.id }}" class="btn btn-sm btn-primary">{{ _("See Details")}}</a>
+                      </div>
+                    </div>
+                  </div>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Tour Grid -->
+
+    <!--=================================
+    Video -->
+    <section class="space-ptb bg-holder video-section bg-overlay-dark-6" style="background-image: url(./../static/temp_photo_test/team/team.jpg);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10 col-xl-8 ">
+            <div class="video-box">
+              <a href="https://www.youtube.com/watch?v=n_Cn8eFo7u8" class="play-btn popup-youtube"><i class="fa-solid fa-play"></i></a>
+            </div>
+            <div class="video-section-conten">
+              <p>{{ _("ENJOY A SUPERIOR TRAVEL EXPERIENCE")}}</p>
+              <h2>{{_("About our excellent team members")}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Video -->
+
+    <!--=================================
+    counter-->
+    <section class="counter-section">
+      <div class="container">
+        <div class="row counter-box">
+          <div class="col-sm-6 col-lg-3">
+            <div class="counter mb-4 mb-lg-0">
+              <div class="counter-number">
+                <div class="counter-text"><h2 class="timer mb-0" data-to="3" data-speed="2000">0</h2><span>Y</span></div>
+                <p class="mb-0">{{ _("Developing Experience")}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="counter mb-4 mb-lg-0">
+              <div class="counter-number">
+                <div class="counter-text"><h2 class="timer mb-0" data-to="8" data-speed="2000">08</h2><span>H</span></div>
+                <p class="mb-0">{{ _("Destionation Collaboration")}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="counter mb-4 mb-md-0">
+              <div class="counter-number">
+                <div class="counter-text"><h2 class="timer mb-0" data-to="20" data-speed="2000">0</h2><span>+</span></div>
+                <p class="mb-0">{{ _("Cities") }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="counter last-counter mb-0">
+              <div class="counter-number">
+                <div class="counter-text"><h2 class="timer mb-0" data-to="20" data-speed="2000">0</h2><span>Y</span></div>
+                <p class="mb-0">{{ _("Average Age")}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    counter-->
+
+    <!--=================================
+    Team -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="section-title text-center">
+              <h2 class="title">{{ _("Team Members")}}</h2>
+              <div class="description">
+                <p>{{ _("This is the introduction for our teammates.")}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="owl-carousel owl-dots-bottom-center" data-nav-dots="true" data-nav-arrow="false" data-items="5" data-lg-items="4" data-md-items="3" data-sm-items="2"  data-space="24" data-autoheight="false">
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/lulu.png" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">{{ _("Frontend & Design")}}</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">{{ _("Wang Jialu")}}</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/dtr.jpg" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">{{ _("Frontend") }}</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">{{ _("Ding Tairan")}}</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/lym.png" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">{{ _("Backend & Management")}}</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">{{ _("Lou Yiming")}}</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/smoker.png" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">{{ _("Frontend & Editing")}}</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">{{ _("Yan Mingwei")}}</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/jinyanxiu.png" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">{{ _("Documentation") }}</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">{{ _("Jin Yanxiu")}}</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/jinyanxiu.png" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">Documentation</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">Jin Yanxiu</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="team">
+                  <div class="team-image  position-relative d-flex justify-content-center">
+                    <img class="img-fluid rounded" src="../static/temp_photo_test/member/liyiming.png" alt="">
+                    <div class="team-social">
+                      <ul class="list-unstyled d-flex mb-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-detail text-center">
+                      <span class="team-label">{{ _("Backend") }}</span>
+                      <h4 class="team-title mb-0"><a href="team-detail.html">{{ _("Li Yiming")}}</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Team -->
+
+
+    <!--=================================
+    Testimonial Style 02 (comment section) -->
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="row testimonial-box">
+          <div class="col-md-12">
+            <div class="owl-carousel owl-nav-bottom-center" data-nav-dots="false" data-nav-arrow="true" data-items="1" data-lg-items="1" data-md-items="1" data-sm-items="1"  data-space="24" data-autoheight="false">
+              <div class="item">
+                <div class="testimonial testimonial-style-2">
+                  <div class="testimonial-star-icon">
+                    <ul>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                    </ul>
+                  </div>
+                  <div class="testimonial-quote-icon">
+                    <img class="img-fluid" src="../static/images/testimonial/quote-light.svg" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="mb-0"><i>I love this website cuz it provides me unique drag-drop planning page and 3D earth which is really cool!</i> </p>
+                  </div>
+                  <div class="testimonial-author d-flex align-items-center">
+                    <div class="testimonial-avatar avatar">
+                      <img class="img-fluid rounded-circle" src="../static/images/avatar/01.jpg" alt="">
+                    </div>
+                    <div class="testimonial-name d-flex align-items-center">
+                      <h6 class="author-tittle">Mark Louis</h6>
+                      <span>Services</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial testimonial-style-2">
+                  <div class="testimonial-star-icon">
+                    <ul>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                    </ul>
+                  </div>
+                  <div class="testimonial-quote-icon">
+                    <img class="img-fluid" src="../static/images/testimonial/quote-light.svg" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="mb-0"><i>I would gladly pay over 600 dollars for Potenza. Since I invested in Potenza I made over 100,000 dollars profits. Your company is truly upstanding and is behind its product 100%.</i> </p>
+                  </div>
+                  <div class="testimonial-author d-flex align-items-center">
+                    <div class="testimonial-avatar avatar">
+                      <img class="img-fluid rounded-circle" src="../static/images/avatar/02.jpg" alt="">
+                    </div>
+                    <div class="testimonial-name d-flex align-items-center">
+                      <h6 class="author-tittle">Harry Russell</h6>
+                      <span>Advisors</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial testimonial-style-2">
+                  <div class="testimonial-star-icon">
+                    <ul>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                    </ul>
+                  </div>
+                  <div class="testimonial-quote-icon">
+                    <img class="img-fluid" src="../static/images/testimonial/quote-light.svg" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="mb-0"><i>I love your system. Nice work on your Potenza. Great job, I will definitely be ordering again! I would like to personally thank you for your outstanding product.</i> </p>
+                  </div>
+                  <div class="testimonial-author d-flex align-items-center">
+                    <div class="testimonial-avatar avatar">
+                      <img class="img-fluid rounded-circle" src="../static/images/avatar/03.jpg" alt="">
+                    </div>
+                    <div class="testimonial-name d-flex align-items-center">
+                      <h6 class="author-tittle">Paul Flavius</h6>
+                      <span>Finance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial testimonial-style-2">
+                  <div class="testimonial-star-icon">
+                    <ul>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                    </ul>
+                  </div>
+                  <div class="testimonial-quote-icon">
+                    <img class="img-fluid" src="../static/images/testimonial/quote-light.svg" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="mb-0"><i>The very best. Thanks guys, keep up the good work! Nice work on your Potenza. I wish I would have thought of it first.</i> </p>
+                  </div>
+                  <div class="testimonial-author d-flex align-items-center">
+                    <div class="testimonial-avatar avatar">
+                      <img class="img-fluid rounded-circle" src="../static/images/avatar/04.jpg" alt="">
+                    </div>
+                    <div class="testimonial-name d-flex align-items-center">
+                      <h6 class="author-tittle">Melanie Byrd</h6>
+                      <span>Consulting</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Testimonial Style 02 -->
+
+{% endblock %}
+
+{% block js %}
+
+    <script>
+      $(function () { // This function is executed after the window is fully loaded
+          setTimeout(function () {
+              $('.img-presented').removeAttr('width').removeAttr('height').css({
+                  'height': function () {
+                      return $(this).width() * 0.625;
+                  },
+                  'width': '100%'
+              });
+          }, 200)
+      });
+</script>
+
+    <script>
+    function resize_photo() { // This function is executed after the window is fully loaded
+          setTimeout(function () {
+              $('.img-presented').removeAttr('width').removeAttr('height').css({
+                  'height': function () {
+                      return $(this).width() * 0.625;
+                  },
+                  'width': '100%'
+              });
+          }, 200)
+      }
+    </script>
+
+{% endblock %}

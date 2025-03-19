@@ -1,0 +1,153 @@
+﻿{% extends "baseHTML_Admin.html" %}
+
+{% block css %}
+         <link href="/static/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="/static/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="/static/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="/static/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link href="/static/css/detail-room/available_rooms.css" rel="stylesheet" type="text/css" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+{% endblock %}
+
+{% block content %}
+    <body>
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                    <!-- Basic Data Table -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Reservation Information Supervision</h4>
+                                    <p class="card-subtitle mb-4">
+                                        You can search for a specific customer with his/her name.
+                                        Reservation made by the customer will be displayed below.
+                                    </p>
+
+                                    <table id="complex-header-datatable" class="table table-striped dt-responsive nowrap">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th rowspan="2" class="align-middle">ID</th>
+                                                <th colspan="4">Information</th>
+                                                <th rowspan="2" class="align-middle">Note</th>
+                                                <th rowspan="2" class="align-middle">PlaceHolder</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Customer</th>
+                                                <th>Destination</th>
+                                                <th>Attraction & Accommodation</th>
+                                                <th>Date</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for attr in reservation_attr %}
+                                            <tr>
+                                                <td>{{attr.id}}</td>
+                                                <td>{{ attr.user.name }}</td>
+                                                <td>{{ attr.attraction.destination.name }}</td>
+                                                <td>{{ attr.attraction.name }}</td>
+                                                <td>{{ attr.date }}</td>
+                                                <td>{{ attr.note }}</td>
+                                                <td></td>
+                                            </tr>
+                                            {% endfor %}
+
+                                            {% for acc in reservation_acc %}
+                                            <tr>
+                                                <td>{{ acc.id }}</td>
+                                                <td>{{ acc.user.name }}</td>
+                                                <td>{{ acc.accommodation.destination.name }}</td>
+                                                <td>{{ acc.accommodation.name }}</td>
+                                                <td>{{ acc.date }}</td>
+                                                <td>{{ acc.note }}</td>
+                                                <td></td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <!-- end row-->
+
+
+
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center text-lg-left">
+                                    2019 © Drezoc
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-right d-none d-lg-block">
+                                    Design & Develop by <a href="http://www.bootstrapMB.com">bootstrapMB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Overlay-->
+        <div class="menu-overlay"></div>
+        {% endblock %}
+        {% block js %}
+
+        <!-- jQuery  -->
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/assets/js/metismenu.min.js"></script>
+        <script src="/static/assets/js/waves.js"></script>
+        <script src="/static/assets/js/jquery.slimscroll.min.js"></script>
+
+         <!-- third party js -->
+        <script src="/static/datatables/jquery.dataTables.min.js"></script>
+        <script src="/static/datatables/dataTables.bootstrap4.js"></script>
+        <script src="/static/datatables/dataTables.responsive.min.js"></script>
+        <script src="/static/datatables/responsive.bootstrap4.min.js"></script>
+        <script src="/static/datatables/dataTables.buttons.min.js"></script>
+        <script src="/static/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="/static/datatables/buttons.html5.min.js"></script>
+        <script src="/static/datatables/buttons.flash.min.js"></script>
+        <script src="/static/datatables/buttons.print.min.js"></script>
+        <script src="/static/datatables/dataTables.keyTable.min.js"></script>
+        <script src="/static/datatables/dataTables.select.min.js"></script>
+        <script src="/static/datatables/pdfmake.min.js"></script>
+        <script src="/static/datatables/vfs_fonts.js"></script>
+        <!-- third party js ends -->
+
+        <!-- Datatables init -->
+        <script src="/static/assets/pages/datatables-demo.js"></script>
+
+
+        <!-- App js -->
+        <script src="/static/assets/js/theme.js"></script>
+        <script src="/static/js/detail-room/available_rooms.js"></script>
+{% endblock %}

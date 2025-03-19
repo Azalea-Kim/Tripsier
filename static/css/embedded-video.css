@@ -1,0 +1,41 @@
+#embedded-video{
+    z-index: 1000;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform:translate(-50%,-50%);
+    height: 500px; width: 1000px;
+    visibility: hidden;
+}
+
+#video-iframe{
+    height: 100%; width: 100%;
+}
+
+.close-video-btn{
+    position: absolute;
+    right: 0;
+    top: -20px;
+    width: 15px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: grey;
+}
+
+.close-video-btn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+#embedded-video svg {
+  width: 17px;
+  margin-top: 3px;
+}
+
+#play-div{
+    position: absolute;
+    left: 10px;
+    bottom: 100px;
+    overflow: hidden;
+    cursor: pointer;
+}

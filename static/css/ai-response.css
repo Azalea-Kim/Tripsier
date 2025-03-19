@@ -1,0 +1,57 @@
+.ai-response-container{
+    position: fixed;
+    bottom: 350px;
+    right: 150px;
+    visibility: hidden;
+}
+
+.ai-response{
+    width: 300px;
+    height: 200px;
+    border: 2px  solid #2cadaf;
+    border-radius: 7px;  /*圆角弧度为7px*/
+    position: relative;
+    padding: 5px;
+    background-color: #ffffff;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.ai-response-container::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border: 20px solid;
+    position: absolute;
+    bottom: -40px;
+    left: 140px;
+    border-color:  #2cadaf transparent transparent;
+}
+
+.ai-response-container::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border: 20px solid;
+    position: absolute;
+    bottom: -37px;
+    left: 140px;
+    border-color:  #fff transparent transparent;
+}
+
+.close-response-btn{
+    position: absolute;
+    right: 0;
+    top: -20px;
+    width: 15px;
+    padding: 0;
+    border: none;
+    background: none;
+    opacity: 1;
+    color: grey;
+}
+
+.close-response-btn:hover{
+    color: black;
+    cursor: pointer;
+}
