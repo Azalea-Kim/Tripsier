@@ -1,6 +1,6 @@
 from flask import *
 from models import *
-from app import db
+from main import db
 from flask_login import login_required
 
 wp_1 = Blueprint("WP1_Blue",__name__)

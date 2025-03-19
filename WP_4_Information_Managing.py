@@ -1,39 +1,16 @@
 from flask import *
 from models import *
-from extension import db
+from main import db
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 
-wp_4 = Blueprint("WP4_Blue",__name__, url_prefix='/')
+wp_4 = Blueprint("WP4_Blue",__name__)
 
 @login_required
 @wp_4.route("/admin",methods = ['GET',"POST"])
 def index_of_admin():
     if current_user.role == 1:
         users = db.session.query(User).limit(10).all()
-
-        visits = db.session.query(Visit).all()
-        total_visit = 0
-        for visit in visits:
-            total_visit += visit.Visits
-
-        total_user = 0
-        users = db.session.query(User).all()
-        for user in users:
-            total_user += 1
-
-        expenses = 0
-        carts_attr = db.session.query(Reservation_Attraction).all()
-        carts_acc = db.session.query(Reservation_Accommodation).all()
-
-        for cart in carts_attr:
-            expenses += int(cart.attraction.price[0:-1])
-        for cart in carts_acc:
-            expenses += int(cart.accommodation.price[0:-1])
-
-        expenses_per_user = expenses/total_user
-
-
-        return render_template("index_admin.html",users = users,total_user = total_user,total_visit = total_visit,expenses = expenses,expenses_per_user = expenses_per_user)
+        return render_template("index_admin.html",users = users)
     return render_template("alert.html")
 
 @login_required
@@ -127,7 +104,7 @@ def show_supervise_page():
 def upload_destination():
     if current_user.role == 1:
         if request.method == 'POST':
-            print(request.form.get("destination_name"))
+            print(request.form)
             destination = Destination()
         return render_template("information/add_destination.html")
     return render_template("alert.html")

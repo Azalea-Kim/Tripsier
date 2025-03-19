@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash
 import random
 
 from Baidu_trans import Translator
-from app import db
+from main import db
 from models import *
 
 from tools import img_to_blob

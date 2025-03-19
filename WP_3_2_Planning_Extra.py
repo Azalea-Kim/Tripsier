@@ -1,13 +1,27 @@
 from flask import *
 from models import *
-from app import db,current_user
-from flask_login import login_required
+from main import db,current_user
 
 wp_3_Extra = Blueprint("WP3_E_Blue",__name__)
 
+def get_user_current_destination_set_base_page():
+    """
+    返回有任何用户预定记录的城市，以便在主页进行展示
+    :return: set of destinations
+    """
+    destination_set = set()
+    current_id = current_user.id
+    cart_attractions = db.session.query(Cart_Attraction).filter(Cart_Attraction.user_id == current_id)
+    cart_accommodations = db.session.query(Cart_Accommodation).filter(Cart_Accommodation.user_id == current_id)
 
+    for cart in cart_attractions:
+        destination_set.add(cart.attraction.destination)
 
-@login_required
+    for cart in cart_accommodations:
+        destination_set.add(cart.destination.destination)
+
+    return destination_set
+
 @wp_3_Extra.route("/addChart/accommodation/<id>")
 def add_accommodation_cart(id):
     """
@@ -20,7 +34,6 @@ def add_accommodation_cart(id):
     db.session.commit()
     return redirect("/detail/accommodation/"+id)
 
-@login_required
 @wp_3_Extra.route("/addChart/attraction/<id>")
 def add_attraction_cart(id):
     """

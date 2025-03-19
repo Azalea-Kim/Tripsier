@@ -137,6 +137,7 @@
                                                         <th>User</th>
                                                         <th>Date</th>
                                                         <th>Note</th>
+                                                        <th>Operation</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -147,6 +148,7 @@
                                                         <td>{{ reserve.user.name }}</td>
                                                         <td>{{ reserve.date }}</td>
                                                         <td>{{ reserve.note }}</td>
+                                                        <td><a href="#"><button type="button" class="btn btn-primary">Details</button></a></td>
                                                     </tr>
                                                 {% endfor %}
                                                 </tbody>

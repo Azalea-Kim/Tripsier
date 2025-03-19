@@ -59,7 +59,7 @@
                                         <thead class="thead-light">
                                             <tr>
 <!--                                                <th rowspan="2" style = "vertical-align: middle; text-align: center;">ID</th>-->
-                                                <th colspan="5" >Information</th>
+                                                <th colspan="4" >Information</th>
                                                 <th colspan="2" >Operations</th>
                                             </tr>
                                             <tr>
@@ -68,7 +68,6 @@
                                                 <th>Destination</th>
                                                 <th>Attraction or Accommodation</th>
                                                 <th>Date</th>
-                                                <th>Priority</th>
 
                                                 <th>Update Information</th>
                                                 <th>Cancel Reservation</th>
@@ -104,7 +103,6 @@
                                                 <td>{{ attr.attraction.destination.name }}</td>
                                                 <td>{{ attr.attraction.name }}</td>
                                                 <td>{{ attr.date }}</td>
-                                                <td>{{ attr.priority }}</td>
                                                 <td> <span onclick="update_reservation({{ attr.id }})" class = "btn btn-sm btn-info update_button">Update Information</span> </td>
                                                 <td> <a onclick="cancel_information()" href="/cancel_notice_attraction/{{ attr.id }}"><span class = "btn btn-sm btn-danger ">Cancel Reservation</span></a></td>
                                                 <td> Space Holder </td>
@@ -126,8 +124,8 @@
                     <div id = "popup_form_container">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Edit Plan for attraction</h4>
-                                <p class="card-subtitle mb-4">This part is for edit any information in the reservation for an attraction</p>
+                                <h4 class="card-title">Form Controls </h4>
+                                <p class="card-subtitle mb-4">Textual form controls—like <code>input</code>s,<code> selects</code>, and<code> textare</code>s—are styled with the .form-control class. Included are styles for general appearance, focus state, sizing, and more. </p>
 
                                 <form id="destination_form">
                                     <div class="form-group row mb-3">
@@ -157,13 +155,6 @@
                                         <label for="date_selected" class="col-3 col-form-label">Date</label>
                                         <div class="col-9">
                                             <input type="date" name="date" class="form-control" id="date_selected">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-3">
-                                        <label for="pri_select" class="col-3 col-form-label">Priority</label>
-                                        <div class="col-9">
-                                            <input type="number" name="pri" class="form-control" id="pri_select">
                                         </div>
                                     </div>
 
@@ -256,7 +247,7 @@
                     console.log("A date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
                     let start_str = start.format('YYYY-MM-DD')
                     let end_str = end.format('YYYY-MM-DD')
-                    location.href = "/admin/edit/attr/"+start_str+"/"+end_str
+                    location.href = "/admin/edit/"+start_str+"/"+end_str
                 });
             });
         </script>

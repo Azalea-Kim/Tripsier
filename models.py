@@ -98,7 +98,6 @@ class Reservation_Attraction(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id',ondelete = "CASCADE"))
     attraction_id = db.Column(db.Integer, db.ForeignKey('Attractions.id',ondelete = "CASCADE"))
-    priority = db.Column(db.Integer, default = 0)
     date = db.Column(db.Date)
     note = db.Column(db.TEXT)
 
@@ -107,7 +106,6 @@ class Reservation_Accommodation(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id',ondelete = "CASCADE"))
     accommodation_id = db.Column(db.Integer, db.ForeignKey('Accommodations.id',ondelete = "CASCADE"))
-    priority = db.Column(db.Integer, default=0)
     date = db.Column(db.Date)
     note = db.Column(db.TEXT)
 
@@ -132,8 +130,6 @@ class Review_Attraction(db.Model):
     rate = db.Column(db.Integer)
     sender_id = db.Column(db.Integer, db.ForeignKey('Users.id',ondelete = "CASCADE"))
     attraction_id = db.Column(db.ForeignKey('Attractions.id',ondelete = "CASCADE"))
-    book_date = db.Column(db.String)
-    order = db.Column(db.Integer, default=5)
 
 class Review_Accommodation(db.Model):
     __tablename__ = 'Review_Accommodation'
@@ -142,8 +138,6 @@ class Review_Accommodation(db.Model):
     rate = db.Column(db.Integer)
     sender_id = db.Column(db.Integer, db.ForeignKey('Users.id', ondelete="CASCADE"))
     accommodation_id = db.Column(db.ForeignKey('Accommodations.id',ondelete = "CASCADE"))
-    book_date = db.Column(db.String)
-    order = db.Column(db.Integer, default=5)
 
 
 class Planning(db.Model):
@@ -179,25 +173,3 @@ class Visit(db.Model):
     Tag = db.Column(db.TEXT)##标签
     Visits = db.Column(db.Integer, default=0)##浏览量
     Recommened_score = db.Column(db.Integer,default=0) ##推荐指数
-
-
-class Reservations(db.Model):
-    __tablename__ = 'Reservations'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('Users.id',ondelete = "CASCADE"))
-    a_id = db.Column(db.Integer, db.ForeignKey('Attractions.id',ondelete = "CASCADE"))
-    type = db.Column(db.Integer) # 1 for att
-    date = db.Column(db.Date)
-    book_date = db.Column(db.String)
-    order = db.Column(db.Integer)
-
-class Plan(db.Model):
-    __tablename__ = 'Plan'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('Users.id',ondelete = "CASCADE"))
-    # start_date = db.Column(db.Integer)
-    # end_date = db.Column(db.Integer)
-    start_date = db.Column(db.Date)
-    end_date = db.Column(db.Date)
-    book_date = db.Column(db.String)
-    # book_date = db.Column(db.Integer)

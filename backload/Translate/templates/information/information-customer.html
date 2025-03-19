@@ -1,0 +1,56 @@
+﻿{% extends "baseHTML_Admin.html" %}
+{% block content %}
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ _("Customers Lists")}}</h4>
+                                        <p class="card-subtitle mb-4">{{ _("This is a customer list shows the information
+                                                about all our customers")}} </p>
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>{{ _("ID") }}</th>
+                                                        <th>{{ _("Username") }}</th>
+                                                        <th>{{ _("Mark") }}</th>
+                                                        <th>{{ _("Email") }}</th>
+                                                        <th>{{ _("Date of register")}}</th>
+                                                        <th>{{ _("Operations") }}</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for user_info in user_list %}
+                                                    <tr>
+                                                        <th scope="row">{{ user_list.index(user_info) }}</th>
+                                                        <td>{{ user_info.id }}</td>
+                                                        <td>{{ user_info.name }}</td>
+                                                        <td>{{ user_info.mark }}</td>
+                                                        <td>{{ user_info.email }}</td>
+                                                        <td>2023/4/11</td>
+                                                        <td><button type="button" class="btn btn-primary">{{ _("Details") }}</button></td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card -->
+
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+{% endblock %}

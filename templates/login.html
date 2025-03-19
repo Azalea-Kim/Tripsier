@@ -9,21 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
 </head>
 <body>
-<div class="container" id="container">
+<div class="container" id="container" >
     <div class="form-container sign-up-container">
-        <form>
-            <div id="registerErr"></div>
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <h3 style="color: #ff050a"> {{ message }}</h3>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
+        <form method="POST" action="{{ url_for('register') }}" method="post">
             <h1>Create Account</h1>
+            {#            <div class="social-container">#}
+            {#                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>#}
+            {#                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>#}
+            {#                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>#}
+            {#            </div>#}
+            {#            <span>or use your email for registration</span>#}
             <input type="text" placeholder="Name" id="username" name="username"/>
             <div class="varify-container">
-                <input type="email" placeholder="Email" name="email" id="registerEmail"/>
+                <input type="email" placeholder="Email" name="email"/>
                 <button class="verify-button" type="button" id="varify" onclick="bindCaptchaBtnClick()">
                     Verify
                 </button>
@@ -31,57 +29,18 @@
             <input type="text" placeholder="Email verification code" name="captcha" id="captcha"/>
             <input type="password" placeholder="Password" name="password" id="password_r"/>
             <input type="password" placeholder="Check Password" name="confirm_password" id="confirm_password_r"/>
-            <div style="display: flex; justify-content: center; align-items: center" id="role">
-                <div style="display: inline-block"><input style="display: inline" type="radio" name="role" value="1">Staff
-                </div>
-                <div style="display: inline-block"><input style="display: inline" type="radio" name="role" value="0">Customer
-                </div>
+            <div style="display: flex; justify-content: center; align-items: center">
+    <div style="display: inline-block"><input style="display: inline" type="radio" name = "role" value="1">Staff</div>
+    <div style="display: inline-block"><input style="display: inline" type="radio" name = "role" value="0">Customer</div>
             </div>
             <br>
             <br>
-            {#            <button class="sign-button" id="signupForm" onclick="registerValidate()">Sign Up#}
-            {#                <div class="arrow-wrapper">#}
-            {#                    <div class="arrow"></div>#}
-            {#                </div>#}
-            {#            </button>#}
-            <button class="sign-button" id="signupForm" onclick="registerValidate()" >Sign Up</button>
-            <script>
-                function registerValidate() {
-                    var username = document.getElementById("username").value;
-                    var email = document.getElementById("registerEmail").value;
-                    var captcha = document.getElementById("captcha").value;
-                    var passowrd = document.getElementById("password_r").value;
-                    var confirm_password = document.getElementById(("confirm_password_r")).value;
-                    var roles = document.getElementsByName("role");
-                    var role = 0;
-                    for (let i = 0; i < roles.length; i++) {
-                        if (roles[i].checked) {
-                            role = roles[i].value;
-                        }
-                    }
-                    $.ajax({
-                        url: "/register",
-                        method: "POST",
-                        data: {
-                            "username": username,
-                            "password": passowrd,
-                            "email": email,
-                            "captcha": captcha,
-                            "check": confirm_password,
-                            "role": role
-                        },
-                        success: function (res) {
-                            console.log(111)
-                            var emsg = res["emsg"];
-                            var eContainer = document.getElementById("registerErr");
-                            if (emsg) {
-                                alert(emsg)
-                            }
+            <button class="sign-button" id="signupForm">Sign Up
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
 
-                        }
-                    })
-                }
-            </script>
         </form>
     </div>
 
@@ -95,12 +54,8 @@
             {% if emsg %}  <!-- 如果有错误信息 则显示 -->
                 <h3 style="color: #ff050a"> {{ emsg }}</h3>
             {% endif %}
-            {% if loginMsg %}  <!-- 如果有错误信息 则显示 -->
-                <h3 style="color: #05ff5d"> {{ loginMsg }}</h3>
-            {% endif %}
 
-
-
+            <a href="#" id="forget-password">Forgot your password?</a>
             <button class="sign-button" type="submit">Sign In
                 <div class="arrow-wrapper">
                     <div class="arrow"></div>

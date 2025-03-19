@@ -1,9 +1,15 @@
 import random
 
-from flask import Blueprint
+from flask import Flask, render_template, request, flash, redirect, url_for,Blueprint
+from flask_sqlalchemy import SQLAlchemy
+import hashlib
 
-from flask_login import current_user
-
+from sqlalchemy import desc
+from werkzeug import security
+import os
+import datetime
+from flask_login import current_user,login_user,UserMixin,LoginManager,login_required,logout_user
+from main import db,current_user
 
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
@@ -34,25 +40,25 @@ def creatVisit():##更新浏览量在用户“看的时候”会更新，此处�
             db.session.commit()
 
 def knnTrain():
-    # Read content of the visit and train the knn.
+    ##读取Visit的tag和浏览量，作为训练内容
     feature_group = []
     score_group = []
     visit_all = db.session.query(Visit).filter(Visit.user_id == current_user.id).all()
     for visit in visit_all:
         f = []
         tags = visit.Tag.split(",")
-        f.append(int(tags[0])*10) # set weight to 10
+        f.append(int(tags[0])*10)##设定第一个的权重为10
         f.append(int(tags[1]))
         f.append(int(tags[2]))
         f.append(int(tags[3]))
-        feature_group.append(f)  #  Feature List
-        score_group.append([visit.Visits])  #  Visit List
-    knn = KNeighborsClassifier(n_neighbors = 5)
+        feature_group.append(f)##特征组
+        score_group.append([visit.Visits])##浏览数组
+    knn = KNeighborsClassifier(n_neighbors = 1)
     knn.fit(feature_group, score_group)
     return knn
 
 def knnPredict(knn,tag):
-    # read the tag and update the recommend index.
+    ##读取Visit的tag，更新推荐指数
     l = []
     tags = tag.split(",")
     l.append(int(tags[0])*10)

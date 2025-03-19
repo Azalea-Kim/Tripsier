@@ -123,44 +123,14 @@
 
  // for the recommended destinations/attractions/accommodations
  // - interactive recommended title
-
- // $("#nav-one-tab").click(function () {
- //        $("#Recommended_Title").text("{{ _(\"Popular Destination\")}}");
- // });
- // $("#nav-tow-tab").click(function () {
- //        $("#Recommended_Title").text("{{ _(\"Popular Attraction\")}}");
- // });
- // $("#nav-three-tab").click(function () {
- //        $("#Recommended_Title").text("{{ _(\"Popular Accommodation\")}}");
- // });
+ $("#nav-one-tab").click(function () {
+        $("#Recommended_Title").text("Popular Destination");
+ });
+ $("#nav-tow-tab").click(function () {
+        $("#Recommended_Title").text("Popular Attractions");
+ });
+ $("#nav-three-tab").click(function () {
+        $("#Recommended_Title").text("Popular Accommodations");
+ });
 
 })(jQuery);
-
-function change_title_1(language){
- console.log(language)
-   if(language == "CHI")
- {
-  $("#Recommended_Title").text("推荐目的地");
- }else{
-  $("#Recommended_Title").text("Recommend Destination");
- }
-}
-
-function change_title_2(language){
- if(language == "CHI")
- {
-  $("#Recommended_Title").text("推荐景点");
- }else{
-  $("#Recommended_Title").text("Recommend Attractions");
- }
-
-}
-
-function change_title_3(language){
-  if(language == "CHI")
- {
-  $("#Recommended_Title").text("推荐住宿");
- }else{
-  $("#Recommended_Title").text("Recommend Accommodations");
- }
-}

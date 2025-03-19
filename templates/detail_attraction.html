@@ -4,13 +4,6 @@
 
     {% block css %}
         <link rel="stylesheet" href="/static/css/embedded-video.css">
-        <style>
-            #return:hover{
-                color: black;
-                cursor: pointer;
-            }
-
-        </style>
     {% endblock %}
     <!--=================================
     Header -->
@@ -51,14 +44,6 @@
           <div class="col-md-12">
             <div class="listing-item listing-item-details">
               <div class="listing-details">
-
-              <a href="/detail/destination/{{ attraction.destination_id }}">
-              <div id="return" style="top: -20px; position: relative;">
-                    <i class="fa-solid fa-arrow-left fa-xl" ></i>
-                    <span style="left: 5px; font-weight: bold">{{ _("Return") }}</span>
-              </div>
-              </a>
-
                 <div class="listing-title d-flex justify-content-between mb-4">
                   <h4 class="mb-0 country-name">
                     <span class="country-flags">
@@ -86,13 +71,11 @@
                             {{ attraction.location }}{% endif %} {% if language == 'CHI' %} {{ attraction.location_cn }} {% endif %}</a>
                     </div>
                   </div>
-                {% if is_logged == True %}
                   <div class="col-lg-5">
                     <div class="d-sm-flex align-items-center ms-auto justify-content-lg-end">
                       <a onclick="alert_add()" href="/add_attraction/{{ attraction.id }}" class="btn btn-primary"><i class="fa-solid fa-circle-check fa-xl me-2"></i>Add To Cart</a>
                     </div>
                   </div>
-                {% endif %}
                 </div>
 
                 
@@ -154,9 +137,15 @@
                       <div class="widget-content">
                         <div class="popular-tag">
                           <ul class="list-unstyled mb-0">
-                              {% for tag in tags %}
-                            <li><a href="#"> {{tag}}</a></li>
-                              {% endfor %}
+                            <li><a href="#"> {{ _("Blog") }}</a></li>
+                            <li><a href="#"> {{ _("Adventure") }}</a></li>
+                            <li><a href="#"> {{ _("WordPress") }}</a></li>
+                            <li><a href="#"> {{ _("Blogger") }}</a></li>
+                            <li><a href="#"> {{ _("Food") }}</a></li>
+                            <li><a href="#"> {{ _("Tourism") }}</a></li>
+                            <li><a href="#"> {{ _("Fashion") }}</a></li>
+                            <li><a href="#"> {{ _("Travel") }}</a></li>
+                            <li><a href="#"> {{ _("Magazine") }}</a></li>
                           </ul>
                         </div>
                       </div>
@@ -185,7 +174,7 @@
                       <div class="row">
                         <div class="col-12">
                           <div class="bg-secondary px-4 py-3 border-radius d-flex align-items-center">
-                            <h6 class="rating text-white mb-0"><span class="bg-success text-white me-2">{{ score }}</span>Ratings</h6>
+                            <h6 class="rating text-white mb-0"><span class="bg-success text-white me-2">5.4</span> 12 Rating</h6>
                             <ul class="ms-auto list-unstyled d-flex mb-0">
                               <li><i class="fas fa-star text-yellow ms-1"></i></li>
                               <li><i class="fas fa-star text-yellow ms-1"></i></li>
@@ -371,6 +360,9 @@
                               </div>
                               <p>{{ review.content }}</p>
                               <div class=" d-flex flex-wrap">
+                                <a class="bg-light text-dark border-radius-sm px-2 py-1 font-sm mb-2 mb-sm-0" href="#"> <i class="fas fa-reply pe-1"></i> Reply Review </a>
+                                <a class="bg-success-soft text-success border-radius-sm px-2 py-1 ms-3 font-sm mb-2 mb-sm-0" href="#"> <i class="far fa-thumbs-up pe-1"></i> 56 Votes</a>
+                                <a class="bg-danger-soft text-danger border-radius-sm px-2 py-1 ms-3 mb-2 mb-sm-0 font-sm" href="#"> <i class="far fa-thumbs-down pe-1"></i> 06</a>
                               </div>
                             </div>
                           </div>

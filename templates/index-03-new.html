@@ -1,8 +1,4 @@
 {% extends "baseHTML.html" %}
-{% block css %}
-    <link rel="stylesheet" href="/static/css/customize/search_bar.css">
-{% endblock %}
-
 {% block body %}
     <!--=================================
     Header -->
@@ -26,6 +22,18 @@
        <div class="container-fluid p-0">
          <div class="row g-0 justify-content-center">
           <div class="col-md-12 position-relative">
+            <div class="d-flex align-items-center justify-content-center justify-content-md-between slider-social" data-swiper-animation="fadeInUp" data-duration="1.0s" data-delay="1.0s">
+              <a href="https://www.youtube.com/watch?v=n_Cn8eFo7u8" class="play-btn popup-youtube"><i class="fa-solid fa-play"></i>Watch Video</a>
+              <div class="slider-social-info">
+                <ul class="list-unstyled share-box-social">
+                  <li> <a href="#">{{ _("Share") }}</a></li>
+                  <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                  <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                  <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                  <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                </ul>
+              </div>
+            </div>
               <div class="owl-carousel owl-nav-center arrow-center" data-nav-dots="false" data-nav-arrow="true" data-items="1" data-xl-items="1" data-lg-items="1" data-md-items="1" data-sm-items="1" data-xs-items="1"  data-space="0" data-autoheight="true">
                 <div class="item">
                  <div class="travel-slider" style="background-image: url(../static/temp_photo_test/city/beijing.jpg); background-size: cover; background-repeat: no-repeat;">
@@ -67,20 +75,14 @@
          <form class="home-search">
               <div class="row g-0 justify-content-center">
                 <div class="col-sm-12">
+                  <div class="destination-find-area">
+                    <input id="input_keyword" placeholder="Input the key words" style="width:100%">
 
-
-                    <div class="form-group ">
-                        <div class="input-group">
-                            <input id="input_keyword" type="text" class="form-control" placeholder="{{ _("Input the key words")}}">
-
-                            <div class="">
-                              <button class="btn btn-secondary form-btn-v" onclick="submit_keyword()"> <i class="fas fa-search-location me-2"></i>
-                                  {{ _("Find Now")}} </button>
-                            </div>
-                        </div>
+                    <div class="form-btn-are">
+                      <button class="btn btn-secondary" onclick="submit_keyword()"> <i class="fas fa-search-location me-2"></i>
+                          {{ _("Find Now")}} </button>
                     </div>
-
-
+                  </div>
                 </div>
               </div>
             </form>
@@ -108,15 +110,15 @@
 
 <!--            需要后端传数据 - destination名称  -->
 
-              <h2 class="title mb-0" id="Recommended_Title">{{ _("Recommend Destination")}}</h2>
+              <h2 class="title mb-0" id="Recommended_Title">{{ _("Popular Destination")}}</h2>
             </div>
           </div>
           <div class="col-lg-12">
             <nav class="nav-tab">
               <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-one-tab" data-bs-toggle="tab" onclick="resize_photo();change_title_1('{{ language|string }}')" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">{{ _("Destinations") }}</a>
-                <a class="nav-item nav-link" id="nav-tow-tab" data-bs-toggle="tab" onclick="resize_photo();change_title_2('{{ language|string }}')" href="#nav-tow" role="tab" aria-controls="nav-tow" aria-selected="false">{{ _("Attractions") }}</a>
-                <a class="nav-item nav-link" id="nav-three-tab" data-bs-toggle="tab" onclick="resize_photo();change_title_3('{{ language|string }}')" href="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">{{ _("Accommodations") }}</a>
+                <a class="nav-item nav-link active" id="nav-one-tab" data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">Destinations</a>
+                <a class="nav-item nav-link" id="nav-tow-tab" data-bs-toggle="tab" href="#nav-tow" role="tab" aria-controls="nav-tow" aria-selected="false">Attractions</a>
+                <a class="nav-item nav-link" id="nav-three-tab" data-bs-toggle="tab" href="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">Accommodations</a>
               </div>
             </nav>
             <div class="tab-content mt-4 mt-lg-5" id="nav-tabContent">
@@ -132,7 +134,7 @@
                   <div class="col-lg-4 col-md-6 mb-4 ">
                     <div class="listing-item">
                       <div class="listing-image bg-overlay-half-bottom">
-                        <img class="img-fluid img-flu img-presented" src="data:;base64,{{ destination.avatar }}" alt="#">
+                        <img class="img-fluid img-flu" src="data:;base64,{{ destination.avatar }}" alt="#">
                         <div class="listing-favourite">
                           <i class="fa-regular fa-heart"></i>
                         </div>
@@ -148,15 +150,13 @@
                             {{ destination.name }}{% endif %} {% if language == 'CHI' %} {{ destination.name_cn }} {% endif %}</a>
                           </h5>
                         </div>
-                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>
-                            {% if language == 'ENG' %}{{ destination.location }}{% endif %}
-                            {% if language == 'CHI' %} {{ destination.location_cn }} {% endif %}</a>
+                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i>{% if language == 'ENG' %}
 
+                            {{ destination.location }}{% endif %} {% if language == 'CHI' %} {{ destination.location_cn }} {% endif %}</a>
                         <div class="listing-info">
-                          <p class="mb-0 p-info">
-                              {% if language == 'ENG' %}{{ destination.info }}{% endif %}
-                              {% if language == 'CHI' %} {{ destination.info_cn }} {% endif %}
-                          </p>
+                          <p class="mb-0">{% if language == 'ENG' %}
+
+                            {{ destination.info }}{% endif %} {% if language == 'CHI' %} {{ destination.info_cn }} {% endif %}</p>
                         </div>
                         <div class="listing-rating d-flex justify-content-between">
                           <div class="d-flex">
@@ -172,11 +172,130 @@
                           </div>
                         </div>
 
-                        <a href="/detail/destination/{{ destination.id }}" class="btn btn-sm btn-primary">{{ _("See Details")}}</a>
+                        <a href="/detail/destination/{{ destination.id }}" class="btn btn-sm btn-primary">See Details</a>
                       </div>
                     </div>
                   </div>
                     {% endfor %}
+
+
+<!--                  <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">-->
+<!--                    <div class="listing-item">-->
+<!--                      <div class="listing-image bg-overlay-half-bottom">-->
+<!--                        <img class="img-fluid" src="../static/images/listing/04.jpg" alt="#">-->
+<!--                        <div class="listing-favourite">-->
+<!--                          <i class="fa-regular fa-heart"></i>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="listing-details">-->
+<!--                        <div class="listing-title d-flex justify-content-between">-->
+<!--                          <h5 class="mb-0">-->
+<!--                            <span class="country-flags">-->
+<!--                              <img class="img-fluid shadow-sm" src="../static/images/country-flags/04.jpg" alt="#">-->
+<!--                            </span>-->
+<!--                            <a href="tour-detail.html" class="title mb-0">Marsella</a>-->
+<!--                          </h5>-->
+
+<!--                        </div>-->
+<!--                        <a href="#" class="listing-loaction"> <i class="fa fa-location-dot"></i>25 Place De L Eglise,Marseille, France</a>-->
+<!--                        <div class="listing-info">-->
+<!--                          <p class="mb-0">We all carry a lot of baggage, thanks to our upbringing.</p>-->
+<!--                        </div>-->
+<!--                        <div class="listing-rating d-flex justify-content-between">-->
+<!--                          <div class="d-flex">-->
+<!--                            <div class="date me-3">-->
+<!--                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="price">-->
+<!--                            <span class="text-decoration-line-through"></span>$970-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                        <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 mb-md-0">-->
+<!--                    <div class="listing-item">-->
+<!--                      <div class="listing-image bg-overlay-half-bottom">-->
+<!--                        <img class="img-fluid" src="../static/images/listing/05.jpg" alt="#">-->
+<!--                        <div class="listing-favourite listing-like">-->
+<!--                          <i class="fa-solid fa-heart"></i>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="listing-details">-->
+<!--                        <div class="listing-title d-flex justify-content-between">-->
+<!--                          <h5 class="mb-0">-->
+<!--                            <span class="country-flags">-->
+<!--                              <img class="img-fluid shadow-sm" src="../static/images/country-flags/05.jpg" alt="#">-->
+<!--                            </span>-->
+<!--                            <a href="tour-detail.html" class="title mb-0">United States</a>-->
+<!--                          </h5>-->
+<!--                        </div>-->
+<!--                        <a href="#" class="listing-loaction"> <i class="fa fa-location-dot"></i>29 Cambridge Drive Atwater,ca, 95301 United States</a>-->
+<!--                        <div class="listing-info">-->
+<!--                          <p class="mb-0">Step out on to the path to your left. Where there is no change.</p>-->
+<!--                        </div>-->
+<!--                        <div class="listing-rating d-flex justify-content-between">-->
+<!--                          <div class="d-flex">-->
+<!--                            <div class="date me-3">-->
+<!--                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="price">-->
+<!--                            <span class="text-decoration-line-through"></span>$700-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                        <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="listing-item">-->
+<!--                      <div class="listing-image bg-overlay-half-bottom">-->
+<!--                        <img class="img-fluid" src="../static/images/listing/06.jpg" alt="#">-->
+<!--                        <div class="listing-favourite">-->
+<!--                          <i class="fa-regular fa-heart"></i>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="listing-details">-->
+<!--                        <div class="listing-title d-flex justify-content-between">-->
+<!--                          <h5 class="mb-0">-->
+<!--                            <span class="country-flags">-->
+<!--                              <img class="img-fluid shadow-sm" src="../static/images/country-flags/06.jpg" alt="#">-->
+<!--                            </span>-->
+<!--                            <a href="tour-detail.html" class="title mb-0">India</a>-->
+<!--                          </h5>-->
+<!--                        </div>-->
+<!--                        <a href="#" class="listing-loaction"><i class="fa fa-location-dot"></i> 44 Kotkar Mandal Estate Off Are Road Goregaon, Mumbai, Mumbai, 400063, India  </a>-->
+<!--                        <div class="listing-info">-->
+<!--                          <p class="mb-0">Briefly imagine that you are not going to live and discover your unfulfilled dreams.</p>-->
+<!--                        </div>-->
+<!--                        <div class="listing-rating d-flex justify-content-between">-->
+<!--                          <div class="d-flex">-->
+<!--                            <div class="date me-3">-->
+<!--                              <i class="fa-regular fa-calendar-days me-2"></i><span> Day </span>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                              <i class="fa-solid fa-star me-1 text-yellow"></i><span>4.3 / 5</span>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="price">-->
+<!--                            <span class="text-decoration-line-through"></span>$850-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                        <a href="tour-detail.html" class="btn btn-sm btn-primary">See Details</a>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
 
                 </div>
               </div>
@@ -188,7 +307,7 @@
                   <div class="col-lg-4 col-md-6 mb-4 ">
                     <div class="listing-item">
                       <div class="listing-image bg-overlay-half-bottom">
-                        <img class="img-fluid img-flu img-presented" src="data:;base64,{{ destination.avatar }}" alt="#">
+                        <img class="img-fluid img-flu" src="data:;base64,{{ destination.avatar }}" alt="#">
                         <div class="listing-favourite">
                           <i class="fa-regular fa-heart"></i>
                         </div>
@@ -241,7 +360,7 @@
                   <div class="col-lg-4 col-md-6 mb-4 ">
                     <div class="listing-item">
                       <div class="listing-image bg-overlay-half-bottom">
-                        <img class="img-fluid img-flu img-presented" src="data:;base64,{{ accommodation.avatar }}" alt="#">
+                        <img class="img-fluid img-flu" src="data:;base64,{{ accommodation.avatar }}" alt="#">
                         <div class="listing-favourite">
                           <i class="fa-regular fa-heart"></i>
                         </div>
@@ -279,7 +398,7 @@
                           </div>
                         </div>
 
-                        <a href="/detail/accommodation/{{ accommodation.id }}" class="btn btn-sm btn-primary">{{ _("See Details")}}</a>
+                        <a href="/detail/accommodation/{{ accommodation.id }}" class="btn btn-sm btn-primary">See Details</a>
                       </div>
                     </div>
                   </div>
@@ -304,8 +423,8 @@
               <a href="https://www.youtube.com/watch?v=n_Cn8eFo7u8" class="play-btn popup-youtube"><i class="fa-solid fa-play"></i></a>
             </div>
             <div class="video-section-conten">
-              <p>{{ _("ENJOY A SUPERIOR TRAVEL EXPERIENCE")}}</p>
-              <h2>{{_("About our excellent team members")}}</h2>
+              <p>ENJOY A SUPERIOR TRAVEL EXPERIENCE</p>
+              <h2>About our excellent team members</h2>
             </div>
           </div>
         </div>
@@ -366,7 +485,8 @@
             <div class="section-title text-center">
               <h2 class="title">{{ _("Team Members")}}</h2>
               <div class="description">
-                <p>{{ _("This is the introduction for our teammates.")}}</p>
+                <p>{{ _("Figure out what you want, put a plan together to achieve it, understand the cost, believe in
+                        yourself then go and get it!")}}</p>
               </div>
             </div>
           </div>
@@ -651,34 +771,345 @@
     <!--=================================
     Testimonial Style 02 -->
 
+    <!--=================================
+    Destination Trips (photos)-->
+{#    <section class="space-pb destination-trips-main">#}
+{#      <div class="container">#}
+{#        <div class="row">#}
+{#          <div class="col-md-7 mb-4">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/43.jpg" alt="#">#}
+{#                <div class="video">#}
+{#                  <a class="popup-youtube"  href="https://www.youtube.com/watch?v=n_Cn8eFo7u8"><i class="fa-solid fa-play"></i></a>#}
+{#                </div>#}
+{#                <div class="trips-content">#}
+{#                  <div class="rating">#}
+{#                    <ul class="list-unstyled d-flex mb-2">#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star-half-stroke"></i></a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                  <h6 class="mb-0"><a class="trips-title" href="tour-detail.html">Sailing</a></h6>#}
+{#                  <a class="trips-price" href="pricing-plan.html">$150</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-md-5 mb-4">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/44.jpg" alt="#">#}
+{#                <div class="destination-trips-content">#}
+{#                  <div class="content">#}
+{#                    <img class="img-fluid" src="../static/images/logo-white.png" alt="">#}
+{#                    <h5 class="text-white my-4 py-2">The Perfect Holiday Tour Plan</h5>#}
+{#                    <a href="tour-grid.html" class="btn btn-link"> View All Tour </a>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-md-6 mb-4">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/45.jpg" alt="#">#}
+{#                <div class="video">#}
+{#                  <a class="popup-youtube"  href="https://www.youtube.com/watch?v=n_Cn8eFo7u8"><i class="fa-solid fa-play"></i></a>#}
+{#                </div>#}
+{#                <div class="trips-content">#}
+{#                  <div class="rating">#}
+{#                    <ul class="list-unstyled d-flex mb-2">#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star-half-stroke"></i></a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                  <h6 class="mb-0"><a class="trips-title" href="tour-detail.html">Camping</a></h6>#}
+{#                  <a class="trips-price" href="pricing-plan.html">$350</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-md-6 mb-4">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/46.jpg" alt="#">#}
+{#                <div class="video">#}
+{#                  <a class="popup-youtube"  href="https://www.youtube.com/watch?v=n_Cn8eFo7u8"><i class="fa-solid fa-play"></i></a>#}
+{#                </div>#}
+{#                <div class="trips-content">#}
+{#                  <div class="rating">#}
+{#                    <ul class="list-unstyled d-flex mb-2">#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                  <h6 class="mb-0"><a class="trips-title" href="tour-detail.html">Road Trip</a></h6>#}
+{#                  <a class="trips-price" href="pricing-plan.html">$550</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-md-4 mb-4 mb-md-0">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/47.jpg" alt="#">#}
+{#                <div class="video">#}
+{#                  <a class="popup-youtube"  href="https://www.youtube.com/watch?v=n_Cn8eFo7u8"><i class="fa-solid fa-play"></i></a>#}
+{#                </div>#}
+{#                <div class="trips-content">#}
+{#                  <div class="rating">#}
+{#                    <ul class="list-unstyled d-flex mb-2">#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star-half-stroke"></i></a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                  <h6 class="mb-0"><a class="trips-title" href="tour-detail.html">Adventure</a></h6>#}
+{#                  <a class="trips-price" href="pricing-plan.html">$750</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-md-4 mb-4 mb-md-0">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/48.jpg" alt="#">#}
+{#                <div class="video">#}
+{#                  <a class="popup-youtube"  href="https://www.youtube.com/watch?v=n_Cn8eFo7u8"><i class="fa-solid fa-play"></i></a>#}
+{#                </div>#}
+{#                <div class="trips-content">#}
+{#                  <div class="rating">#}
+{#                    <ul class="list-unstyled d-flex mb-2">#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star-half-stroke"></i></a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                  <h6 class="mb-0"><a class="trips-title" href="tour-detail.html">Switzerland Snow Bord</a></h6>#}
+{#                  <a class="trips-price" href="pricing-plan.html">$800</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-md-4">#}
+{#            <div class="destination-trips-item trips-style-2">#}
+{#              <div class="trips-img">#}
+{#                <img class="img-fluid" src="../static/images/destination/49.jpg" alt="#">#}
+{#                <div class="video">#}
+{#                  <a class="popup-youtube"  href="https://www.youtube.com/watch?v=n_Cn8eFo7u8"><i class="fa-solid fa-play"></i></a>#}
+{#                </div>#}
+{#                <div class="trips-content">#}
+{#                  <div class="rating">#}
+{#                    <ul class="list-unstyled d-flex mb-2">#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                      <li><a href=""><i class="fa-solid fa-star"></i></a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                  <h6 class="mb-0"><a class="trips-title" href="tour-detail.html">Road Trip</a></h6>#}
+{#                  <a class="trips-price" href="pricing-plan.html">$550</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </section>#}
+    <!--=================================
+    Destination Trips -->
+
+
+    <!--=================================
+    Blog -->
+{#    <section class="blog-section">#}
+{#      <div class="container">#}
+{#        <div class="row">#}
+{#          <div class="col-lg-6">#}
+{#            <div class="section-title mb-5">#}
+{#              <h2 class="title">Latest news and inspirational blog</h2>#}
+{#              <p>Focus is having the unwavering attention to complete what you set out to do. There are a million distractions in every facet of our lives.</p>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#          <div class="col-md-12">#}
+{#            <div class="owl-carousel owl-nav-bottom-center" data-nav-dots="false" data-nav-arrow="true" data-items="3" data-xl-items="3" data-lg-items="3" data-md-items="2" data-sm-items="2" data-xs-items="1"  data-space="24" data-autoheight="true">#}
+{#              <div class="item">#}
+{#                <div class="blog">#}
+{#                  <div class="blog-img">#}
+{#                    <img  class="img-fluid rounded" src="../static/images/blog/01.jpg" alt="">#}
+{#                    <div class="time-card">#}
+{#                      <img class="img-fluid rounded me-2" src="../static/images/svg/on-time01.svg" alt="">#}
+{#                      <span>Feb 1, 2022</span>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="blog-body">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                      <div class="user d-flex align-items-center me-3">#}
+{#                        <span class="me-2">By</span>#}
+{#                        <div class="user-img me-2"><img  class="img-fluid" src="../static/images/avatar/01.jpg" alt=""></div>#}
+{#                        <span>Harry Russell</span>#}
+{#                      </div>#}
+{#                      <div class="comment d-flex align-items-center">#}
+{#                        <i class="fa-regular fa-comment me-2"></i>#}
+{#                        25#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <a href="blog-single.html">Exclusive holidays for the single traveler.</a>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <div class="item">#}
+{#                <div class="blog">#}
+{#                  <div class="blog-img">#}
+{#                    <img class="img-fluid rounded" src="../static/images/blog/02.jpg" alt="">#}
+{#                    <div class="time-card">#}
+{#                      <img class="img-fluid rounded me-2" src="../static/images/svg/on-time01.svg" alt="">#}
+{#                      <span>May 4, 2022</span>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="blog-body">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                      <div class="user d-flex align-items-center me-3">#}
+{#                        <span class="me-2">By</span>#}
+{#                        <div class="user-img me-2"><img  class="img-fluid" src="../static/images/avatar/05.jpg" alt=""></div>#}
+{#                        <span>Maria Fields</span>#}
+{#                      </div>#}
+{#                      <div class="comment d-flex align-items-center">#}
+{#                        <i class="fa-regular fa-comment me-2"></i>#}
+{#                        28#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <a href="blog-single.html">We’re National, the sunshine airline. Watch us shine.</a>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <div class="item">#}
+{#                <div class="blog">#}
+{#                  <div class="blog-img">#}
+{#                    <img  class="img-fluid rounded" src="../static/images/blog/03.jpg" alt="">#}
+{#                    <div class="time-card me-3">#}
+{#                      <img class="img-fluid rounded me-2" src="../static/images/svg/on-time01.svg" alt="">#}
+{#                      <span>Jun 3, 2022</span>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="blog-body">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                      <div class="user d-flex align-items-center me-3">#}
+{#                        <span class="me-2">By</span>#}
+{#                        <div class="user-img me-2"><img  class="img-fluid" src="../static/images/avatar/06.jpg" alt=""></div>#}
+{#                        <span>Ora Bryan</span>#}
+{#                      </div>#}
+{#                      <div class="comment d-flex align-items-center">#}
+{#                        <i class="fa-regular fa-comment me-2"></i>#}
+{#                        57#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <a href="blog-single.html">You are now free to move about the country.</a>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <div class="item">#}
+{#                <div class="blog">#}
+{#                  <div class="blog-img">#}
+{#                    <img  class="img-fluid rounded" src="../static/images/blog/04.jpg" alt="">#}
+{#                    <div class="time-card me-3">#}
+{#                      <img class="img-fluid rounded me-2" src="../static/images/svg/on-time01.svg" alt="">#}
+{#                      <span>Jul 7, 2022</span>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="blog-body">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                      <div class="user d-flex align-items-center me-3">#}
+{#                        <span class="me-2">By</span>#}
+{#                        <div class="user-img me-2"><img  class="img-fluid" src="../static/images/avatar/07.jpg" alt=""></div>#}
+{#                        <span>Ora Bryan</span>#}
+{#                      </div>#}
+{#                      <div class="comment d-flex align-items-center">#}
+{#                        <i class="fa-regular fa-comment me-2"></i>#}
+{#                        57#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <a href="blog-single.html">We get the job done, on time and ata reasonable cost.</a>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <div class="item">#}
+{#                 <div class="blog">#}
+{#                  <div class="blog-img">#}
+{#                    <img  class="img-fluid rounded" src="../static/images/blog/05.jpg" alt="">#}
+{#                    <div class="time-card me-3">#}
+{#                      <img class="img-fluid rounded me-2" src="../static/images/svg/on-time01.svg" alt="">#}
+{#                      <span>Aug 16, 2022</span>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="blog-body">#}
+{#                    <div class="d-flex align-items-center">#}
+{#                      <div class="user d-flex align-items-center me-3">#}
+{#                        <span class="me-2">By</span>#}
+{#                        <div class="user-img me-2"><img  class="img-fluid" src="../static/images/avatar/08.jpg" alt=""></div>#}
+{#                        <span>Ora Bryan</span>#}
+{#                      </div>#}
+{#                      <div class="comment d-flex align-items-center">#}
+{#                        <i class="fa-regular fa-comment me-2"></i>#}
+{#                        57#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <a href="blog-single.html">Showing you the world, one country at a time.</a>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </section>#}
+    <!--=================================
+    Blog -->
 {% endblock %}
 
 {% block js %}
 
-    <script>
-      $(function () { // This function is executed after the window is fully loaded
-          setTimeout(function () {
-              $('.img-presented').removeAttr('width').removeAttr('height').css({
-                  'height': function () {
-                      return $(this).width() * 0.625;
-                  },
-                  'width': '100%'
-              });
-          }, 200)
-      });
-</script>
-
-    <script>
-    function resize_photo() { // This function is executed after the window is fully loaded
-          setTimeout(function () {
-              $('.img-presented').removeAttr('width').removeAttr('height').css({
-                  'height': function () {
-                      return $(this).width() * 0.625;
-                  },
-                  'width': '100%'
-              });
-          }, 200)
-      }
-    </script>
+{#        <script>#}
+{#            $(function(){#}
+{#                $(window).on('load', function () { // This function is executed after the window is fully loaded#}
+{#          setTimeout(function (){#}
+{#              $('.img-flu').removeAttr('width').removeAttr('height').css({#}
+{#            'height': function () {#}
+{#                return $(this).width() * 0.625;#}
+{#            },#}
+{#            'width': '100%'#}
+{#          });#}
+{#          },500)#}
+{#      });#}
+{#            })#}
+{##}
+{#    </script>#}
 
 {% endblock %}

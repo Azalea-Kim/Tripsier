@@ -2,10 +2,9 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or '1111111'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'silicon_squad.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir,'silicon_squad.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Mail configuration
@@ -17,4 +16,4 @@ class Config(object):
     MAIL_USERNAME = "1193058357@qq.com"
     MAIL_PASSWORD = "eednzbwjcibyjiac"
     MAIL_DEFAULT_SENDER = "1193058357@qq.com"
-    LANGUAGE = "ENG"
+    LANGUAGE = 'ENG'

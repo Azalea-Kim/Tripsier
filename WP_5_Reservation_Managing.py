@@ -6,11 +6,11 @@ import flask_mail
 from flask import *
 from models import *
 from extension import mail
-from extension import db
+from main import db
 from flask_sqlalchemy import *
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 
-wp_5 = Blueprint("WP5_Blue",__name__, url_prefix='/')
+wp_5 = Blueprint("WP5_Blue",__name__)
 
 @login_required
 @wp_5.route('/cancel_notice_accommodation/<id>', methods=["POST","GET"])
@@ -27,10 +27,10 @@ def sendCancelMail_Acc(id):
             message = flask_mail.Message(
                 subject="[Room of Requirement] Cancel Notification",
                 recipients=[email],
-                body=f"[Web Tripsier]: \n Dear customer, we are sorry to tell you that your trip to {place} on {date} has been canceled due to some reasons\n\n Tripsier Team"
+                body=f"[Web Tripsier]: Dear customer, we are sorry to tell you that your trip to {place} on {date} has been canceled due to some reasons"
             )
             mail.send(message)
-            return redirect("/admin/edit/acc")
+            return redirect("/admin/edit")
         else:  # if the email address is empty
             return make_response(
                 jsonify({"code": 400, "message": "Something wrong with the cancel"}))  # return the error message
@@ -51,10 +51,10 @@ def sendCancelMail_Attr(id):
             message = flask_mail.Message(
                 subject="[Room of Requirement] Cancel Notification",
                 recipients=[email],
-                body=f"[Web Tripsier]: Dear customer, we are sorry to tell you that your trip to {place} on {date} has been canceled due to some reasons ---Tripsier Team"
+                body=f"[Web Tripsier]: Dear customer, we are sorry to tell you that your trip to {place} on {date} has been canceled due to some reasons"
             )
             mail.send(message)
-            return redirect("/admin/edit/attr")
+            return redirect("/admin/edit")
         else:  # if the email address is empty
             return make_response(
                 jsonify({"code": 400, "message": "Something wrong with the cancel"}))  # return the error message
@@ -144,16 +144,14 @@ def edit_reservation_accommodation(id):
         if  request.method == 'POST':
             name = request.form.get('name')
             date = request.form.get('date')
-            pri = request.form.get('pri')
             date = datetime.strptime(date,"%Y-%m-%d")
             reservation = db.session.query(Reservation_Accommodation).filter(Reservation_Accommodation.id == id).one()
             accommodation = db.session.query(Accommodation).filter(Accommodation.name == name).one()
             reservation.date = date
-            reservation.priority = pri
             reservation.accommodation_id = accommodation.id
             db.session.add(reservation)
             db.session.commit()
-            return redirect("/admin/edit/acc")
+            return redirect("/admin/edit/")
     return render_template("alert.html")
 
 @login_required
@@ -163,14 +161,12 @@ def edit_reservation_attraction(id):
         if  request.method == 'POST':
             name = request.form.get('name')
             date = request.form.get('date')
-            pri = request.form.get('pri')
             date = datetime.strptime(date,"%Y-%m-%d")
             reservation = db.session.query(Reservation_Attraction).filter(Reservation_Attraction.id == id).one()
             attraction = db.session.query(Attraction).filter(Attraction.name == name).one()
             reservation.date = date
-            reservation.priority = pri
-            reservation.attraction_id = attraction.id
+            reservation.attraction = attraction.id
             db.session.add(reservation)
             db.session.commit()
-            return redirect("/admin/edit/attr")
+            return redirect("/admin/edit/")
     return render_template("alert.html")

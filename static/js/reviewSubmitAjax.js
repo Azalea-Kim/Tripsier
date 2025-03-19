@@ -58,6 +58,9 @@ function sendReviewAttraction(sender_id,attraction_id) {
                  "                              </div>\n" +
                  `                              <p>${content_chat}</p>\n` +
                  "                              <div class=\" d-flex flex-wrap\">\n" +
+                 "                                <a class=\"bg-light text-dark border-radius-sm px-2 py-1 font-sm mb-2 mb-sm-0\" href=\"#\"> <i class=\"fas fa-reply pe-1\"></i> Reply Review </a>\n" +
+                 "                                <a class=\"bg-success-soft text-success border-radius-sm px-2 py-1 ms-3 font-sm mb-2 mb-sm-0\" href=\"#\"> <i class=\"far fa-thumbs-up pe-1\"></i> 56 Votes</a>\n" +
+                 "                                <a class=\"bg-danger-soft text-danger border-radius-sm px-2 py-1 ms-3 mb-2 mb-sm-0 font-sm\" href=\"#\"> <i class=\"far fa-thumbs-down pe-1\"></i> 06</a>\n" +
                  "                              </div>\n" +
                  "                            </div>\n" +
                  "                          </div>"

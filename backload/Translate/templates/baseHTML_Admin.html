@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ _("Drezoc - Admin & Dashboard Template")}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="MyraStudio" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/static/assets/images/favicon.ico">
+
+        <!-- App css -->
+        <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
+        {% block css %}
+        {% endblock %}
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <div class="main-content">
+
+                <header id="page-topbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <div class="d-flex align-items-center">
+
+                                <div class="navbar-brand-box mr-3 mr-lg-5">
+                                    <a href="else/index.html" class="logo">
+                                        <span class="d-none d-lg-block">
+                                            <img src="assets/images/logo-dark.png" alt="" height="15">
+                                        </span>
+                                        <i class="d-lg-none">
+                                            <img src="assets/images/logo-small.png" alt="" height="24">
+                                        </i>
+                                    </a>
+                                </div>
+
+                                <button type="button" class="btn btn-sm mr-2 d-lg-none header-item" data-toggle="collapse" data-target="#topnav-menu-content">
+                                    <i class="fa fa-fw fa-bars"></i>
+                                </button>
+
+                                <div class="header-breadcumb">
+                                    <h2 class="header-title">{{ _("Trip Management System")}}</h2>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+
+                                <div class="dropdown d-inline-block ml-2">
+                                    <button type="button" class="btn header-item noti-icon" id="page-header-search-dropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                                        aria-labelledby="page-header-search-dropdown">
+
+                                        <form class="p-3">
+                                            <div class="form-group m-0">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown d-inline-block ml-1">
+                                    <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-bell-outline"></i>
+                                        <span class="badge badge-danger badge-pill">6</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                                        aria-labelledby="page-header-notifications-dropdown">
+                                        <div class="p-3">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <h6 class="m-0"> {{ _("Notifications") }} </h6>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="#!" class="small"> {{ _("View All")}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="custom-scroll" style="max-height: 230px;">
+                                            <a href="" class="text-reset">
+                                                <div class="media p-3">
+                                                    <img src="assets/images/users/avatar-2.jpg"
+                                                        class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 mb-1">{{ _("Samuel Coverdale")}}</h6>
+                                                        <p class="font-size-12 mb-1">{{ _("You have new follower on
+                                                                Instagram")}}</p>
+                                                        <p class="font-size-12 mb-0 text-muted"><i class="mdi mdi-clock-outline"></i>
+                                                            {{ _("2 min ago")}}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="text-reset">
+                                                <div class="media p-3">
+                                                    <div class="avatar-xs mr-3">
+                                                        <span class="avatar-title bg-success rounded-circle">
+                                                            <i class="mdi mdi-cloud-download-outline"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 mb-1">{{ _("Download Available !")}}</h6>
+                                                        <p class="font-size-12 mb-1">{{ _("Latest version of admin is now
+                                                                available. Please download here.")}}</p>
+                                                        <p class="font-size-12 mb-0 text-muted"><i class="mdi mdi-clock-outline"></i>
+                                                            {{ _("4 hours ago")}}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="text-reset">
+                                                <div class="media p-3">
+                                                    <img src="assets/images/users/avatar-3.jpg"
+                                                        class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <div class="media-body">
+                                                        <h6 class="mt-0 mb-1">{{ _("Victoria Mendis")}}</h6>
+                                                        <p class="font-size-12 mb-1">{{ _("Just upgraded to premium account.")}}</p>
+                                                        <p class="font-size-12 mb-0 text-muted"><i class="mdi mdi-clock-outline"></i>
+                                                            {{ _("1 day ago")}}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="p-2 border-top">
+                                            <a class="btn btn-sm btn-light btn-block text-center" href="javascript:void(0)">
+                                                <i class="mdi mdi-arrow-down-circle mr-1"></i> {{ _("Load More..")}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown d-inline-block ml-2">
+                                    <button type="button" class="btn header-item" id="page-header-user-dropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="rounded-circle header-profile-user" src="data:;base64,{{ user.avatar }}"
+                                            alt="Header Avatar">
+                                        <span class="d-none d-sm-inline-block ml-1">{{ user.name }}</span>
+                                        <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                            <span>{{ _("Inbox") }}</span>
+                                            <span>
+                                                <span class="badge badge-pill badge-success">3</span>
+                                            </span>
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="/a">
+                                            <span>{{ _("Chat") }}</span>
+                                            <span>
+                                                <span class="badge badge-pill badge-info">1</span>
+                                            </span>
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                            {{ _("Settings") }}
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                            <span>{{ _("Lock Account")}}</span>
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="/logout">
+                                            <span>{{ _("Log Out")}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="topnav">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
+
+                            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/admin">
+                                            <i class="feather-home mr-2"></i>{{ _("Overview") }}
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="feather-copy mr-2"></i>{{ _("Information") }} <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+{#                                            <div class="dropdown">#}
+{#                                                <a class="dropdown-item" href="/admin/customers" id="topnav-auth" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                                                    Customers <div class="dropdown-item"></div>#}
+{#                                                </a>#}
+{#                                                如果需要修改为箭头，请改class为 arror-right#}
+{#                                                a的类为 dropdown-toggle arrow-non#}
+{#                                                <div class="dropdown-menu" aria-labelledby="topnav-auth">#}
+{#                                                    <a href="auth-login.html" class="dropdown-item">Cart</a>#}
+{#                                                    <a href="auth-register.html" class="dropdown-item">Register</a>#}
+{#                                                    <a href="auth-recoverpw.html" class="dropdown-item">Recover Password</a>#}
+{#                                                    <a href="auth-lock-screen.html" class="dropdown-item">Lock Screen</a>#}
+{#                                                    <a href="auth-404.html" class="dropdown-item">Error 404</a>#}
+{#                                                    <a href="auth-500.html" class="dropdown-item">Error 500</a>#}
+{#                                                </div>#}
+{#                                            </div>#}
+                                            <a href="/admin/customers" class="dropdown-item">{{ _("Customers") }}</a>
+                                            <a href="/admin/destinations" class="dropdown-item">{{ _("Destinations") }}</a>
+                                            <a href="/admin/attractions" class="dropdown-item">{{ _("Attractions") }}</a>
+                                            <a href="/admin/accommodations" class="dropdown-item">{{ _("Accommodations") }}</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="feather-briefcase mr-2"></i>{{ _("Planning & Booking")}}<div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-components">
+                                            <a href="ui-typography.html" class="dropdown-item">{{ _("Typography") }}</a>
+                                            <a href="ui-cards.html" class="dropdown-item">{{ _("Cards") }}</a>
+                                            <a href="ui-buttons.html" class="dropdown-item">{{ _("Buttons") }}</a>
+                                            <a href="ui-modals.html" class="dropdown-item">{{ _("Modals") }}</a>
+                                            <a href="ui-tabs.html" class="dropdown-item">{{ _("Tabs") }}</a>
+                                            <a href="ui-progressbars.html" class="dropdown-item">{{ _("Progress Bars")}}</a>
+                                            <a href="ui-toasts.html" class="dropdown-item">{{ _("Toasts") }}</a>
+                                            <a href="ui-carousel.html" class="dropdown-item">{{ _("Carousel") }}</a>
+                                            <a href="ui-embeds.html" class="dropdown-item">{{ _("Embeds") }}</a>
+                                            <a href="ui-tooltips-popovers.html" class="dropdown-item">{{ _("Tooltips &
+                                                    Popovers")}}</a>
+                                            <a href="ui-media-objects.html" class="dropdown-item">{{ _("Media Objects")}}</a>
+                                            <a href="ui-general.html" class="dropdown-item">{{ _("General") }}</a>
+                                            <a href="ui-grid.html" class="dropdown-item">{{ _("Grid") }}</a>
+                                            <a href="ui-spinners.html" class="dropdown-item">{{ _("Spinners") }}</a>
+                                            <a href="ui-scrollspy.html" class="dropdown-item">{{ _("Scrollspy") }}</a>
+                                            <a href="ui-sweetalerts.html" class="dropdown-item">{{ _("Sweet Alerts")}}</a>
+                                        </div>
+                                    </li>
+
+{#                                    <li class="nav-item dropdown">#}
+{#                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-charts" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                                            <i class="feather-bar-chart-2 mr-2"></i>Charts <div class="arrow-down"></div>#}
+{#                                        </a>#}
+{#                                        <div class="dropdown-menu" aria-labelledby="topnav-charts">#}
+{#                                            <a href="charts-morris.html" class="dropdown-item">Morris</a>#}
+{#                                            <a href="charts-google.html" class="dropdown-item">Google</a>#}
+{#                                            <a href="charts-chartjs.html" class="dropdown-item">Chartjs</a>#}
+{#                                            <a href="charts-sparkline.html" class="dropdown-item">Sparkline</a>#}
+{#                                            <a href="charts-knob.html" class="dropdown-item">Jquery Knob</a>#}
+{#                                        </div>#}
+{#                                    </li>#}
+{##}
+{#                                    <li class="nav-item dropdown">#}
+{#                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-forms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                                            <i class="feather-disc mr-2"></i>Forms <div class="arrow-down"></div>#}
+{#                                        </a>#}
+{#                                        <div class="dropdown-menu" aria-labelledby="topnav-forms">#}
+{#                                            <a href="forms-elements.html" class="dropdown-item">Elements</a>#}
+{#                                            <a href="forms-plugins.html" class="dropdown-item">Plugins</a>#}
+{#                                            <a href="forms-validation.html" class="dropdown-item">Validation</a>#}
+{#                                            <a href="forms-mask.html" class="dropdown-item">Masks</a>#}
+{#                                            <a href="forms-quilljs.html" class="dropdown-item">Quilljs</a>#}
+{#                                            <a href="forms-uploads.html" class="dropdown-item">File Uploads</a>#}
+{#                                        </div>#}
+{#                                    </li>#}
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="feather-book-open mr-2"></i>{{ _("More") }} <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-more">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-tables" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    {{ _("Tables") }} <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-tables">
+                                                    <a href="tables-basic.html" class="dropdown-item">{{ _("Basic Tables")}}</a>
+                                                    <a href="tables-datatables.html" class="dropdown-item">{{ _("Data Tables")}}</a>
+                                                </div>
+                                            </div>
+                                            <a href="calendar.html" class="dropdown-item">Calendar</a>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-icons" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    {{ _("Icons") }} <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-icons">
+                                                    <a href="icons-feather.html" class="dropdown-item">{{ _("Feather Icons")}}</a>
+                                                    <a href="icons-materialdesign.html" class="dropdown-item">{{ _("Material
+                                                            Design")}}</a>
+                                                    <a href="icons-dripicons.html" class="dropdown-item">{{ _("Dripicons") }}</a>
+                                                    <a href="icons-fontawesome.html" class="dropdown-item">{{ _("Font
+                                                            awesome")}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-maps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    {{ _("Maps") }} <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-maps">
+                                                    <a href="maps-google.html" class="dropdown-item">{{ _("Google Maps")}}</a>
+                                                    <a href="maps-vector.html" class="dropdown-item">{{ _("Vector Maps")}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                {% block content %}
+
+
+                {% endblock %}
+
+                            <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center text-lg-left">
+                                    2019 © Drezoc
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-right d-none d-lg-block">
+                                    {{ _("Design & Develop by")}} <a href="http://www.bootstrapMB.com">bootstrapMB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Overlay-->
+        <div class="menu-overlay"></div>
+
+
+        <!-- jQuery  -->
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/assets/js/jquery.slimscroll.min.js"></script>
+
+        <!-- Sparkline Js-->
+        <script src="/static/assets/js/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+        <!-- Morris Js-->
+        <script src="/static/assets/js/morris-js/morris.min.js"></script>
+        <!-- Raphael Js-->
+        <script src="/static/assets/js/raphael/raphael.min.js"></script>
+
+        <!-- Custom Js -->
+        <script src="/static/assets/js/pages/dashboard-demo.js"></script>
+
+        <!-- App js -->
+        <script src="/static/assets/js/theme.js"></script>
+
+    {% block js %}
+        
+
+        
+    {% endblock %}
+
+    </body>
+
+</html>

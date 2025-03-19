@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+  <script src="https://d3js.org/d3.v7.js"></script>
+</head>
+<body>
+<script>
+  const echarts = require("echarts/lib/echarts");
+  require('echarts-gl');
+  var chartDom = document.getElementById('globe');
+  var myChart = echarts.init(chartDom);
+ myChart.setOption({
+    backgroundColor: '#000',//背景颜色
+    globe: {
+      baseTexture: "../static/earth_new.png",//地球的纹理。支持图片路径的字符串，图片或者 Canvas 的对象
+      heightTexture:url,//地球的高度纹理
+      shading: 'lambert',//地球中三维图形的着色效果
+      light: {
+        ambient: {
+          intensity: 0.2,//环境光源强度
+        },//环境光
+        main: {
+          intensity: 0.8//光源强度
+        }//主光源
+      },//光照设置
+    },
+    series: {
+          type: 'lines3D',
+          coordinateSystem: 'globe',
+          blendMode: 'source-over',
+          effect:{
+             show:true,
+          },
+          lineStyle: {
+            width: 1,
+            color: 'rgb(255, 255,255)',
+            opacity: 1,
+            trailWidth:4,
+            trailLength:0.01,
+          },//3D飞线图
+      data:[
+            [
+              [112, 40, 2],  // 终点的经纬度和海拔坐标
+              [120, 20, 1], // 起点的经纬度和海拔坐标
+            ] ,
+            [
+              [112, 40, 2],
+              [20, -40, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [-60, 60, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [40, 0, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [-20, 20, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [-39, -40, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [67, 43, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [160, -18, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [145, 66, 1],
+            ] ,
+            [
+              [112, 40, 2],
+              [1790, 42, 1],
+            ] ,
+      ]
+    }
+  });
+option && myChart.setOption(option);
+
+</script>
+
+<body>
+    <div id="globe"></div>
+</body>
+
+</body>
+</html>

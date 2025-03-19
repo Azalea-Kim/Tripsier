@@ -93,26 +93,16 @@ $('#submit_destination').click(function() {
     avatar.removeClass('is-invalid');
   }
 
-//   function encodeFileToBase64Sync(file) {
-//   var reader = new FileReader();
-//   reader.readAsDataURL(file);
-//
-//   while (!reader.result) {
-//     // 等待文件读取完成
-//   }
-//
-//   var base64String = reader.result.split(',')[1];
-//   return base64String;
-// }
-
   if (haveEmptyField === false) {
       console.log("submit successfully")
               // 创建一个新的 FormData 对象
-          var formData = new FormData();
+          var formData = new FormData( this );
+
           // 将文件添加到 FormData 中
           var fileInput = $( "#destination_avatar" )[0]; // 获取文件输入框元素
           var file = fileInput.files[0]; // 获取第一个文件
           formData.append( "file", file ); // 将文件添加到 FormData 中，使用 "file" 作为文件参数的名称
+          console.log(file)
 
     $('#destination_form').submit(function( event ) {
           event.preventDefault(); // 阻止默认的表单提交行为
@@ -120,9 +110,8 @@ $('#submit_destination').click(function() {
           $.ajax({
             url: "/admin/upload_destination",
             method: "POST",
-            data: 1,
+            data: formData,
             success: function( response ) {
-                alert("Submit Successfully.")
               console.log( "Form submitted successfully." );
             },
             error: function( error ) {

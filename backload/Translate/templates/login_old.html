@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/login-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
+</head>
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form method="POST" action="{{ url_for('register') }}" method="post">
+            <h1>Create Account</h1>
+            {#            <div class="social-container">#}
+            {#                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>#}
+            {#                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>#}
+            {#                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>#}
+            {#            </div>#}
+            {#            <span>or use your email for registration</span>#}
+            <input type="text" placeholder="Name" id="username" name="username"/>
+            <div class="varify-container">
+                <input type="email" placeholder="Email" name="email"/>
+                <button type="verify-button" id="varify" onclick="bindCaptchaBtnClick()">Verify</button>
+            </div>
+            <input type="text" placeholder="Email verification code" name="captcha" id="captcha"/>
+            <input type="password" placeholder="Password" name="password" id="password_r"/>
+            <input type="password" placeholder="Check Password" name="confirm_password" id="confirm_password_r"/>
+            <input type="text" placeholder="Your Role" name="role" id="role"/>
+            <button class = "sign-button" id="signupForm">Sign Up
+            <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div></button>
+
+        </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+        <form method="POST" action="{{ url_for("login") }}">
+            <h1>Sign in</h1>
+            <span>or use your account</span>
+            {{ form.csrf_token }}
+            <input type="email" placeholder="Email" id="email" name="email"/>
+            <input type="password" placeholder="Password" id="passwd" name="password"/>
+            {% if emsg %}  <!-- 如果有错误信息 则显示 -->
+                <h3 style="color: #ff050a"> {{ emsg }}</h3>
+            {% endif %}
+
+            <a href="#" id="forget-password">Forgot your password?</a>
+            <button class="sign-button" type="submit">Sign In
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </form>
+    </div>
+    <div class="form-container forget-pass-container">
+        <form action="#">
+            <h1>Forgot Password</h1>
+            <p>Please enter your email, if email is registered, you'll recieve a link to reset your password</p>
+            <div class="varify-container">
+                <input type="email" placeholder="Email"/>
+                <button type="button">Varify</button>
+            </div>
+            <input type="text" placeholder="Email verification code"/>
+            <input type="password" placeholder="New password"/>
+            <button id="send">Reset</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost sign-button" id="signIn">Sign In
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost sign-button" id="signUp">Sign Up
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../static/js/login-script.js"></script>
+<script src="../static/js/jquery-3.6.1.min.js"></script>
+
+</body>
+</html>

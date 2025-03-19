@@ -3,7 +3,7 @@ from datetime import datetime
 
 from werkzeug.security import generate_password_hash
 import random
-from app import db
+from main import db
 from models import *
 from tools import img_to_blob
 
@@ -37,10 +37,6 @@ def insert_test_destinations():
 
     destination1.map_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d444252.9906780506!2d105.92539830501002!3d29.553458508621397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x369334baf3e64f43%3A0xde9f8616dc88b321!2z5Lit5Zu96YeN5bqG5biC!5e0!3m2!1szh-CN!2sus!4v1681388390815!5m2!1szh-CN!2sus"
     destination2.map_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391569.02107709314!2d116.06713495575086!3d39.938415109305666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f05296e7142cb9%3A0xb9625620af0fa98a!2z5Lit5Zu95YyX5Lqs5biC!5e0!3m2!1szh-CN!2sus!4v1681388210875!5m2!1szh-CN!2sus"
-    destination3.map_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d436718.51323912194!2d121.14643449198199!3d31.224514109018454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b27040b1f53c33%3A0x295129423c364a1!2sShanghai%2C%20China!5e0!3m2!1sen!2sus!4v1683889104128!5m2!1sen!2sus"
-    destination4.map_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d469659.2746582003!2d112.89752278737684!3d23.125885385077076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3402f895a35c2bc7%3A0xe59e075adeae415!2sGuangzhou%2C%20Guangdong%20Province%2C%20China!5e0!3m2!1sen!2sus!4v1683889155672!5m2!1sen!2sus"
-    destination5.map_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236161.50322517025!2d113.81554609364626!3d22.352741963746826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403e2eda332980f%3A0xf08ab3badbeac97c!2sHong%20Kong!5e0!3m2!1sen!2sus!4v1683889201776!5m2!1sen!2sus"
-    destination6.map_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219655.7475493114!2d103.91039759020617!3d30.658719499247145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36efc52300447721%3A0xb98652ce2e240e02!2sChengdu%2C%20Sichuan%2C%20China!5e0!3m2!1sen!2sus!4v1683889227988!5m2!1sen!2sus"
 
     db.session.add(destination1)
     db.session.add(destination2)
@@ -186,20 +182,6 @@ def insert_reservations():
         db.session.add(r1)
         db.session.add(r2)
         db.session.commit()
-
-# def insert_carts():
-#     for i in range(0,80):
-#         month = random.randint(1,12)
-#         day = random.randint(1,30)
-#         if(month==2):
-#             day = random.randint(1,28)
-#         date = "2023/" + str(month) + "/" +str(day)
-#         date = datetime.strptime(date, '%Y/%m/%d')
-#         r1 = Reservation_Accommodation(user_id = random.randint(1,4),accommodation_id = random.randint(1,5),date = date,note = "Hi Manager")
-#         r2 = Reservation_Attraction(user_id = random.randint(1,4),attraction_id = random.randint(1,5),date = date,note = "Hi Manager")
-#         db.session.add(r1)
-#         db.session.add(r2)
-#         db.session.commit()
 
 def insert_tags():
     tag1 = Tag(id = 1, content = "Natural scenery")

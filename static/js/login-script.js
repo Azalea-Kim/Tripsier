@@ -24,13 +24,7 @@ sendButton.addEventListener('click', () => {
     container.classList.remove("forgetPassword");
 });
 
-var alertContent = document.getElementById("alert").innerHTML;
-console.log(alertContent )
-if(alertContent != null || alertContent.length != 0)
-    {
-        alert("content:"+alertContent);
-        document.getElementById("alert").innerHTML =  '';
-    }
+
 function passwordCheck() {
     var mail = document.getElementById("email").value;
     var password = document.getElementById("passwd").value;
@@ -43,12 +37,12 @@ function passwordCheck() {
 }
 
 
-
+var _count = document.getElementById("varify"); //获取验证码按钮
+var time = 59;
 
 function bindCaptchaBtnClick(event) {
-    var time = 59;
-    var _count = document.getElementById("varify"); //获取验证码按钮
-    console.log(_count)
+
+
     var $this = $(this)
     var email = $("input[name='email']").val();
     if (!email) {
@@ -65,12 +59,10 @@ function bindCaptchaBtnClick(event) {
         },
         success: function (res) {
             alert("Send Captcha Successfully")
-
             // 禁用按钮
             _count.disabled = true;
             // 开启定时器
             var timer = setInterval(function () {
-                console.log("timer")
                 // 判断剩余秒数
                 if (time === 0) {
                     // 清除定时器和复原按钮

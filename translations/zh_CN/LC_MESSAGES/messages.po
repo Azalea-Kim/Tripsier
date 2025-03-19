@@ -19,8 +19,8 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: templates/baseHTML.html:9
-msgid "Tripsier - Tour & Travel Hotel Booking Website"
-msgstr "Tripsier - 旅游和旅游酒店预订网站"
+msgid "Tripsier - Tour & Travel Hotel Booking HTML Template"
+msgstr "Tripsier - 旅游和旅游酒店预订HTML模板"
 
 #: templates/baseHTML.html:46
 msgid "Homepage"
@@ -103,7 +103,7 @@ msgstr "预订"
 
 #: templates/baseHTML.html:86
 msgid "Planning Tool"
-msgstr "计划工具"
+msgstr ""
 
 #: templates/baseHTML.html:87
 msgid "Booking Tool"
@@ -234,8 +234,8 @@ msgid "Copyright"
 msgstr "版权"
 
 #: templates/baseHTML_Admin.html:6
-msgid "Tripsier - Admin"
-msgstr "Tripsier - 管理员网站"
+msgid "Drezoc - Admin & Dashboard Template"
+msgstr "Drezoc - 管理员和仪表板模板"
 
 #: templates/baseHTML_Admin.html:52
 msgid "Trip Management System"
@@ -320,11 +320,11 @@ msgstr "概述"
 
 #: templates/baseHTML_Admin.html:200
 msgid "Information"
-msgstr "信息"
+msgstr ""
 
 #: templates/baseHTML_Admin.html:218
 msgid "Customers"
-msgstr "客户"
+msgstr "信息"
 
 #: templates/baseHTML_Admin.html:227
 msgid "Planning & Booking"
@@ -737,8 +737,8 @@ msgid "Hong Kong"
 msgstr "香港"
 
 #: templates/index-03-new.html:113
-msgid "Recommend Destination"
-msgstr "推荐目的地"
+msgid "Popular Destination"
+msgstr "热门目的地"
 
 #: templates/index-03-new.html:169 templates/index-03-new.html:335
 #: templates/index-03-new.html:375 templates/index-03-new.html:415
@@ -895,7 +895,7 @@ msgstr ""
 
 #: templates/index_admin.html:51
 msgid "User Numbers"
-msgstr "用户数量"
+msgstr "用户编号"
 
 #: templates/index_admin.html:69
 msgid "Daily Visits"
@@ -907,7 +907,7 @@ msgstr "史上最佳目的地"
 
 #: templates/index_admin.html:90
 msgid "From begin until now"
-msgstr "自始至终"
+msgstr "从开始到现在"
 
 #: templates/index_admin.html:102
 msgid "Destination Information"
@@ -1636,83 +1636,3 @@ msgstr ""
 msgid "Not a valid float value."
 msgstr ""
 
-msgid "ENJOY A SUPERIOR TRAVEL EXPERIENCE"
-msgstr "享受卓越的旅行体验"
-
-msgid "About our excellent team members"
-msgstr "关于我们优秀的团队成员"
-
-msgid "Input the key words"
-msgstr "输入搜索关键词"
-
-msgid "This is the introduction for our teammates."
-msgstr "这是一个关于我们优秀团队成员的介绍"
-
-msgid "ASK AI"
-msgstr "询问AI"
-
-msgid "Switch Language"
-msgstr "切换语言"
-
-msgid "Income Per User"
-msgstr "平均购物车价格"
-
-msgid "Total Expense in Cart"
-msgstr "全部购物车价格"
-
-msgid "User Numbers"
-msgstr "总用户数"
-
-msgid "Visits"
-msgstr "总访问量"
-
-msgid "All Time Best Destinations"
-msgstr "一直以来的最佳景点"
-
-msgid "From begin until now"
-msgstr "从始至终"
-
-msgid "Destination Information"
-msgstr "目的地信息"
-
-msgid "For our top destinations"
-msgstr "头牌景点"
-
-msgid "Registered Customers"
-msgstr "注册的用户"
-
-msgid "Recently, just about the last 5 registered customers"
-msgstr "仅展示最近注册的五个用户"
-
-msgid "Cart Transactions"
-msgstr "购物车内容"
-
-msgid "Transaction about the last 10 records"
-msgstr "展示最近的十个内容"
-
-msgid "Supervise Planning"
-msgstr "监控预定安排"
-
-msgid "Edit Reservation Accommodation"
-msgstr "修改住宿预定安排"
-
-msgid "Edit Reservation Attraction"
-msgstr "修改景点预定安排"
-
-msgid "Add Destination"
-msgstr "添加游客目的地"
-
-msgid "Index"
-msgstr "首页"
-
-msgid "Customer"
-msgstr "客户"
-
-msgid "Role"
-msgstr "职责"
-
-msgid "Email"
-msgstr "电子邮箱"
-
-msgid "Contact Us"
-msgstr "联系我们"

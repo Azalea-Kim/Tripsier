@@ -21,4 +21,5 @@ $(function() {
     $("#close-response-btn").click(function (){
         $("#ai-response-container").css("visibility", "hidden");
     });
+
 });

@@ -55,13 +55,13 @@ function getTabs(){
 
 		    loadStyles: ['../static/css/test.css','../static/css/test2.css'],
             html: "<div class='example example--outside'>"+
-              "<div class='drag-zone plan-item' id='tab-"+i+"-1-destination'></div>"+
+              "<div class='drag-zone plan-item' id='tab-"+i+"-1'></div>"+
               "<p class='line_01'> Destination </p>"+
-              "<div class='drag-zone plan-item' id='tab-"+i+"-2-other'></div>"+
-              "<div class='drag-zone plan-item' id='tab-"+i+"-3-other'></div>"+
-              "<div class='drag-zone plan-item' id='tab-"+i+"-4-other'></div>"+
-              "<div class='drag-zone plan-item' id='tab-"+i+"-5-other'></div>"+
-              "<div class='drag-zone plan-item' id='tab-"+i+"-6-other'></div>"+
+              "<div class='drag-zone plan-item' id='tab-"+i+"-2'></div>"+
+              "<div class='drag-zone plan-item' id='tab-"+i+"-3'></div>"+
+              "<div class='drag-zone plan-item' id='tab-"+i+"-4'></div>"+
+              "<div class='drag-zone plan-item' id='tab-"+i+"-5'></div>"+
+              "<div class='drag-zone plan-item' id='tab-"+i+"-6'></div>"+
               "</div>"
 
           })
@@ -183,64 +183,6 @@ function getAttractions(desid) {
     })
 }
 
-
-function getAccommodations(attrid) {
-     $.ajax({
-        url: "/destInfo",
-        method: "POST",
-        data: {
-            "command": "Get attractions", //修改这里
-            "destination": attrid//修改这里
-        },
-        success: function (res) {
-            var htmlStr = ""
-            var accommodations = res["attractions"]//修改这里
-            for (var i = 0; i < accommodations.length; i++) {
-                var name = accommodations[i][0]
-                var image_pace = "data:;base64," + (accommodations[i][1])
-                var info = accommodations[i][2]
-                var score = accommodations[i][3]
-                var price = accommodations[i][4]
-                var id = accommodations[i][5]
-                var country = accommodations[i][6]
-                var string =
-                            "<div class='drag-zone' id='draggable-container-accommodation-"+id+"-"+global+"'>"+
-                                "<div class='draggable-form' style='width: 80%' id='draggable-task-accommodation-"+ id +"-"+global+"' draggable='true'>" +
-                                    "<div class='listing-item listing-item-3 mb-3 accommodation'>" +
-                                        "<div class='listing-image'>" +
-                                            `<img class='img-fluid' src="${image_pace}" alt='#'>` +
-                                        "</div>" +
-                                        "<div class='listing-details'>" +
-                                            "<div class='listing-title d-flex justify-content-between'>" +
-                                                "<h5 class='mb-0'>" +
-                                                    "<a href='#' class='title mb-0'>"+name+"</a>" + "</h5>" +
-                                                "<div class='country-flags'>" +
-                                                    `<img class='img-fluid shadow-sm' src= "/static/images/country-flags/${country}.jpg" alt='#'>` +
-                                                "</div>" +
-                                            "</div>" +
-                                            "<a href='#' class='listing-loaction'>" + "<i class='fa fa-location-dot'></i> The Location : " + info+ "</a>" +
-                                            "<div class='listing-rating d-flex justify-content-between'>" +
-                                                "<div class='d-flex'>" +
-                                                    "<div class='rating'>" +
-                                                        "<i class='fa-solid fa-star me-1 text-yellow'></i><span>"+score+"/ 5</span>" +
-                                                    "</div>" +
-                                                "</div>" +
-                                                "<div class='price'>" +
-                                                    "<span class='text-decoration-line-through'>$899</span>"+price+
-                                                "</div>" +
-                                            "</div>" +
-                                        "</div>" +
-                                    "</div>" +
-                                "</div>" +
-                            "</div>"
-                htmlStr = htmlStr + string
-            }
-            document.getElementById("displaylist").innerHTML = htmlStr
-            drop();
-        }
-    })
-}
-
 function drop(){
 
 
@@ -278,43 +220,22 @@ function drop(){
             var list = draggedElement.id.split("-");
             var type = list[2];
             var desid = list[3];
-            let zoneLst = dropZone.id.split("-");
-            let zoneType = zoneLst[3]
 
-            if(type != "destination" && zoneType != "destination"){
-                zoneType = type
-            }
 
-            if(dropZone.id != "trash-can"){
-                if(type == zoneType){
-                    if (children.item(0) === null){
-                        dropZone.appendChild(draggedElement)
-                        if(num == 0 && type == "destination"){
-                            console.log(desid)
-                            getAttractions(desid);
-                            console.log(333)
-                            num = 1;
-                        }
-                        else if(num == 1 && type == "attraction"){
-                            getAccommodations(2);
-                            console.log(444)
-                            num = 2;
-                        }
-
-                        console.log(555)
-                    }else{
-
-                        const swapDraggableElement = document.getElementById(children.item(0).id)
-                        const swapZone = document.getElementById(data[1]);
-                        swapZone.appendChild(swapDraggableElement)
-                        dropZone.appendChild(draggedElement)
-
-                    }
-                }else{
-                    alert("Sorry, please drag destination or attraction to the corresponding position on the panel!")
+            if (children.item(0) === null){
+                dropZone.appendChild(draggedElement)
+                if(num == 0 && type == "destination"){
+                    getAttractions(desid);
+                    // alert(3)
+                    num = 1;
                 }
             }else{
+
+                const swapDraggableElement = document.getElementById(children.item(0).id)
+                const swapZone = document.getElementById(data[1]);
+                swapZone.appendChild(swapDraggableElement)
                 dropZone.appendChild(draggedElement)
+
             }
 
             if(dropZone.id === "trash-can"){
@@ -337,7 +258,7 @@ function submit(){
 
     var text = "";
     var tabNum = (document.querySelectorAll('.tab-pane')).length - 1;
-
+    
     for (var i = 1; i <= tabNum; i ++){
         // text = text + i +":";
         destination="";
@@ -345,36 +266,28 @@ function submit(){
         accommodation = "";
         var tab = document.getElementById('tab' + i.toString()+tabsCount.toString()).firstChild;
         planNodes = tab.children;
-        console.log(planNodes.length);
-        for (var t = 1; t < planNodes.length; t++){
-            if(t == 1){
-                planNode = document.getElementById('tab-'+i+'-'+t+'-destination');
-            }else{
-                planNode = document.getElementById('tab-'+i+'-'+t+'-other');
-            }
-
-
+        console.log(planNodes);
+        for (var t = 1; t < planNodes.length; t++){ 
+            planNode = document.getElementById('tab-'+i+'-'+t);
             console.log(planNode.childNodes.length);
             if(planNode.childNodes.length !=0 ){
-
+                
                 list = (planNode.firstChild.id.split('-'));
                 type = list[2];
                 id = list[3];
                 console.log(type);
-                if(type == "destination"){
-                    destination = id +";";
-                }
+                // if(type == "destination"){
+                //     destination = id +";";
+                // }
                 if(type == "attraction"){
                     attraction = attraction + "attr"  + id +",";
                 }
                 if(type == "accommodation"){
                     accommodation = "acc" + accommodation + id +",";
                 }
-
             }
         }
-        console.log(text);
-        text = text + destination + accommodation + attraction + "||";
+        text = text + accommodation + attraction + "||";
     }
 
 
@@ -397,35 +310,4 @@ function submit(){
             alert("Submit Successfully!");
         }
    })
-}
-
-function open_earth_page(){
-    console.log("WTF")
-    var text = "";
-    var tabNum = (document.querySelectorAll('.tab-pane')).length - 1;
-    destination="";
-
-    for (var i = 1; i <= tabNum; i ++){
-        // text = text + i +":";
-        var tab = document.getElementById('tab' + i.toString()+tabsCount.toString()).firstChild;
-        planNodes = tab.children;
-        for (var t = 1; t < planNodes.length; t++){
-            if(t == 1){
-                planNode = document.getElementById('tab-'+i+'-'+t+'-destination');
-                console.log(planNode)
-                console.log(planNode.childNodes.length);
-            if(planNode.childNodes.length !=0 ){
-                list = (planNode.firstChild.id.split('-'));
-                type = list[2];
-                id = list[3];
-                console.log(type);
-                if(type == "destination"){
-                    destination = destination + "&" + id;
-                }
-            }
-            }
-        }
-
-    }
-    window.location.href = "/earth/"+destination
 }

@@ -1,0 +1,183 @@
+{% extends "baseHTML.html" %}
+{% block css %}
+	<!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="/static/css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="/static/css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/animate/animate.min.css">
+    <link rel="stylesheet" href="/static/css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/static/css/datetimepicker/datetimepicker.min.css">
+    <link rel="stylesheet" href="/static/css/range-slider/ion.rangeSlider.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/select2/select2.css">
+    <!-- Template Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-dynamic-tabs.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link href="/static/css/lightpick.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/drag_css.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/lym_style.css">
+{% endblock %}
+
+{% block body %}
+	<body>
+    <section class="header-inner header-inner-menu bg-overlay-dark-6" style="background-image: url('/static/images/bg/01.jpg');">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 position-relative">
+            <div class="header-inner-title">
+              <div class="section-title">
+                <h2 class="title text-white">{{ _("Tackle your travel bucket list")}}</h2>
+                <div class="sub-title">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-uppercase" href="index.html"><i class="fas fa-home me-1"></i>{{ _("Home") }}</a></li>
+                    <li class="breadcrumb-item active">{{ _("Destinations Details")}}</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<div class="container-fluid" style="width: 85%">
+
+            <div class="row">
+			    <div class="col-lg-12">
+
+				<div class="new_card_box">
+				  <div class="card">
+					  <div class="card-body">
+                          <h4 class="card-title">{{ _("Step.1 Select Plan Date")}}</h4>
+                                            <p class="card-subtitle mb-4">{{ _("Select the planning date and confirm it.")}}</p>
+						  <div class="row">
+							  <div class="col-md-6">
+								  <p id="result"></p>
+								  <input type="text" id="demo" placeholder="Click Here To Select Date" class="form-control form-control-sm" />
+							  </div>
+							  <button class="col-md-3 btn btn-primary" id="confirm" onclick="getTabs()"><i class="fas fa-search-location me-2"></i>
+                                  {{ _("Find Now")}}</button>
+
+						  </div>
+					  </div>
+
+
+				  </div>
+				</div>
+
+			</div>
+            </div>
+
+			<div class="row">
+
+				<!--mt: margin bottom-->
+				<!--mb-lg-0 是为了确保屏幕尺寸放大缩小时距离正确（大概），用于排列图片，此处不需要，因此删掉-->
+                    <div class="col-xl-6 col-lg-6 col-md-6 mb-4 schedule-container "> <!--drag zone where put draggable forms inside-->
+                        <!--this is a single draggable form - should be replicated-->
+            <div class="new_card_box">
+                <div class = "card">
+                <div class="card-body">
+                    <h4 class="card-title">{{ _("Step.2 Cart Lists")}}</h4>
+                    <p class="card-subtitle mb-4">{{ _("This is a destination list shows the information about all our
+                            destinations")}} </p>
+                        <div>
+                            <div class='drag-zone trash-can' id='trash-can' style="height: 50px;">
+                                🗑
+                            </div>
+                        </div>
+
+
+                        <div class="destination-items new_content_table">
+                            <div class="example example--outside" id="displaylist">
+                            </div>
+                        </div>
+{#                        <button class="btn-5" onclick="getDestinations()">Back</button>#}
+                    <div class="row" style="margin-top: 10%">
+                        <button class="col-md-3 col-md-offset-3 btn btn-primary m-auto" id="confirm" onclick="getDestinations()"><i class="fas fa-backward me-2"></i>Back</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+
+
+				<div class="col-xl-6 col-lg-6 col-md-6 mb-4 schedule-container">
+                    <div class="new_card_box">
+                    <div class = "card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ _("Step.3 Plan Chart")}}</h4>
+                        <p class="card-subtitle mb-4">{{ _("This is a destination list shows the information about all our
+                                destinations")}} </p>
+
+					<div id="tabs">
+
+					</div>
+                        <div class="row" style="margin-top: 10%">
+                        <button class="col-md-3 col-md-offset-3 btn btn-primary m-auto" onclick="submit()">{{ _("Submit") }}</button>
+
+                        <button class="col-md-3 btn btn-primary m-auto"><a href="/earth"><i class="fa-solid fa-earth-americas fa-2xl" style="color: #ffffff;"></i></a></button>
+
+                        </div>
+
+				</div>
+                        </div>
+                        </div>
+                </div>
+
+{#				<button class="btn-5" onclick="submit()">Submit</button>#}
+{#                <button class=" btn-5">#}
+{#                          <a class="btn btn-primary" href="#"> <i class="fas fa-search-location me-2"></i> Find Now </a>#}
+{#                </button>#}
+
+			</div>
+		</div>
+
+{% endblock %}
+
+{% block js %}
+	<script src="/static/js/jquery-3.6.1.min.js"></script>
+	<script src="/static/js/jquery.appear.js"></script>
+	<script src="/static/js/popper/popper.min.js"></script>
+	<script src="/static/js/bootstrap/bootstrap.min.js"></script>
+	<!-- Template Scripts (Do not remove)-->
+	<script src="/static/js/custom.js"></script>
+	<script src="/static/js/moment-with-locales.min.js"></script>
+	<script src="/static/js/lightpick.js"></script>
+
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap-dynamic-tabs.js"></script>
+	<script type="text/javascript" src="/static/js/draggable_js.js"></script>
+
+
+	<script>
+
+		function rangeText(start, end) {
+			var str = '';
+			str += start ? start.format('Do MMMM YYYY') + ' to ' : '';
+			str += end ? end.format('Do MMMM YYYY') : '...';
+
+			return str;
+		}
+		new lightPick({
+			field: document.getElementById('demo'),
+			lang: 'en',
+			numberOfMonths: 2,
+			numberOfColumns: 3,
+			singleDate: false,
+			onSelect: function (start, end) {
+				document.getElementById('result').innerHTML = rangeText(start, end);
+			}
+		});
+
+
+
+	</script>
+{% endblock %}
