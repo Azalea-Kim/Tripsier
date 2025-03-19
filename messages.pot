@@ -1,0 +1,624 @@
+# Translations template for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-05-15 21:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: templates/baseHTML.html:9
+msgid "Tripsier - Tour & Travel Hotel Booking HTML Template"
+msgstr ""
+
+#: templates/baseHTML.html:57
+msgid "Homepage"
+msgstr ""
+
+#: templates/baseHTML.html:59
+msgid "My Tours"
+msgstr ""
+
+#: templates/baseHTML.html:64 templates/baseHTML_Admin.html:222
+msgid "Destinations"
+msgstr ""
+
+#: templates/baseHTML.html:66
+msgid "View All Destinations"
+msgstr ""
+
+#: templates/baseHTML.html:67 templates/index-03-new.html:46
+msgid "Beijing"
+msgstr ""
+
+#: templates/baseHTML.html:68 templates/index-03-new.html:54
+msgid "Shanghai"
+msgstr ""
+
+#: templates/baseHTML.html:69
+msgid "HongKong"
+msgstr ""
+
+#: templates/baseHTML.html:70
+msgid "Guangzhou"
+msgstr ""
+
+#: templates/baseHTML.html:76 templates/baseHTML.html:352
+#: templates/baseHTML_Admin.html:223
+msgid "Attractions"
+msgstr ""
+
+#: templates/baseHTML.html:80
+msgid "View All Attractions"
+msgstr ""
+
+#: templates/baseHTML.html:89 templates/baseHTML.html:351
+#: templates/baseHTML_Admin.html:224
+msgid "Accommodations"
+msgstr ""
+
+#: templates/baseHTML.html:92
+msgid "View All Accommodations"
+msgstr ""
+
+#: templates/baseHTML.html:100
+msgid "Booking"
+msgstr ""
+
+#: templates/baseHTML.html:103
+msgid "Planning Tool"
+msgstr ""
+
+#: templates/baseHTML.html:104
+msgid "Booking Tool"
+msgstr ""
+
+#: templates/baseHTML.html:108
+msgid "Ask For Help"
+msgstr ""
+
+#: templates/baseHTML.html:111
+msgid "Ask About Tours"
+msgstr ""
+
+#: templates/baseHTML.html:113
+msgid "Report Bugs"
+msgstr ""
+
+#: templates/baseHTML.html:233
+msgid "Admin Page"
+msgstr ""
+
+#: templates/baseHTML.html:236
+msgid "Logout"
+msgstr ""
+
+#: templates/baseHTML.html:295
+msgid "Call us at"
+msgstr ""
+
+#: templates/baseHTML.html:298
+msgid "Call Us"
+msgstr ""
+
+#: templates/baseHTML.html:305
+msgid "Newsletters sign up"
+msgstr ""
+
+#: templates/baseHTML.html:309
+msgid "Get Notified"
+msgstr ""
+
+#: templates/baseHTML.html:346
+msgid "Quick Link"
+msgstr ""
+
+#: templates/baseHTML.html:349 templates/drag_drop.html:37
+#: templates/reservation.html:49
+msgid "Home"
+msgstr ""
+
+#: templates/baseHTML.html:350
+msgid "About Us"
+msgstr ""
+
+#: templates/baseHTML.html:357
+msgid "Support"
+msgstr ""
+
+#: templates/baseHTML.html:360
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/baseHTML.html:361
+msgid "FAQs"
+msgstr ""
+
+#: templates/baseHTML.html:362
+msgid "Contact"
+msgstr ""
+
+#: templates/baseHTML.html:368
+msgid "Contact Travel"
+msgstr ""
+
+#: templates/baseHTML.html:385
+msgid "Copyright"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:6
+msgid "Drezoc - Admin & Dashboard Template"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:52
+msgid "Trip Management System"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:89
+msgid "Notifications"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:92
+msgid "View All"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:102
+msgid "Samuel Coverdale"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:103
+msgid ""
+"You have new follower on\n"
+"                                                                Instagram"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:106
+msgid "2 min ago"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:118
+msgid "Download Available !"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:119
+msgid ""
+"Latest version of admin is now\n"
+"                                                                "
+"available. Please download here."
+msgstr ""
+
+#: templates/baseHTML_Admin.html:122
+msgid "4 hours ago"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:131
+msgid "Victoria Mendis"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:132
+msgid "Just upgraded to premium account."
+msgstr ""
+
+#: templates/baseHTML_Admin.html:134
+msgid "1 day ago"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:141
+msgid "Load More.."
+msgstr ""
+
+#: templates/baseHTML_Admin.html:158
+msgid "Inbox"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:164
+msgid "Chat"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:170
+msgid "Settings"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:173
+msgid "Lock Account"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:176
+msgid "Index"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:179
+msgid "Log Out"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:197
+msgid "Overview"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:203
+msgid "Information"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:221
+msgid "Customers"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:230
+msgid "Planning & Booking"
+msgstr ""
+
+#: templates/baseHTML_Admin.html:268
+msgid "More"
+msgstr ""
+
+#: templates/chat_room.html:7
+msgid ":: PostMan :: Chat Application"
+msgstr ""
+
+#: templates/detail_accommodation.html:16
+#: templates/detail_accommodation.html:20
+msgid "Accommodation Details"
+msgstr ""
+
+#: templates/detail_accommodation.html:56 templates/detail_destination.html:57
+#: templates/index-03-new.html:230 templates/index-03-new.html:283
+msgid "Day"
+msgstr ""
+
+#: templates/detail_accommodation.html:68
+msgid ""
+"Add To\n"
+"                              Cart"
+msgstr ""
+
+#: templates/detail_accommodation.html:108
+#: templates/detail_accommodation.html:197 templates/detail_attraction.html:202
+#: templates/detail_destination.html:83 templates/detail_destination.html:172
+msgid "Location"
+msgstr ""
+
+#: templates/detail_accommodation.html:113 templates/detail_attraction.html:118
+#: templates/detail_destination.html:88
+msgid "Address:"
+msgstr ""
+
+#: templates/detail_accommodation.html:116 templates/detail_attraction.html:121
+#: templates/detail_destination.html:91
+msgid "Website:"
+msgstr ""
+
+#: templates/detail_accommodation.html:130 templates/detail_attraction.html:135
+#: templates/detail_destination.html:105
+msgid "Tags"
+msgstr ""
+
+#: templates/detail_accommodation.html:135 templates/detail_attraction.html:140
+#: templates/detail_destination.html:110
+msgid "Blog"
+msgstr ""
+
+#: templates/detail_accommodation.html:136 templates/detail_attraction.html:141
+#: templates/detail_destination.html:111
+msgid "Adventure"
+msgstr ""
+
+#: templates/detail_accommodation.html:137 templates/detail_attraction.html:142
+#: templates/detail_destination.html:112
+msgid "WordPress"
+msgstr ""
+
+#: templates/detail_accommodation.html:138 templates/detail_attraction.html:143
+#: templates/detail_destination.html:113
+msgid "Blogger"
+msgstr ""
+
+#: templates/detail_accommodation.html:139 templates/detail_attraction.html:144
+#: templates/detail_destination.html:114
+msgid "Food"
+msgstr ""
+
+#: templates/detail_accommodation.html:140 templates/detail_attraction.html:145
+#: templates/detail_destination.html:115
+msgid "Tourism"
+msgstr ""
+
+#: templates/detail_accommodation.html:141 templates/detail_attraction.html:146
+#: templates/detail_destination.html:116
+msgid "Fashion"
+msgstr ""
+
+#: templates/detail_accommodation.html:142 templates/detail_attraction.html:147
+#: templates/detail_destination.html:117
+msgid "Travel"
+msgstr ""
+
+#: templates/detail_accommodation.html:143 templates/detail_attraction.html:148
+#: templates/detail_destination.html:118
+msgid "Magazine"
+msgstr ""
+
+#: templates/detail_accommodation.html:158 templates/detail_attraction.html:163
+#: templates/detail_destination.html:133
+msgid "Listing Description"
+msgstr ""
+
+#: templates/detail_accommodation.html:167 templates/detail_attraction.html:172
+#: templates/detail_destination.html:142
+msgid "Listing Average Reviews"
+msgstr ""
+
+#: templates/detail_accommodation.html:186 templates/detail_attraction.html:191
+#: templates/detail_destination.html:161
+msgid "Quality"
+msgstr ""
+
+#: templates/detail_accommodation.html:211 templates/detail_attraction.html:216
+#: templates/detail_destination.html:186
+msgid "Space"
+msgstr ""
+
+#: templates/detail_accommodation.html:221 templates/detail_attraction.html:226
+#: templates/detail_destination.html:196
+msgid "Service"
+msgstr ""
+
+#: templates/detail_accommodation.html:235 templates/detail_attraction.html:240
+#: templates/detail_destination.html:210
+msgid "Price"
+msgstr ""
+
+#: templates/detail_accommodation.html:245 templates/detail_attraction.html:250
+#: templates/detail_destination.html:220
+msgid "Cleanliness"
+msgstr ""
+
+#: templates/detail_accommodation.html:329
+#: templates/detail_accommodation.html:370 templates/detail_attraction.html:376
+msgid "Add a Review"
+msgstr ""
+
+#: templates/detail_accommodation.html:384 templates/detail_attraction.html:391
+#: templates/detail_destination.html:436
+msgid "Your message"
+msgstr ""
+
+#: templates/detail_accommodation.html:389
+#: templates/detail_destination.html:440
+msgid "Submit Review"
+msgstr ""
+
+#: templates/detail_accommodation.html:393 templates/detail_attraction.html:396
+msgid "Login To Send Review"
+msgstr ""
+
+#: templates/detail_attraction.html:24 templates/detail_attraction.html:28
+msgid "Attraction Details"
+msgstr ""
+
+#: templates/detail_attraction.html:99
+msgid "Possible Price Range"
+msgstr ""
+
+#: templates/detail_attraction.html:334
+msgid "Reviews"
+msgstr ""
+
+#: templates/detail_destination.html:16 templates/detail_destination.html:20
+msgid "Destination Details"
+msgstr ""
+
+#: templates/detail_destination.html:235
+msgid "Representative Captures"
+msgstr ""
+
+#: templates/detail_destination.html:304
+msgid "Top 3 Reviews"
+msgstr ""
+
+#: templates/detail_destination.html:314
+msgid "Alice Williams"
+msgstr ""
+
+#: templates/detail_destination.html:326
+msgid ""
+"Then work backwards to develop the plan. What steps are required to get "
+"you to the\n"
+"                                      goals? Make the plan as detailed as"
+" possible. Try to visualize and then plan."
+msgstr ""
+
+#: templates/detail_destination.html:341
+msgid "Ora Bryan"
+msgstr ""
+
+#: templates/detail_destination.html:353
+msgid ""
+"Along with your plans, you should consider developing an action "
+"orientation that will\n"
+"                                      keep you motivated to move forward "
+"at all times This requires a little."
+msgstr ""
+
+#: templates/detail_destination.html:379
+msgid "Maria Fields"
+msgstr ""
+
+#: templates/detail_destination.html:391
+msgid ""
+"I coach my clients to practice the 3 D’s – Defer, Delegate or Delete. Can"
+" the\n"
+"                                      particular activity be done later? "
+"Defer it! Can it be done by someone else? Delegate"
+msgstr ""
+
+#: templates/detail_destination.html:424
+msgid "Your name"
+msgstr ""
+
+#: templates/detail_destination.html:428
+msgid "Your email"
+msgstr ""
+
+#: templates/detail_destination.html:432
+msgid "Subject"
+msgstr ""
+
+#: templates/drag_drop.html:34 templates/reservation.html:46
+msgid "Tackle your travel bucket list"
+msgstr ""
+
+#: templates/drag_drop.html:38 templates/reservation.html:50
+msgid "Destinations Details"
+msgstr ""
+
+#: templates/drag_drop.html:56
+msgid "Step.1 Select Plan Date"
+msgstr ""
+
+#: templates/drag_drop.html:57
+msgid "Select the planning date and confirm it."
+msgstr ""
+
+#: templates/drag_drop.html:64 templates/index-03-new.html:90
+#: templates/search_page.html:29
+msgid "Find Now"
+msgstr ""
+
+#: templates/drag_drop.html:85
+msgid "Step.2 Cart Lists"
+msgstr ""
+
+#: templates/drag_drop.html:86
+msgid ""
+"This is a destination list shows the information about all our\n"
+"                            destinations"
+msgstr ""
+
+#: templates/drag_drop.html:113
+msgid "Step.3 Plan Chart"
+msgstr ""
+
+#: templates/drag_drop.html:114
+msgid ""
+"This is a destination list shows the information about all our\n"
+"                                destinations"
+msgstr ""
+
+#: templates/drag_drop.html:121
+msgid "Submit"
+msgstr ""
+
+#: templates/index-03-new.html:17
+msgid "Search"
+msgstr ""
+
+#: templates/index-03-new.html:33
+msgid "Share"
+msgstr ""
+
+#: templates/index-03-new.html:45 templates/index-03-new.html:53
+#: templates/index-03-new.html:61
+msgid "Your next tour plan"
+msgstr ""
+
+#: templates/index-03-new.html:62
+msgid "Hong Kong"
+msgstr ""
+
+#: templates/index-03-new.html:123
+msgid "Popular Destination"
+msgstr ""
+
+#: templates/index-03-new.html:241
+msgid "See Details"
+msgstr ""
+
+#: templates/index-03-new.html:338
+msgid "Developing Experience"
+msgstr ""
+
+#: templates/index-03-new.html:346
+msgid "Destionation Collaboration"
+msgstr ""
+
+#: templates/index-03-new.html:354
+msgid "Cities"
+msgstr ""
+
+#: templates/index-03-new.html:362
+msgid "Average Age"
+msgstr ""
+
+#: templates/index-03-new.html:379
+msgid "Team Members"
+msgstr ""
+
+#: templates/index-03-new.html:381
+msgid ""
+"Figure out what you want, put a plan together to achieve it, understand "
+"the cost, believe in\n"
+"                        yourself then go and get it!"
+msgstr ""
+
+#: templates/index-03-new.html:405
+msgid "Frontend & Design"
+msgstr ""
+
+#: templates/index-03-new.html:406
+msgid "Wang Jialu"
+msgstr ""
+
+#: templates/index-03-new.html:425
+msgid "Frontend"
+msgstr ""
+
+#: templates/index-03-new.html:426
+msgid "Ding Tairan"
+msgstr ""
+
+#: templates/index-03-new.html:445
+msgid "Backend & Management"
+msgstr ""
+
+#: templates/index-03-new.html:446
+msgid "Lou Yiming"
+msgstr ""
+
+#: templates/index-03-new.html:465
+msgid "Frontend & Editing"
+msgstr ""
+
+#: templates/index-03-new.html:466
+msgid "Yan Mingwei"
+msgstr ""
+
+#: templates/index-03-new.html:485
+msgid "Documentation"
+msgstr ""
+
+#: templates/index-03-new.html:486
+msgid "Jin Yanxiu"
+msgstr ""
+
+#: templates/index-03-new.html:525
+msgid "Backend"
+msgstr ""
+
+#: templates/index-03-new.html:526
+msgid "Li Yiming"
+msgstr ""
+
+#: templates/search_page.html:61
+msgid "Searched Destination"
+msgstr ""
+
